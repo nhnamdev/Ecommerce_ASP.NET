@@ -1,7 +1,13 @@
+using EcomemerceASP_NET.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<EcommerceContext>(options => {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Ecommerce"));
+    });
 
 var app = builder.Build();
 
