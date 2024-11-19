@@ -28,6 +28,8 @@
 
     <!-- Template Stylesheet -->
     <link href="~/css/style.css" rel="stylesheet">
+
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <div>
@@ -53,7 +55,7 @@
             </div>
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                    <a href="index.html" class="navbar-brand"><h1 class="text-primary display-6">Fruitables</h1></a>
+                    <a href="index.html" class="navbar-brand"><h1 class="text-primary display-6">Hoàng Nam Shop</h1></a>
                     <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
                     </button>
@@ -88,6 +90,24 @@
             </div>
         </div>
         <!-- Navbar End -->\
+        <!-- Modal Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input id="searchText" type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <span id="searchButton" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
         <div style="min-height: 400px">
             @RenderBody()
             </div>
@@ -110,5 +130,15 @@
 
     <!-- Template Javascript -->
     <script src="~/js/main.js"></script>
+    @RenderSection("Scripts", required:false)
+
+    <script>
+        $(document).ready(function(){
+            $("#searchButton").click(function(){
+                let url = `/HangHoa/Search?query=` + $("#searchText").val();
+                window.location.href= url;
+            })
+        })
+    </script>
 </body>
 </html>
