@@ -88,13 +88,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\EcomemerceASP_NET.4wmhypakr9.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4wmhypakr9"},{"Name":"integrity","Value":"sha256-3Gs/9Mk/oBT\u002ByTn24YDbgBaZDXDSBEvqMrRxIAzBkM8="},{"Name":"label","Value":"_content/EcomemerceASP_NET/EcomemerceASP_NET.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00223Gs/9Mk/oBT\u002ByTn24YDbgBaZDXDSBEvqMrRxIAzBkM8=\u0022"},{"Name":"Last-Modified","Value":"Sun, 17 Nov 2024 14:00:16 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00223Gs/9Mk/oBT\u002ByTn24YDbgBaZDXDSBEvqMrRxIAzBkM8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 21 Nov 2024 12:53:27 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EcomemerceASP_NET/EcomemerceASP_NET.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\EcomemerceASP_NET.4wmhypakr9.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-3Gs/9Mk/oBT\u002ByTn24YDbgBaZDXDSBEvqMrRxIAzBkM8="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00223Gs/9Mk/oBT\u002ByTn24YDbgBaZDXDSBEvqMrRxIAzBkM8=\u0022"},{"Name":"Last-Modified","Value":"Sun, 17 Nov 2024 14:00:16 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00223Gs/9Mk/oBT\u002ByTn24YDbgBaZDXDSBEvqMrRxIAzBkM8=\u0022"},{"Name":"Last-Modified","Value":"Thu, 21 Nov 2024 12:53:27 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EcomemerceASP_NET/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>

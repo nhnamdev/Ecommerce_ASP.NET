@@ -1,6 +1,7 @@
 ﻿using EcomemerceASP_NET.Data;
 using EcomemerceASP_NET.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EcomemerceASP_NET.Controllers
 {
@@ -36,7 +37,7 @@ namespace EcomemerceASP_NET.Controllers
             var hangHoas = db.HangHoas.AsQueryable();
             if (query != null)
             {
-                hangHoas = hangHoas.Where(p =>p.TenHh.Contains(query));
+                hangHoas = hangHoas.Where(p => p.TenHh.Contains(query));
 
             }
             var result = hangHoas.Select(p => new HangHoaVM
@@ -49,6 +50,30 @@ namespace EcomemerceASP_NET.Controllers
                 TenLoai = p.MaLoaiNavigation.TenLoai
             });
 
+            return View(result);
+        }
+        public IActionResult Detail(int id)
+        {
+            var data = db.HangHoas.Include(P => P.MaLoaiNavigation).SingleOrDefault(p => p.MaHh == id);
+               
+            if (data == null)
+            {
+                TempData["Massage"] = $"Không tìm thấy sản phẩm {id}";
+                return Redirect("/404");
+            }
+            var result = new ChiTietHangHoaVM
+            {
+                MaHh = data.MaHh,
+                TenHH = data.TenHh,
+                DonGia = data.DonGia ?? 0,
+                ChiTiet = data.MoTa ?? "",
+                DiemDanhGia = 5,
+                MoTaNgan = data.MoTaDonVi ?? "",
+                TenLoai = data.MaLoaiNavigation.TenLoai,
+                SoLuongTon = 10,
+                Hinh = data.Hinh ?? "",
+
+            };
             return View(result);
         }
     }

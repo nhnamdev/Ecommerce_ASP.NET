@@ -8,6 +8,21 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<EcommerceContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Ecommerce"));
     });
+//Add service database
+// Add services to the container.
+
+// Add session
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(60);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+// Add session
+
+
 
 var app = builder.Build();
 
@@ -23,6 +38,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 

@@ -13,12 +13,7 @@
                 <div class="row g-4">
                     <div class="col-xl-3">
                         <div class="input-group w-100 mx-auto d-flex">
-                            <form asp-action="Search" asp-controller="HangHoa">
-                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1" name="query">
-                            <button>
-                                <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                            </button>
-                            </form>
+                            @await Html.PartialAsync("_TimKiemPanel")
                         </div>
                     </div>
                     <div class="col-6"></div>
@@ -75,7 +70,7 @@
                                 <h4 class="mb-3">Featured products</h4>
                                 <div class="d-flex align-items-center justify-content-start">
                                     <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                        <img src="img/featur-1.jpg" class="img-fluid rounded" alt="">
+                                        <img src="~/img/featur-1.jpg" class="img-fluid rounded" alt="">
                                     </div>
                                     <div>
                                         <h6 class="mb-2">Big Banana</h6>
@@ -94,7 +89,7 @@
                                 </div>
                                 <div class="d-flex align-items-center justify-content-start">
                                     <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                        <img src="img/featur-2.jpg" class="img-fluid rounded" alt="">
+                                        <img src="~/img/featur-2.jpg" class="img-fluid rounded" alt="">
                                     </div>
                                     <div>
                                         <h6 class="mb-2">Big Banana</h6>
@@ -113,7 +108,7 @@
                                 </div>
                                 <div class="d-flex align-items-center justify-content-start">
                                     <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                        <img src="img/featur-3.jpg" class="img-fluid rounded" alt="">
+                                        <img src="~/img/featur-3.jpg" class="img-fluid rounded" alt="">
                                     </div>
                                     <div>
                                         <h6 class="mb-2">Big Banana</h6>
@@ -138,7 +133,7 @@
                                 <div class="position-relative">
                                     <img src="img/banner-fruits.jpg" class="img-fluid w-100 rounded" alt="">
                                     <div class="position-absolute" style="top: 50%; right: 10px; transform: translateY(-50%);">
-                                        <h3 class="text-secondary fw-bold">Fresh <br> Fruits <br> Banner</h3>
+                                        <h3 class="text-secondary fw-bold">Fresh Fruits Banner</h3>
                                     </div>
                                 </div>
                             </div>
