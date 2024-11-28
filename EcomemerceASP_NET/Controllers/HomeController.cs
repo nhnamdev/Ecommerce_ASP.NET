@@ -22,6 +22,21 @@ namespace EcomemerceASP_NET.Controllers
         {
             return View();
         }
+        [Route("/Contact")]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        [Route("/Checkout")]
+        public IActionResult Checkout()
+        {
+            return View();
+        }
+        [Route("/Testimonial")]
+        public IActionResult Testimonial()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
