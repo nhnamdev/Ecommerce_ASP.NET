@@ -86,7 +86,10 @@
                 </nav>
             </div>
         </div>
-        <!-- Navbar End -->\
+        <!-- Navbar End -->
+
+
+        
         <!-- Modal Search Start -->
         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen">
@@ -130,7 +133,6 @@
     @RenderSection("Scripts", required:false)
 
     <script>
-        $(document).ready(function(){
             $("#searchButton").click(function(){
                 let url = `/HangHoa/Search?query=` + $("#searchText").val();
                 window.location.href= url;
