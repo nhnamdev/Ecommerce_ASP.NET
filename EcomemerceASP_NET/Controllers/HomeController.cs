@@ -37,6 +37,8 @@ namespace EcomemerceASP_NET.Controllers
         {
             return View();
         }
+     
+    
         public IActionResult Privacy()
         {
             return View();

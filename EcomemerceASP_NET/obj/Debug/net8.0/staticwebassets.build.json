@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9F0jnudQUE713oDoXjnpsYwM/WgQzg8ksE5D1AQQXPc=",
+  "Hash": "+sCZyNNKWsUx/oqnIJEwIFyMXh6nQmA9BunycCAMAOE=",
   "Source": "EcomemerceASP_NET",
   "BasePath": "_content/EcomemerceASP_NET",
   "Mode": "Default",
@@ -8809,8 +8809,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "6ublnzmi72",
-      "Integrity": "LvKLit6qXtIpSL2b5YCUJG0Uw5bHDNj6nYQfxWT5Rjs=",
+      "Fingerprint": "t382rg3g4f",
+      "Integrity": "iQDBjEHUtopRfHaqEHUb73Q0nMCm2LHIiSGpfikfmxs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\index.html"
@@ -53682,51 +53682,6 @@
       ]
     },
     {
-      "Route": "admin/index.6ublnzmi72.html",
-      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\admin\\index.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "67217"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"LvKLit6qXtIpSL2b5YCUJG0Uw5bHDNj6nYQfxWT5Rjs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 07 Jul 2024 09:17:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "6ublnzmi72"
-        },
-        {
-          "Name": "label",
-          "Value": "admin/index.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-LvKLit6qXtIpSL2b5YCUJG0Uw5bHDNj6nYQfxWT5Rjs="
-        }
-      ]
-    },
-    {
       "Route": "admin/index.html",
       "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\admin\\index.html",
       "Selectors": [],
@@ -53737,7 +53692,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "67217"
+          "Value": "83329"
         },
         {
           "Name": "Content-Type",
@@ -53745,11 +53700,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"LvKLit6qXtIpSL2b5YCUJG0Uw5bHDNj6nYQfxWT5Rjs=\""
+          "Value": "\"iQDBjEHUtopRfHaqEHUb73Q0nMCm2LHIiSGpfikfmxs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 07 Jul 2024 09:17:42 GMT"
+          "Value": "Fri, 29 Nov 2024 12:46:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -53759,7 +53714,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-LvKLit6qXtIpSL2b5YCUJG0Uw5bHDNj6nYQfxWT5Rjs="
+          "Value": "sha256-iQDBjEHUtopRfHaqEHUb73Q0nMCm2LHIiSGpfikfmxs="
+        }
+      ]
+    },
+    {
+      "Route": "admin/index.t382rg3g4f.html",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\admin\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "83329"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iQDBjEHUtopRfHaqEHUb73Q0nMCm2LHIiSGpfikfmxs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 29 Nov 2024 12:46:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t382rg3g4f"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iQDBjEHUtopRfHaqEHUb73Q0nMCm2LHIiSGpfikfmxs="
         }
       ]
     },

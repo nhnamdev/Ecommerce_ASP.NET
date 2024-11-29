@@ -4992,17 +4992,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kLOK1cInRggDhrvZj4\u002BjuZNiA5XX\u002BNwSu6Mq3eWq46w="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"78523"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022kLOK1cInRggDhrvZj4\u002BjuZNiA5XX\u002BNwSu6Mq3eWq46w=\u0022"},{"Name":"Last-Modified","Value":"Sun, 07 Jul 2024 09:17:42 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/EcomemerceASP_NET/admin/index.6ublnzmi72.html">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin\index.html'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6ublnzmi72"},{"Name":"integrity","Value":"sha256-LvKLit6qXtIpSL2b5YCUJG0Uw5bHDNj6nYQfxWT5Rjs="},{"Name":"label","Value":"_content/EcomemerceASP_NET/admin/index.html"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"67217"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022LvKLit6qXtIpSL2b5YCUJG0Uw5bHDNj6nYQfxWT5Rjs=\u0022"},{"Name":"Last-Modified","Value":"Sun, 07 Jul 2024 09:17:42 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EcomemerceASP_NET/admin/index.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin\index.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-LvKLit6qXtIpSL2b5YCUJG0Uw5bHDNj6nYQfxWT5Rjs="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"67217"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022LvKLit6qXtIpSL2b5YCUJG0Uw5bHDNj6nYQfxWT5Rjs=\u0022"},{"Name":"Last-Modified","Value":"Sun, 07 Jul 2024 09:17:42 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-iQDBjEHUtopRfHaqEHUb73Q0nMCm2LHIiSGpfikfmxs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"83329"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022iQDBjEHUtopRfHaqEHUb73Q0nMCm2LHIiSGpfikfmxs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 12:46:53 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EcomemerceASP_NET/admin/index.t382rg3g4f.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"t382rg3g4f"},{"Name":"integrity","Value":"sha256-iQDBjEHUtopRfHaqEHUb73Q0nMCm2LHIiSGpfikfmxs="},{"Name":"label","Value":"_content/EcomemerceASP_NET/admin/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"83329"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022iQDBjEHUtopRfHaqEHUb73Q0nMCm2LHIiSGpfikfmxs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 29 Nov 2024 12:46:53 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EcomemerceASP_NET/admin/LICENSE">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin\LICENSE'))</AssetFile>
