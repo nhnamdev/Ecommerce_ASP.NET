@@ -10,5 +10,15 @@ namespace EcomemerceASP_NET.Controllers
             ViewBag.Title = "Admin";
             return View();
         }
+        public IActionResult ManageProduct()
+        {
+            ViewBag.Title = "Product";
+            return View();
+        }
+        public IActionResult ManageUser()
+        {
+            ViewBag.Title = "User";
+            return View();
+        }
     }
 }
