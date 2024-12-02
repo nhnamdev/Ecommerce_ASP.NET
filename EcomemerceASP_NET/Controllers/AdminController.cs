@@ -1,10 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using EcomemerceASP_NET.Models;
+
+using System.Diagnostics;
+using EcomemerceASP_NET.Data;
+using EcomemerceASP_NET.ViewModels;
 
 namespace EcomemerceASP_NET.Controllers
 {
+    
     public class AdminController : Controller
     {
-        //[Route("/Admin")]
+        private readonly EcommerceContext db;
+    public AdminController(EcommerceContext context)
+        {
+            db = context;
+        }
+        
         public IActionResult Index()
         {
             ViewBag.Title = "Admin";
@@ -13,12 +24,34 @@ namespace EcomemerceASP_NET.Controllers
         public IActionResult ManageProduct()
         {
             ViewBag.Title = "Product";
+
+
+
             return View();
         }
         public IActionResult ManageUser()
         {
             ViewBag.Title = "User";
-            return View();
+
+
+            var khachHangs = db.KhachHangs.AsQueryable();
+
+
+
+            var result = khachHangs.Select(p => new KhachHangVM
+            {
+                MaKh = p.MaKh,
+                MatKhau = p.MatKhau,
+                HoTen = p.HoTen,
+                GioiTinh = p.GioiTinh,
+                DiaChi = p.DiaChi,
+                DienThoai = p.DienThoai,
+                Email = p.Email,
+                Hinh = p.Hinh,
+                HieuLuc = p.HieuLuc,
+                VaiTro = p.VaiTro
+            });
+            return View(result);
         }
     }
 }
