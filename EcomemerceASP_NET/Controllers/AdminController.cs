@@ -7,7 +7,6 @@ using EcomemerceASP_NET.ViewModels;
 
 namespace EcomemerceASP_NET.Controllers
 {
-    
     public class AdminController : Controller
     {
         private readonly EcommerceContext db;
@@ -20,6 +19,18 @@ namespace EcomemerceASP_NET.Controllers
         {
             ViewBag.Title = "Admin";
             return View();
+        }
+        public IActionResult DashboardTop()
+        {
+            ViewBag.Title = "Dashboard";
+            var model = new DashboardTopAdminVM
+            {
+                Visitors = 1000,
+                Subscribers = 100,
+                Sales = 1000000,
+                Orders = 100
+            };
+            return View(model);
         }
         public IActionResult ManageProduct()
         {

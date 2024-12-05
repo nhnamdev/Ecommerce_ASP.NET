@@ -29,7 +29,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 21 Nov 2024 12:53:27 GMT"
+          "Value": "Thu, 05 Dec 2024 15:20:15 GMT"
         }
       ],
       "EndpointProperties": [
@@ -74,7 +74,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 21 Nov 2024 12:53:27 GMT"
+          "Value": "Thu, 05 Dec 2024 15:20:15 GMT"
         }
       ],
       "EndpointProperties": [
@@ -6887,6 +6887,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-flvdAjts8h7+QqjskLwZk/yFOYDUtWRojlrC0oxkIjw="
+        }
+      ]
+    },
+    {
+      "Route": "Hinh/KhachHang/Untitled.png",
+      "AssetFile": "Hinh/KhachHang/Untitled.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28299"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"npDe/OCyuTqqz+bSayWssk7h0BHf+jcIG/PHYlyrZ78=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 16:27:30 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-npDe/OCyuTqqz+bSayWssk7h0BHf+jcIG/PHYlyrZ78="
+        }
+      ]
+    },
+    {
+      "Route": "Hinh/KhachHang/Untitled.utjkek7zb4.png",
+      "AssetFile": "Hinh/KhachHang/Untitled.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28299"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"npDe/OCyuTqqz+bSayWssk7h0BHf+jcIG/PHYlyrZ78=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 16:27:30 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "utjkek7zb4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-npDe/OCyuTqqz+bSayWssk7h0BHf+jcIG/PHYlyrZ78="
+        },
+        {
+          "Name": "label",
+          "Value": "Hinh/KhachHang/Untitled.png"
         }
       ]
     },

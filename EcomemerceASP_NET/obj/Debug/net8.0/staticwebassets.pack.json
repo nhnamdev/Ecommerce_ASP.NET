@@ -337,6 +337,10 @@
       "PackagePath": "staticwebassets\\Hinh\\KhachHang\\Penguins.jpg"
     },
     {
+      "Id": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\Untitled.png",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\Untitled.png"
+    },
+    {
       "Id": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\android_300200.png",
       "PackagePath": "staticwebassets\\Hinh\\KhachHang\\android_300200.png"
     },

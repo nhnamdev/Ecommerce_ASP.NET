@@ -1,4 +1,5 @@
-using EcomemerceASP_NET.Data;
+﻿using EcomemerceASP_NET.Data;
+using EcomemerceASP_NET.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +23,15 @@ builder.Services.AddSession(options =>
 });
 // Add session
 
+// Auto reload khi thay đổi file cshtml
+builder.Services.AddControllersWithViews()
+    .AddRazorRuntimeCompilation();
 
+// Auto reload khi thay đổi file cshtml
+
+// Add AutoMapper
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+// Add AutoMapper
 
 var app = builder.Build();
 

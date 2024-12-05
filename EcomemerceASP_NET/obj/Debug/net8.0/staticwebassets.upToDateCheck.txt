@@ -694,6 +694,7 @@ wwwroot\Hinh\KhachHang\android_300200.png
 wwwroot\Hinh\KhachHang\Author.jpg
 wwwroot\Hinh\KhachHang\man.jpg
 wwwroot\Hinh\KhachHang\Penguins.jpg
+wwwroot\Hinh\KhachHang\Untitled.png
 wwwroot\Hinh\KhachHang\woman.jpg
 wwwroot\Hinh\Loai\Accept.png
 wwwroot\Hinh\Loai\agenda_1.jpg
