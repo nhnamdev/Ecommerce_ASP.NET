@@ -24,7 +24,6 @@ namespace EcomemerceASP_NET.ViewModels
         [Display(Name ="Địa chỉ")]
         public string DiaChi { get; set; }
         [MaxLength(20, ErrorMessage = "Điện thoại không được quá 20 ký tự")]
-        [RegularExpression(@"(09|01[2|6|8|9])+([0-9]{8})\b", ErrorMessage = "Điện thoại không đúng định dạng")]
         [Display(Name = "Điện Thoại")]
         public string DienThoai { get; set; }
         [EmailAddress(ErrorMessage = "Email không đúng định dạng")]

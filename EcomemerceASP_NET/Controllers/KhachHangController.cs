@@ -2,7 +2,11 @@
 using EcomemerceASP_NET.Data;
 using EcomemerceASP_NET.Helpers;
 using EcomemerceASP_NET.ViewModels;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace EcomemerceASP_NET.Controllers
 {
@@ -16,6 +20,7 @@ namespace EcomemerceASP_NET.Controllers
             _mapper = mapper;
         }
         [HttpGet]
+        #region Register
         public IActionResult DangKy()
         {
             return View();
@@ -49,5 +54,144 @@ namespace EcomemerceASP_NET.Controllers
             }
             return View();
         }
+        #endregion
+        #region Login  
+        [HttpGet]
+        public IActionResult DangNhap(string? ReturnUrl)
+        {
+            ViewBag.ReturnUrl = ReturnUrl;
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> DangNhap(LoginVM model, string? ReturnUrl)
+        {
+            ViewBag.ReturnUrl = ReturnUrl;
+            if (ModelState.IsValid)
+            {
+                var khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == model.UserName);
+                if (khachHang == null)
+                {
+                    ModelState.AddModelError("loi", "Không có khách hàng này");
+                }
+                else
+                {
+                    if (!khachHang.HieuLuc)
+                    {
+                        ModelState.AddModelError("loi", "Tài khoản đã bị khóa. Vui lòng liên hệ Admin.");
+                    }
+                    else
+                    {
+                        if (khachHang.MatKhau != model.Password.ToMd5Hash(khachHang.RandomKey))
+                        {
+                            ModelState.AddModelError("loi", "Sai thông tin đăng nhập");
+                        }
+                        else
+                        {
+                            var claims = new List<Claim> {
+                                new Claim(ClaimTypes.Email, khachHang.Email),
+                                new Claim(ClaimTypes.Name, khachHang.HoTen),
+                                new Claim("CustomerID", khachHang.MaKh),
+
+								//claim - role động
+								new Claim(ClaimTypes.Role, "Customer")
+                            };
+
+                            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                            var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+
+                            await HttpContext.SignInAsync(claimsPrincipal);
+
+                            if (Url.IsLocalUrl(ReturnUrl))
+                            {
+                                return Redirect(ReturnUrl);
+                            }
+                            else
+                            {
+                                return Redirect("/");
+                            }
+                        }
+                    }
+                }
+            }
+            return View();
+        }
+        #endregion
+        [Authorize]
+        public IActionResult Profile()
+        {
+            //Chat gpt
+            var customerId = User.Claims.FirstOrDefault(c => c.Type == "CustomerID")?.Value;
+            if (string.IsNullOrEmpty(customerId))
+            {
+                return RedirectToAction("DangNhap");
+            }
+
+            var khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerId);
+            if (khachHang == null)
+            {
+                return NotFound("Khách hàng không tồn tại.");
+            }
+
+            var profileVM = new ProfileVM
+            {
+                HoTen = khachHang.HoTen,
+                Email = khachHang.Email,
+                DienThoai = khachHang.DienThoai,
+                DiaChi = khachHang.DiaChi,
+                Hinh = khachHang.Hinh
+            };
+
+            //Chat gpt
+            return View(profileVM);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> DangXuat()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("/");
+        }
+        #region EditProfile
+        [HttpGet]
+        public IActionResult EditProfile()
+        {
+            return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult EditProfile(ProfileVM model, IFormFile? Hinh)
+        {
+            var customerId = User.Claims.FirstOrDefault(c => c.Type == "CustomerID")?.Value;
+            if (string.IsNullOrEmpty(customerId))
+            {
+                return RedirectToAction("DangNhap");
+            }
+
+            var khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerId);
+            if (khachHang == null)
+            {
+                return NotFound("Khách hàng không tồn tại.");
+            }
+
+            if (ModelState.IsValid)
+            {
+                khachHang.HoTen = model.HoTen;
+                khachHang.Email = model.Email;
+                khachHang.DienThoai = model.DienThoai;
+                khachHang.DiaChi = model.DiaChi;
+
+                db.Update(khachHang);
+                db.SaveChanges();
+
+                return RedirectToAction("Profile");
+            }
+
+            return View(model);
+        }
+
+
+        #endregion
+
     }
 }

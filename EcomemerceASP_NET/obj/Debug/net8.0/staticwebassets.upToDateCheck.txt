@@ -692,6 +692,7 @@ wwwroot\Hinh\icons\Zoom out.png
 wwwroot\Hinh\icons\Zoom.png
 wwwroot\Hinh\KhachHang\android_300200.png
 wwwroot\Hinh\KhachHang\Author.jpg
+wwwroot\Hinh\KhachHang\locket.jpg
 wwwroot\Hinh\KhachHang\man.jpg
 wwwroot\Hinh\KhachHang\Penguins.jpg
 wwwroot\Hinh\KhachHang\Untitled.png
@@ -753,6 +754,7 @@ wwwroot\img\fruite-item-6.jpg
 wwwroot\img\hero-img.jpg
 wwwroot\img\hero-img-1.png
 wwwroot\img\hero-img-2.jpg
+wwwroot\img\locket.jpg
 wwwroot\img\payment.png
 wwwroot\img\single-item.jpg
 wwwroot\img\testimonial-1.jpg

@@ -1,5 +1,6 @@
 ﻿using EcomemerceASP_NET.Data;
 using EcomemerceASP_NET.Helpers;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,7 +33,15 @@ builder.Services.AddControllersWithViews()
 // Add AutoMapper
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 // Add AutoMapper
+// Add Authentication
+// https://learn.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-8.0
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+{
+    options.LoginPath = "/KhachHang/DangNhap";
+    options.AccessDeniedPath = "/AccessDenied";
+});
 
+// Add Authentication
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -50,6 +59,7 @@ app.UseRouting();
 
 app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 

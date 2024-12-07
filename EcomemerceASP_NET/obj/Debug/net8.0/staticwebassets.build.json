@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LT1KAdq2j8B1fKdOVChGxm8nd4CmaKfL/Ha31JHuiI8=",
+  "Hash": "VR8Qjq4cKvBRGPoiOFcPO1hFrp5bctfy6rFNkHszbgY=",
   "Source": "EcomemerceASP_NET",
   "BasePath": "_content/EcomemerceASP_NET",
   "Mode": "Default",
@@ -14633,6 +14633,27 @@
       "OriginalItemSpec": "wwwroot\\Hinh\\KhachHang\\Author.jpg"
     },
     {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\locket.jpg",
+      "SourceId": "EcomemerceASP_NET",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\",
+      "BasePath": "_content/EcomemerceASP_NET",
+      "RelativePath": "Hinh/KhachHang/locket#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5xpxke4yzk",
+      "Integrity": "eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Hinh\\KhachHang\\locket.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\man.jpg",
       "SourceId": "EcomemerceASP_NET",
       "SourceType": "Discovered",
@@ -15912,6 +15933,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\hero-img-2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\img\\locket.jpg",
+      "SourceId": "EcomemerceASP_NET",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\",
+      "BasePath": "_content/EcomemerceASP_NET",
+      "RelativePath": "img/locket#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "j3hqmzl2q6",
+      "Integrity": "D+sl/Ct8p+8F3xU3vUV5IhLjKhq2mgJhPRt2avyTZCA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\locket.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\img\\payment.png",
@@ -54955,7 +54997,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 15:20:15 GMT"
+          "Value": "Fri, 06 Dec 2024 18:37:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -55000,7 +55042,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 15:20:15 GMT"
+          "Value": "Fri, 06 Dec 2024 18:37:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -55045,7 +55087,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 15:20:15 GMT"
+          "Value": "Fri, 06 Dec 2024 18:37:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -55082,7 +55124,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 05 Dec 2024 15:20:15 GMT"
+          "Value": "Fri, 06 Dec 2024 18:37:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -76663,6 +76705,88 @@
       ]
     },
     {
+      "Route": "Hinh/KhachHang/locket.5xpxke4yzk.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\locket.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "342625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 06 Dec 2024 18:11:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5xpxke4yzk"
+        },
+        {
+          "Name": "label",
+          "Value": "Hinh/KhachHang/locket.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc="
+        }
+      ]
+    },
+    {
+      "Route": "Hinh/KhachHang/locket.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\locket.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "342625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 06 Dec 2024 18:11:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc="
+        }
+      ]
+    },
+    {
       "Route": "Hinh/KhachHang/man.jpg",
       "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\man.jpg",
       "Selectors": [],
@@ -81661,6 +81785,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ujalo8DHsRBtfQPE39n3+GSg643iXUjFOuLNScGl5Kg="
+        }
+      ]
+    },
+    {
+      "Route": "img/locket.j3hqmzl2q6.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\img\\locket.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "255157"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"D+sl/Ct8p+8F3xU3vUV5IhLjKhq2mgJhPRt2avyTZCA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Dec 2024 15:53:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "j3hqmzl2q6"
+        },
+        {
+          "Name": "label",
+          "Value": "img/locket.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-D+sl/Ct8p+8F3xU3vUV5IhLjKhq2mgJhPRt2avyTZCA="
+        }
+      ]
+    },
+    {
+      "Route": "img/locket.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\img\\locket.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "255157"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"D+sl/Ct8p+8F3xU3vUV5IhLjKhq2mgJhPRt2avyTZCA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Dec 2024 15:53:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-D+sl/Ct8p+8F3xU3vUV5IhLjKhq2mgJhPRt2avyTZCA="
         }
       ]
     },

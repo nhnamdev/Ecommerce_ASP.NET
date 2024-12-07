@@ -1,0 +1,56 @@
+﻿﻿@{
+    ViewData["Title"] = "Profile";
+}
+
+
+<div class="container-fluid py-5 mb-5 hero-header">
+    <h2>Welcome @Context.User.Identity.Name</h2>
+    <a asp-action="DangXuat">Đăng xuất</a>
+
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Avatar chưa xử lí đc -->
+            <div class="text-center">
+                <img src="~/img/@Model.Hinh" alt="Avatar" class="img-fluid rounded-circle" style="width: 200px;height: 200px">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <!-- Profile Info -->
+            <h3>Thông tin cá nhân</h3>
+
+
+
+
+            <div>
+                <div class="mb-3">
+                    <label for="HoTen" class="form-label">Họ Tên</label>
+                    <input class="form-control" value="@Model.HoTen" disabled />
+                   
+                </div>
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Email</label>
+                    <input class="form-control" value="@Model.Email" disabled />
+                   
+                </div>
+                <div class="mb-3">
+                    <label for="SoDienThoai" class="form-label">Số điện thoại</label>
+                    <input class="form-control" value="@Model.DienThoai" disabled />
+                   
+                </div>
+                <div class="mb-3">
+                    <label for="DiaChi" class="form-label">Địa chỉ</label>
+                    <textarea class="form-control"  disabled>@Model.DiaChi</textarea>
+                  
+                </div>
+            </div>
+          
+            <div class="mt-4">
+                <a asp-action="EditProfile" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Chỉnh sửa thông tin</a>
+              
+            </div>
+            <div class="mt-4">
+                <a asp-action="DangXuat" class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+</div>
