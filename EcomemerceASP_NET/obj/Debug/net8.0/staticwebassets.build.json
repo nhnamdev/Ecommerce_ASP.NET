@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VR8Qjq4cKvBRGPoiOFcPO1hFrp5bctfy6rFNkHszbgY=",
+  "Hash": "zlYOnB0hHpOk1BhLPq7/0CLjqxmuvZZ/bt6siP3R7Ns=",
   "Source": "EcomemerceASP_NET",
   "BasePath": "_content/EcomemerceASP_NET",
   "Mode": "Default",
@@ -7927,8 +7927,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zzhbizqlk9",
-      "Integrity": "381ETYNQPu16sjp0JZ1jjqShakixVTnklNuRKUd/qbk=",
+      "Fingerprint": "8nfetu1fy6",
+      "Integrity": "tIsvnAxVR+4Na7ouWNGrIYbw6K0YjOgowTzuyNYRSuo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\assets\\js\\plugin\\bootstrap-notify\\bootstrap-notify.min.js"
@@ -50301,6 +50301,51 @@
       ]
     },
     {
+      "Route": "admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.8nfetu1fy6.js",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\admin\\assets\\js\\plugin\\bootstrap-notify\\bootstrap-notify.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10152"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tIsvnAxVR+4Na7ouWNGrIYbw6K0YjOgowTzuyNYRSuo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Dec 2024 15:05:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8nfetu1fy6"
+        },
+        {
+          "Name": "label",
+          "Value": "admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tIsvnAxVR+4Na7ouWNGrIYbw6K0YjOgowTzuyNYRSuo="
+        }
+      ]
+    },
+    {
       "Route": "admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js",
       "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\admin\\assets\\js\\plugin\\bootstrap-notify\\bootstrap-notify.min.js",
       "Selectors": [],
@@ -50311,7 +50356,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9015"
+          "Value": "10152"
         },
         {
           "Name": "Content-Type",
@@ -50319,11 +50364,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"381ETYNQPu16sjp0JZ1jjqShakixVTnklNuRKUd/qbk=\""
+          "Value": "\"tIsvnAxVR+4Na7ouWNGrIYbw6K0YjOgowTzuyNYRSuo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 07 Jul 2024 09:17:42 GMT"
+          "Value": "Tue, 10 Dec 2024 15:05:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -50333,52 +50378,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-381ETYNQPu16sjp0JZ1jjqShakixVTnklNuRKUd/qbk="
-        }
-      ]
-    },
-    {
-      "Route": "admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.zzhbizqlk9.js",
-      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\admin\\assets\\js\\plugin\\bootstrap-notify\\bootstrap-notify.min.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "9015"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"381ETYNQPu16sjp0JZ1jjqShakixVTnklNuRKUd/qbk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 07 Jul 2024 09:17:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zzhbizqlk9"
-        },
-        {
-          "Name": "label",
-          "Value": "admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-381ETYNQPu16sjp0JZ1jjqShakixVTnklNuRKUd/qbk="
+          "Value": "sha256-tIsvnAxVR+4Na7ouWNGrIYbw6K0YjOgowTzuyNYRSuo="
         }
       ]
     },

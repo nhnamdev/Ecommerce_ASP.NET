@@ -6744,8 +6744,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>zzhbizqlk9</Fingerprint>
-      <Integrity>381ETYNQPu16sjp0JZ1jjqShakixVTnklNuRKUd/qbk=</Integrity>
+      <Fingerprint>8nfetu1fy6</Fingerprint>
+      <Integrity>tIsvnAxVR+4Na7ouWNGrIYbw6K0YjOgowTzuyNYRSuo=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\js\plugin\bootstrap-notify\bootstrap-notify.min.js'))</OriginalItemSpec>

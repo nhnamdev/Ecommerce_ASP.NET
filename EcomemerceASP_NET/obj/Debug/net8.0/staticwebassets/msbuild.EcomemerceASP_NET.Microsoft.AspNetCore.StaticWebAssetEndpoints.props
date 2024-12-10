@@ -4488,17 +4488,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-SElynnrs3KdAxCDMJZJ2S\u002B5TcDyi4ngMbeRThodKX2I="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6612"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022SElynnrs3KdAxCDMJZJ2S\u002B5TcDyi4ngMbeRThodKX2I=\u0022"},{"Name":"Last-Modified","Value":"Sun, 07 Jul 2024 09:17:42 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/EcomemerceASP_NET/admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.8nfetu1fy6.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\js\plugin\bootstrap-notify\bootstrap-notify.min.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"8nfetu1fy6"},{"Name":"integrity","Value":"sha256-tIsvnAxVR\u002B4Na7ouWNGrIYbw6K0YjOgowTzuyNYRSuo="},{"Name":"label","Value":"_content/EcomemerceASP_NET/admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"10152"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022tIsvnAxVR\u002B4Na7ouWNGrIYbw6K0YjOgowTzuyNYRSuo=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Dec 2024 15:05:58 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EcomemerceASP_NET/admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\js\plugin\bootstrap-notify\bootstrap-notify.min.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-381ETYNQPu16sjp0JZ1jjqShakixVTnklNuRKUd/qbk="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"9015"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022381ETYNQPu16sjp0JZ1jjqShakixVTnklNuRKUd/qbk=\u0022"},{"Name":"Last-Modified","Value":"Sun, 07 Jul 2024 09:17:42 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/EcomemerceASP_NET/admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.zzhbizqlk9.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\js\plugin\bootstrap-notify\bootstrap-notify.min.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zzhbizqlk9"},{"Name":"integrity","Value":"sha256-381ETYNQPu16sjp0JZ1jjqShakixVTnklNuRKUd/qbk="},{"Name":"label","Value":"_content/EcomemerceASP_NET/admin/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9015"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022381ETYNQPu16sjp0JZ1jjqShakixVTnklNuRKUd/qbk=\u0022"},{"Name":"Last-Modified","Value":"Sun, 07 Jul 2024 09:17:42 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tIsvnAxVR\u002B4Na7ouWNGrIYbw6K0YjOgowTzuyNYRSuo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"10152"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022tIsvnAxVR\u002B4Na7ouWNGrIYbw6K0YjOgowTzuyNYRSuo=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Dec 2024 15:05:58 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EcomemerceASP_NET/admin/assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.84g50xniwd.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\js\plugin\bootstrap-tagsinput\bootstrap-tagsinput.min.js'))</AssetFile>
