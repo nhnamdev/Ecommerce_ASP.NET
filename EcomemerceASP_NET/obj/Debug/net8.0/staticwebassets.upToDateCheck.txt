@@ -690,8 +690,12 @@ wwwroot\Hinh\icons\Yin-Yang.png
 wwwroot\Hinh\icons\Zoom in.png
 wwwroot\Hinh\icons\Zoom out.png
 wwwroot\Hinh\icons\Zoom.png
+wwwroot\Hinh\KhachHang\6d2f1d0e-4f55-47bb-93c5-ffdbde29fbf6.png
+wwwroot\Hinh\KhachHang\a836c050-39b1-4481-8514-c7b0a58d723d.jpg
 wwwroot\Hinh\KhachHang\android_300200.png
 wwwroot\Hinh\KhachHang\Author.jpg
+wwwroot\Hinh\KhachHang\bb8910af-6473-4a9d-9a16-df0ecfd203e5.jpg
+wwwroot\Hinh\KhachHang\ec40bcd3-3df8-4c55-b002-11767bfad9a6.jpg
 wwwroot\Hinh\KhachHang\locket.jpg
 wwwroot\Hinh\KhachHang\man.jpg
 wwwroot\Hinh\KhachHang\Penguins.jpg

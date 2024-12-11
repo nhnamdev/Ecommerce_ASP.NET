@@ -329,6 +329,10 @@
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\To.gif"
     },
     {
+      "Id": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\6d2f1d0e-4f55-47bb-93c5-ffdbde29fbf6.png",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\6d2f1d0e-4f55-47bb-93c5-ffdbde29fbf6.png"
+    },
+    {
       "Id": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\Author.jpg",
       "PackagePath": "staticwebassets\\Hinh\\KhachHang\\Author.jpg"
     },
@@ -341,8 +345,20 @@
       "PackagePath": "staticwebassets\\Hinh\\KhachHang\\Untitled.png"
     },
     {
+      "Id": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\a836c050-39b1-4481-8514-c7b0a58d723d.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\a836c050-39b1-4481-8514-c7b0a58d723d.jpg"
+    },
+    {
       "Id": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\android_300200.png",
       "PackagePath": "staticwebassets\\Hinh\\KhachHang\\android_300200.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\bb8910af-6473-4a9d-9a16-df0ecfd203e5.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\bb8910af-6473-4a9d-9a16-df0ecfd203e5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\ec40bcd3-3df8-4c55-b002-11767bfad9a6.jpg",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\ec40bcd3-3df8-4c55-b002-11767bfad9a6.jpg"
     },
     {
       "Id": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\locket.jpg",

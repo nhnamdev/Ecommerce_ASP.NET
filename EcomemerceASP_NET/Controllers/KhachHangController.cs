@@ -19,8 +19,9 @@ namespace EcomemerceASP_NET.Controllers
             db = context;
             _mapper = mapper;
         }
-        [HttpGet]
+
         #region Register
+        [HttpGet]
         public IActionResult DangKy()
         {
             return View();
@@ -66,10 +67,10 @@ namespace EcomemerceASP_NET.Controllers
         public async Task<IActionResult> DangNhap(LoginVM model, string? ReturnUrl)
         {
             ViewBag.ReturnUrl = ReturnUrl;
-            if (model.UserName.Equals("admin") && model.Password.Equals("123"))
-            {
-                return Redirect("/Admin");
-            }
+            //if (model.UserName.Equals("admin") && model.Password.Equals("123"))
+            //{
+            //    return Redirect("/Admin");
+            //}
             if (ModelState.IsValid)
             {
                 var khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == model.UserName);
@@ -79,19 +80,25 @@ namespace EcomemerceASP_NET.Controllers
                 }
                 else
                 {
-                    if (!khachHang.HieuLuc)
+                    if (khachHang.VaiTro == 1)
                     {
-                        ModelState.AddModelError("loi", "Tài khoản đã bị khóa. Vui lòng liên hệ Admin.");
+                        return Redirect("/Admin");
                     }
                     else
                     {
-                        if (khachHang.MatKhau != model.Password.ToMd5Hash(khachHang.RandomKey))
+                        if (!khachHang.HieuLuc)
                         {
-                            ModelState.AddModelError("loi", "Sai thông tin đăng nhập");
+                            ModelState.AddModelError("loi", "Tài khoản đã bị khóa. Vui lòng liên hệ Admin.");
                         }
                         else
                         {
-                            var claims = new List<Claim> {
+                            if (khachHang.MatKhau != model.Password.ToMd5Hash(khachHang.RandomKey))
+                            {
+                                ModelState.AddModelError("loi", "Sai thông tin đăng nhập");
+                            }
+                            else
+                            {
+                                var claims = new List<Claim> {
                                 new Claim(ClaimTypes.Email, khachHang.Email),
                                 new Claim(ClaimTypes.Name, khachHang.HoTen),
                                 new Claim("CustomerID", khachHang.MaKh),
@@ -100,18 +107,19 @@ namespace EcomemerceASP_NET.Controllers
 								new Claim(ClaimTypes.Role, "Customer")
                             };
 
-                            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                            var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+                                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
-                            await HttpContext.SignInAsync(claimsPrincipal);
+                                await HttpContext.SignInAsync(claimsPrincipal);
 
-                            if (Url.IsLocalUrl(ReturnUrl))
-                            {
-                                return Redirect(ReturnUrl);
-                            }
-                            else
-                            {
-                                return Redirect("/");
+                                if (Url.IsLocalUrl(ReturnUrl))
+                                {
+                                    return Redirect(ReturnUrl);
+                                }
+                                else
+                                {
+                                    return Redirect("/");
+                                }
                             }
                         }
                     }
@@ -120,6 +128,7 @@ namespace EcomemerceASP_NET.Controllers
             return View();
         }
         #endregion
+        #region Profile
         [Authorize]
         public IActionResult Profile()
         {
@@ -148,6 +157,7 @@ namespace EcomemerceASP_NET.Controllers
             //Chat gpt
             return View(profileVM);
         }
+        #endregion
 
         [Authorize]
         public async Task<IActionResult> DangXuat()
@@ -180,15 +190,37 @@ namespace EcomemerceASP_NET.Controllers
 
             if (ModelState.IsValid)
             {
-                khachHang.HoTen = model.HoTen;
-                khachHang.Email = model.Email;
-                khachHang.DienThoai = model.DienThoai;
-                khachHang.DiaChi = model.DiaChi;
 
-                db.Update(khachHang);
-                db.SaveChanges();
+                try
+                {
+                    khachHang.HoTen = model.HoTen;
+                    khachHang.Email = model.Email;
+                    khachHang.DienThoai = model.DienThoai;
+                    khachHang.DiaChi = model.DiaChi;
 
-                return RedirectToAction("Profile");
+                    db.Update(khachHang);
+                    db.SaveChanges();
+                    // Cập nhật lại claims
+                    var claims = new List<Claim> {
+                        new Claim(ClaimTypes.Email, khachHang.Email),
+                        new Claim(ClaimTypes.Name, khachHang.HoTen),
+                        new Claim("CustomerID", khachHang.MaKh),
+                        new Claim(ClaimTypes.Role, "Customer")
+        };
+
+                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+
+                    // Đăng nhập lại để làm mới claims
+                    HttpContext.SignInAsync(claimsPrincipal);
+
+                    return RedirectToAction("Profile");
+
+                }
+                catch
+                {
+
+                }
             }
 
             return View(model);
@@ -196,6 +228,36 @@ namespace EcomemerceASP_NET.Controllers
 
 
         #endregion
+        /* public IActionResult EditProfile(ProfileVM model, IFormFile? Hinh)
+         {
+             var customerId = User.Claims.FirstOrDefault(c => c.Type == "CustomerID")?.Value;
+             if (string.IsNullOrEmpty(customerId))
+             {
+                 return RedirectToAction("DangNhap");
+             }
 
+             var khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerId);
+             if (khachHang == null)
+             {
+                 return NotFound("Khách hàng không tồn tại.");
+             }
+
+             if (ModelState.IsValid)
+             {
+
+                 khachHang.HoTen = model.HoTen;
+                 khachHang.Email = model.Email;
+                 khachHang.DienThoai = model.DienThoai;
+                 khachHang.DiaChi = model.DiaChi;
+
+                 db.Update(khachHang);
+                 db.SaveChanges();
+
+                 return RedirectToAction("Profile");
+             }
+
+             return View(model);
+         }
+ */
     }
 }
