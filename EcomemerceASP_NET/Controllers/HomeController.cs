@@ -1,4 +1,6 @@
+using EcomemerceASP_NET.Data;
 using EcomemerceASP_NET.Models;
+using EcomemerceASP_NET.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,16 +8,29 @@ namespace EcomemerceASP_NET.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly EcommerceContext db;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, EcommerceContext context)
         {
             _logger = logger;
+            db = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var hangHoas = db.HangHoas.AsQueryable();
+
+            var result = hangHoas.Select(p => new HangHoaVM
+            {
+                MaHh = p.MaHh,
+                TenHH = p.TenHh,
+                Hinh = p.Hinh ?? "",
+                DonGia = p.DonGia ?? 0,
+                MoTaNgan = p.MoTaDonVi ?? "",
+                TenLoai = p.MaLoaiNavigation.TenLoai
+            });
+            return View(result);
         }
         [Route("/404")]
         public IActionResult PageNotFound()

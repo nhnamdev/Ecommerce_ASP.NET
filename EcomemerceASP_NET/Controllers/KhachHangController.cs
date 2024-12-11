@@ -44,7 +44,7 @@ namespace EcomemerceASP_NET.Controllers
                     }
                     db.Add(khachHang);
                     db.SaveChanges();
-                    return RedirectToAction("Index", "HangHoa");
+                    return RedirectToAction("DangNhap");
                 }
                 catch (Exception ex)
                 {
@@ -142,7 +142,7 @@ namespace EcomemerceASP_NET.Controllers
             var khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerId);
             if (khachHang == null)
             {
-                return NotFound("Khách hàng không tồn tại.");
+                return RedirectToAction("DangNhap");
             }
 
             var profileVM = new ProfileVM
