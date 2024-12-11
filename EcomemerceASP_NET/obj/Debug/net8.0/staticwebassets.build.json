@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Uuyqk3P3eDBRUa0++NO6rrGFDRObcbblIBNtwOqqr5k=",
+  "Hash": "C4XxYRU/NYlUh0fu3rG53fGUiV9ZkBy0g9/4xvttAPU=",
   "Source": "EcomemerceASP_NET",
   "BasePath": "_content/EcomemerceASP_NET",
   "Mode": "Default",
@@ -9082,8 +9082,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "jtdk0kmnyl",
+      "Integrity": "CY0Tf3A3havcH1hop0ivNFqhcl5dfCoj097hW4X8tpk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -14612,6 +14612,27 @@
       "OriginalItemSpec": "wwwroot\\Hinh\\KhachHang\\6d2f1d0e-4f55-47bb-93c5-ffdbde29fbf6.png"
     },
     {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\7e0f2e8e-dc28-48f7-b668-f4129742b261.jpg",
+      "SourceId": "EcomemerceASP_NET",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\",
+      "BasePath": "_content/EcomemerceASP_NET",
+      "RelativePath": "Hinh/KhachHang/7e0f2e8e-dc28-48f7-b668-f4129742b261#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5xpxke4yzk",
+      "Integrity": "eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Hinh\\KhachHang\\7e0f2e8e-dc28-48f7-b668-f4129742b261.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\a836c050-39b1-4481-8514-c7b0a58d723d.jpg",
       "SourceId": "EcomemerceASP_NET",
       "SourceType": "Discovered",
@@ -14694,6 +14715,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Hinh\\KhachHang\\bb8910af-6473-4a9d-9a16-df0ecfd203e5.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\e87695d7-9e2a-4f78-85a7-f62935b6b3c7.jpg",
+      "SourceId": "EcomemerceASP_NET",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\",
+      "BasePath": "_content/EcomemerceASP_NET",
+      "RelativePath": "Hinh/KhachHang/e87695d7-9e2a-4f78-85a7-f62935b6b3c7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5xpxke4yzk",
+      "Integrity": "eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Hinh\\KhachHang\\e87695d7-9e2a-4f78-85a7-f62935b6b3c7.jpg"
     },
     {
       "Identity": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\ec40bcd3-3df8-4c55-b002-11767bfad9a6.jpg",
@@ -54895,51 +54937,6 @@
       ]
     },
     {
-      "Route": "css/site.c2tiyv64ts.css",
-      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "362"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 17 Nov 2024 06:40:59 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -54950,7 +54947,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "579"
         },
         {
           "Name": "Content-Type",
@@ -54958,11 +54955,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"CY0Tf3A3havcH1hop0ivNFqhcl5dfCoj097hW4X8tpk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 17 Nov 2024 06:40:59 GMT"
+          "Value": "Wed, 11 Dec 2024 14:32:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -54972,7 +54969,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-CY0Tf3A3havcH1hop0ivNFqhcl5dfCoj097hW4X8tpk="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.jtdk0kmnyl.css",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "579"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CY0Tf3A3havcH1hop0ivNFqhcl5dfCoj097hW4X8tpk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Dec 2024 14:32:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jtdk0kmnyl"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CY0Tf3A3havcH1hop0ivNFqhcl5dfCoj097hW4X8tpk="
         }
       ]
     },
@@ -76707,6 +76749,88 @@
       ]
     },
     {
+      "Route": "Hinh/KhachHang/7e0f2e8e-dc28-48f7-b668-f4129742b261.5xpxke4yzk.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\7e0f2e8e-dc28-48f7-b668-f4129742b261.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "342625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Dec 2024 14:05:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5xpxke4yzk"
+        },
+        {
+          "Name": "label",
+          "Value": "Hinh/KhachHang/7e0f2e8e-dc28-48f7-b668-f4129742b261.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc="
+        }
+      ]
+    },
+    {
+      "Route": "Hinh/KhachHang/7e0f2e8e-dc28-48f7-b668-f4129742b261.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\7e0f2e8e-dc28-48f7-b668-f4129742b261.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "342625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Dec 2024 14:05:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc="
+        }
+      ]
+    },
+    {
       "Route": "Hinh/KhachHang/a836c050-39b1-4481-8514-c7b0a58d723d.5xpxke4yzk.jpg",
       "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\a836c050-39b1-4481-8514-c7b0a58d723d.jpg",
       "Selectors": [],
@@ -77021,6 +77145,88 @@
         {
           "Name": "Last-Modified",
           "Value": "Wed, 11 Dec 2024 06:39:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc="
+        }
+      ]
+    },
+    {
+      "Route": "Hinh/KhachHang/e87695d7-9e2a-4f78-85a7-f62935b6b3c7.5xpxke4yzk.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\e87695d7-9e2a-4f78-85a7-f62935b6b3c7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "342625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Dec 2024 06:41:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5xpxke4yzk"
+        },
+        {
+          "Name": "label",
+          "Value": "Hinh/KhachHang/e87695d7-9e2a-4f78-85a7-f62935b6b3c7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc="
+        }
+      ]
+    },
+    {
+      "Route": "Hinh/KhachHang/e87695d7-9e2a-4f78-85a7-f62935b6b3c7.jpg",
+      "AssetFile": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\e87695d7-9e2a-4f78-85a7-f62935b6b3c7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "342625"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eU0hCOmScE1l28NhOvLwSXeWMxuxKrYtYfzLqNuD+Hc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 11 Dec 2024 06:41:58 GMT"
         },
         {
           "Name": "Cache-Control",
