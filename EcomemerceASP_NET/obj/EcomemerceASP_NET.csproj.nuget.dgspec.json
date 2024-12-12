@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\dotNetProject\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\EcomemerceASP_NET.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "D:\\dotNetProject\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\EcomemerceASP_NET.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
         "outputPath": "D:\\dotNetProject\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\obj\\",
+=======
+    "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\EcomemerceASP_NET.csproj": {}
+  },
+  "projects": {
+    "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\EcomemerceASP_NET.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\EcomemerceASP_NET.csproj",
+        "projectName": "EcomemerceASP_NET",
+        "projectPath": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\EcomemerceASP_NET.csproj",
+        "packagesPath": "C:\\Users\\Trung Nghia\\.nuget\\packages\\",
+        "outputPath": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\obj\\",
+>>>>>>> 3fdc325f83ec1288c465c4de6f55c1c529531aa0
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Trung Nghia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 3fdc325f83ec1288c465c4de6f55c1c529531aa0
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -100,7 +118,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+>>>>>>> 3fdc325f83ec1288c465c4de6f55c1c529531aa0
         }
       }
     }

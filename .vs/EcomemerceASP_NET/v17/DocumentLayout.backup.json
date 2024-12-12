@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\",
+  "WorkspaceRootPath": "E:\\Ecommerce_ASP.NET\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|c:\\users\\admin\\source\\repos\\ecomemerceasp_net\\ecomemerceasp_net\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -65,6 +66,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|c:\\users\\admin\\source\\repos\\ecomemerceasp_net\\ecomemerceasp_net\\views\\khachhang\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\khachhang\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+=======
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\solution1.ssmssln||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\solution1.ssmssln||{8B382828-6202-11D1-8870-0000F87579D2}"
+>>>>>>> 3fdc325f83ec1288c465c4de6f55c1c529531aa0
     }
   ],
   "DocumentGroupContainers": [
@@ -74,15 +87,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 8,
+=======
+          "SelectedChildIndex": 3,
+>>>>>>> 3fdc325f83ec1288c465c4de6f55c1c529531aa0
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
@@ -90,6 +107,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "ProductItem.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\Views\\HangHoa\\ProductItem.cshtml",
@@ -125,10 +143,22 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-12-11T14:31:43.532Z",
+=======
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\appsettings.json",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\appsettings.json",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\appsettings.json",
+              "RelativeToolTip": "EcomemerceASP_NET\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-12T11:29:18.732Z",
+>>>>>>> 3fdc325f83ec1288c465c4de6f55c1c529531aa0
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\Controllers\\HomeController.cs",
@@ -138,11 +168,23 @@
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwCAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T14:25:12.864Z",
+=======
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\appsettings.Development.json",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\appsettings.Development.json",
+              "RelativeToolTip": "EcomemerceASP_NET\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-12T11:29:17.979Z",
+>>>>>>> 3fdc325f83ec1288c465c4de6f55c1c529531aa0
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< HEAD
               "Title": "HangHoaController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EcomemerceASP_NET\\EcomemerceASP_NET\\Controllers\\HangHoaController.cs",
               "RelativeDocumentMoniker": "EcomemerceASP_NET\\Controllers\\HangHoaController.cs",
@@ -290,6 +332,16 @@
               "ViewState": "AgIAAA4AAAAAAAAAAAAkwC4AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T05:01:52.802Z",
+=======
+              "Title": "Solution1.ssmssln",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Solution1.ssmssln",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Solution1.ssmssln",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Solution1.ssmssln",
+              "RelativeToolTip": "EcomemerceASP_NET\\Solution1.ssmssln",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALlSURBVDhPnZTvS1phFMe/ev2RP5qzMpWKpjFHQU4oLOtFsaBoBL3qP9n/M/Ymgvm2Fw6mTQgql3NJCkU0yYxizSwz8\u002BfOc7rNtoW1fS6H\u002B9znnnvuOd/nPA/\u002Bh8nJSWM\u002Bn/eRfSXLkr0Nh8PPUa/XFTRYp3td9n0Ura2tktPp1AUCgWfn5\u002Bcal8t11t/fn0kmk0VFoVCo\u002B/3\u002B\u002BsnJiezenN7eXgwODsJqtWJxcRGJRAKdnZ0iawwPD0MlnFZXV7Gzs8MfNKO7uxtXV1c8zuVy6OnpwcHBAUQyu7u7HFDJbx9AoVDAZDLB4/HwPRqNYnl5GQ6HAz6fD1Qy1Go1\u002B3KGD6HX6zE/Pw/SC9vb29jb24MkSfxubm4OpCdnKfgVcHb2NUa8XvmpgciuUqkgkUxwsHQ6jWq1yu/K5TIUdKW\u002BpbAR2cDo6GgjYFdXF9zul/LTDSJYNvsDsViMxT88PGQNW1paeHFGvCNob\u002B9g/Y6Pj/mbphoqlAqc5c4Q/RLF/v4\u002BqCOg0\u002BngdDgx9WoKXqrIbDbL3jdwQCHorSa3SJKSSi1zeQaDAVqtlk1kNjExgZmZGQqul70bcMnUlLDbbZBUjaBKym4ruoXT01MsLCyITYDLy0sMDQ1hzDdGP6rJnr/DAUUrCH2ur0uchfiwWq3g6OiIx4Lp6Wn6iRJPTWZoNFqeuw8uWbSF0Wjk0vRUhtFgpBa5YH0GBgZI\u002BHbuuT5n31\u002Ba/QkHvLjI818tHRa0tbXxViqXSrDZbBgfH\u002BcdIEkq1Go1Lr0ZHHBz8zOCwY/4FF7B2voaj4OhIFKpFAUAKuUqaqTZY44QDliibOLxOG8nv/89Ah8CrJ9o6H\u002BFF0WUUSwW2e5C5xzv25VQSJ65H7GgomcFnKHdbhdnHE/cIvQTC6BWq2AwGpqa64WLtRaI8zAeCoWskUjkSSaT0fAs4Xa7C\u002BT03WKxZOkwuJanH4YCesjekaXJ6ncsRvZmaWnpmez6CICfkd5NDWtZQxoAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-12-12T11:13:22.831Z",
+>>>>>>> 3fdc325f83ec1288c465c4de6f55c1c529531aa0
               "EditorCaption": ""
             }
           ]
