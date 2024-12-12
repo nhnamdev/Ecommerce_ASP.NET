@@ -33,6 +33,7 @@ namespace EcomemerceASP_NET.Controllers
             };
             return View(model);
         }
+        
         public IActionResult ManageType()
         {
             ViewBag.Title = "Type";
