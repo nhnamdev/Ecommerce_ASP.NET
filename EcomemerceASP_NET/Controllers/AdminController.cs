@@ -33,7 +33,7 @@ namespace EcomemerceASP_NET.Controllers
             };
             return View(model);
         }
-        
+
         public IActionResult ManageType()
         {
             ViewBag.Title = "Type";
@@ -43,10 +43,39 @@ namespace EcomemerceASP_NET.Controllers
             {
                 TenLoai = p.TenLoai,
                 MoTa = p.MoTa,
+                MaLoai = p.MaLoai
             }).ToList();
 
             return View(result);
         }
+
+        [HttpPost]
+        public IActionResult UpdateType(int MaLoai, string type, string moTa)
+        {
+            var loai = db.Loais.FirstOrDefault(p => p.MaLoai == MaLoai);
+            if (loai == null)
+            {
+                return NotFound("Không tìm thấy loại cần cập nhật.");
+            }
+            loai.TenLoai = type;
+            loai.MoTa = moTa;
+            db.SaveChanges();
+            return RedirectToAction("ManageType");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteType(int MaLoai)
+        {
+            var loai = db.Loais.FirstOrDefault(p => p.MaLoai == MaLoai);
+            if (loai == null)
+            {
+                return NotFound("Không tìm thấy loại cần xóa.");
+            }
+            db.Loais.Remove(loai);
+            db.SaveChanges();
+            return RedirectToAction("ManageType");
+        }
+
         public IActionResult ManageProduct()
         {
             ViewBag.Title = "Product";
