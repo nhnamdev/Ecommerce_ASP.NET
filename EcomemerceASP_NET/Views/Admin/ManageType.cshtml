@@ -1,3 +1,109 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center mt-2 w-100">
+                <h4 class="card-title ms-auto">Add Type</h4>
+                <button class="btn btn-primary btn-round ms-auto" data-bs-toggle="modal" data-bs-target="#addRowModal">
+                    <i class="fa fa-plus"></i>
+                    Add Type
+                </button>
+            </div>
+
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="basic-datatables"></label>
+                        </div>
+                    </div>
+                </div><div class="row">
+                    <div class="col-sm-12">
+                        <table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
+                            <thead>
+                                <tr role="row">
+                                    <th class="sorting_asc" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Loại: activate to sort column descending" style="width: 168.962px;">Loại</th>
+                                    <th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1" aria-label="Mô tả: activate to sort column ascending" style="width: 261.438px;">Mô tả</th>
+                                    <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Thao Tác: activate to sort column ascending" style="width: 150px;">Thao Tác</th>
+
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+
+
+                                @* Xử lý vòng lặp *@
+
+                                @* Dữ liệu kiểu mẫu*@
+
+                                <tr role="row" class="odd">
+                                    <td>Món chính</td>
+                                    <td>Các món ăn giúp giảm đói</td>
+                                    <td>
+                                        <div class="form-button-action">
+                                            <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr role="row" class="even">
+                                    <td>Món Phụ</td>
+                                    <td>Các món ăn giúp tráng miệng</td>
+                                    <td>
+                                        <div class="form-button-action">
+                                            <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                <i class="fa fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal to add new product -->
+    <div class="modal fade" id="addRowModal" tabindex="-1" aria-labelledby="addRowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title ms-auto" id="addRowModalLabel">Add New Type</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form method="post" action="@Url.Action("AddType", "Admin")">
+                        <div class="mb-3">
+                            <label for="productName" class="form-label">Loại</label>
+                            <input type="text" class="form-control" id="type" name="type" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="productType" class="form-label">Mô tả</label>
+                            <input type="text" class="form-control" id="moTa" name="moTa" required />
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Add Type</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
