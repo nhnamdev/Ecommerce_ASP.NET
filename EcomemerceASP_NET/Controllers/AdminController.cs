@@ -32,6 +32,14 @@ namespace EcomemerceASP_NET.Controllers
             };
             return View(model);
         }
+        public IActionResult ManageType()
+        {
+            ViewBag.Title = "Type";
+
+
+
+            return View();
+        }
         public IActionResult ManageProduct()
         {
             ViewBag.Title = "Product";
@@ -63,6 +71,15 @@ namespace EcomemerceASP_NET.Controllers
                 VaiTro = p.VaiTro
             });
             return View(result);
+        }
+
+        public IActionResult PaymentHistory()
+        {
+            ViewBag.Title = "Payment history";
+
+
+
+            return View();
         }
     }
 }
