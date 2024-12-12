@@ -23,8 +23,8 @@ namespace EcomemerceASP_NET.Controllers
 
             var result = hangHoas.Select(p => new HangHoaVM
             {
-                MaHh = p.MaHh,
-                TenHH = p.TenHh,
+                MaHh = p.MaHH,
+                TenHH = p.TenHH,
                 Hinh = p.Hinh ?? "",
                 DonGia = p.DonGia ?? 0,
                 MoTaNgan = p.MoTaDonVi ?? "",

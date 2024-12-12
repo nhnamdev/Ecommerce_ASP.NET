@@ -150,11 +150,11 @@ public partial class EcommerceContext : DbContext
 
         modelBuilder.Entity<HangHoa>(entity =>
         {
-            entity.HasKey(e => e.MaHh).HasName("PK_Products");
+            entity.HasKey(e => e.MaHH).HasName("PK_Products");
 
             entity.ToTable("HangHoa");
 
-            entity.Property(e => e.MaHh).HasColumnName("MaHH");
+            entity.Property(e => e.MaHH).HasColumnName("MaHH");
             entity.Property(e => e.DonGia).HasDefaultValue(0.0);
             entity.Property(e => e.Hinh).HasMaxLength(50);
             entity.Property(e => e.MaNcc)
@@ -166,7 +166,7 @@ public partial class EcommerceContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("NgaySX");
             entity.Property(e => e.TenAlias).HasMaxLength(50);
-            entity.Property(e => e.TenHh)
+            entity.Property(e => e.TenHH)
                 .HasMaxLength(50)
                 .HasColumnName("TenHH");
 

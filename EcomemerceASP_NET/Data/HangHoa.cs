@@ -5,9 +5,9 @@ namespace EcomemerceASP_NET.Data;
 
 public partial class HangHoa
 {
-    public int MaHh { get; set; }
+    public int MaHH { get; set; }
 
-    public string TenHh { get; set; } = null!;
+    public string TenHH { get; set; } = null!;
 
     public string? TenAlias { get; set; }
 

@@ -37,49 +37,45 @@ namespace EcomemerceASP_NET.Controllers
         {
             ViewBag.Title = "Type";
 
+            var Types = db.Loais.AsQueryable();
+            var result = Types.Select(p => new LoaiVM
+            {
+                TenLoai = p.TenLoai,
+                MoTa = p.MoTa,
+            }).ToList();
 
-
-            return View();
+            return View(result);
         }
         public IActionResult ManageProduct()
         {
             ViewBag.Title = "Product";
-
-
-
-            return View();
+            var Products = db.HangHoas.AsQueryable();
+            var result = Products.Include(p => p.MaLoaiNavigation).Select(p => new ProductVM
+            {
+                TenHH = p.TenHH,
+                TenLoai = p.MaLoaiNavigation.TenLoai,
+                DonGia = p.DonGia,
+                Hinh = p.Hinh,
+            }).ToList();
+            return View(result);
         }
         public IActionResult ManageUser()
         {
             ViewBag.Title = "User";
-
-
             var khachHangs = db.KhachHangs.AsQueryable();
-
-
-
             var result = khachHangs.Select(p => new KhachHangVM
             {
-                MaKh = p.MaKh,
-                MatKhau = p.MatKhau,
                 HoTen = p.HoTen,
-                GioiTinh = p.GioiTinh,
+                NgaySinh = p.NgaySinh,
                 DiaChi = p.DiaChi,
                 DienThoai = p.DienThoai,
-                Email = p.Email,
-                Hinh = p.Hinh,
-                HieuLuc = p.HieuLuc,
-                VaiTro = p.VaiTro
-            });
+            }).ToList();
             return View(result);
         }
 
         public IActionResult PaymentHistory()
         {
-
-
             ViewBag.Title = "Payment history";
-
             var HoaDons = db.HoaDons.AsQueryable();
             var result = HoaDons.Include(hd => hd.ChiTietHds).Select(hd => new HoaDonVM
             {
@@ -87,10 +83,7 @@ namespace EcomemerceASP_NET.Controllers
                 HoTen = hd.HoTen,
                 DonGia = hd.ChiTietHds.FirstOrDefault().DonGia,
                 SoLuong = hd.ChiTietHds.FirstOrDefault().SoLuong
-
             }).ToList();
-
-
             return View(result);
         }
     }
