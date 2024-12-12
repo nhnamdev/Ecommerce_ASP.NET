@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<EcomemerceASP_NET.ViewModels.LoaiVM>
+@{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <div class="col-md-12">
@@ -41,36 +42,27 @@
                                 @* Xử lý vòng lặp *@
 
                                 @* Dữ liệu kiểu mẫu*@
-
-                                <tr role="row" class="odd">
-                                    <td>Món chính</td>
-                                    <td>Các món ăn giúp giảm đói</td>
-                                    <td>
-                                        <div class="form-button-action">
-                                            <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr role="row" class="even">
-                                    <td>Món Phụ</td>
-                                    <td>Các món ăn giúp tráng miệng</td>
-                                    <td>
-                                        <div class="form-button-action">
-                                            <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                                 @if (Model != null && Model.Any())
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr role="row" class="odd">
+                                            <td>@item.TenLoai</td>
+                                            <td>@item.MoTa</td>
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal"
+                                                            data-bs-target="#editRowModal" data-id="1" data-type="Món chính" data-mota="Các món ăn giúp giảm đói">
+                                                        <i class="fa fa-edit"></i>
+                                                    </button>
+                                                    <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
                             </tbody>
                         </table>
                     </div>
@@ -105,5 +97,32 @@
             </div>
         </div>
     </div>
+    <!-- Modal chỉnh sửa loại -->
+    <div class="modal fade" id="editRowModal" tabindex="-1" aria-labelledby="editRowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title ms-auto" id="editRowModalLabel">Chỉnh sửa loại</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
+                <div class="modal-body">
+                    <form method="post" action="#">
+                        <input type="hidden" id="editTypeId" name="id" />
+                        <div class="mb-3">
+                            <label for="editType" class="form-label">Loại</label>
+                            <input type="text" class="form-control" id="editType" name="type" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="editDescription" class="form-label">Mô tả</label>
+                            <input type="text" class="form-control" id="editDescription" name="moTa" required />
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Cập nhật loại</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

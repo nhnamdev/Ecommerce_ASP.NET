@@ -22,8 +22,8 @@ namespace EcomemerceASP_NET.Controllers
             }
             var result = hangHoas.Select(p => new HangHoaVM
             {
-                MaHh = p.MaHh,
-                TenHH = p.TenHh,
+                MaHh = p.MaHH,
+                TenHH = p.TenHH,
                 Hinh = p.Hinh ?? "",
                 DonGia = p.DonGia ?? 0,
                 MoTaNgan = p.MoTaDonVi ?? "",
@@ -37,13 +37,13 @@ namespace EcomemerceASP_NET.Controllers
             var hangHoas = db.HangHoas.AsQueryable();
             if (query != null)
             {
-                hangHoas = hangHoas.Where(p => p.TenHh.Contains(query));
+                hangHoas = hangHoas.Where(p => p.TenHH.Contains(query));
 
             }
             var result = hangHoas.Select(p => new HangHoaVM
             {
-                MaHh = p.MaHh,
-                TenHH = p.TenHh,
+                MaHh = p.MaHH,
+                TenHH = p.TenHH,
                 Hinh = p.Hinh ?? "",
                 DonGia = p.DonGia ?? 0,
                 MoTaNgan = p.MoTaDonVi ?? "",
@@ -54,7 +54,7 @@ namespace EcomemerceASP_NET.Controllers
         }
         public IActionResult Detail(int id)
         {
-            var data = db.HangHoas.Include(P => P.MaLoaiNavigation).SingleOrDefault(p => p.MaHh == id);
+            var data = db.HangHoas.Include(P => P.MaLoaiNavigation).SingleOrDefault(p => p.MaHH == id);
                
             if (data == null)
             {
@@ -63,8 +63,8 @@ namespace EcomemerceASP_NET.Controllers
             }
             var result = new ChiTietHangHoaVM
             {
-                MaHh = data.MaHh,
-                TenHH = data.TenHh,
+                MaHh = data.MaHH,
+                TenHH = data.TenHH,
                 DonGia = data.DonGia ?? 0,
                 ChiTiet = data.MoTa ?? "",
                 DiemDanhGia = 5,

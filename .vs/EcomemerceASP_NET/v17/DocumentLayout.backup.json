@@ -1,46 +1,130 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\DoAnNet\\Ecommerce_ASP.NET\\",
+  "WorkspaceRootPath": "E:\\Ecommerce_ASP.NET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|d:\\doannet\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\manageuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\manageuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\managetype.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\managetype.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|d:\\doannet\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\data\\loai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\data\\loai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|d:\\doannet\\ecommerce_asp.net\\ecomemerceasp_net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\data\\hanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\data\\hanghoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|d:\\doannet\\ecommerce_asp.net\\ecomemerceasp_net\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|d:\\doannet\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\dashboardtop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\dashboardtop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|d:\\doannet\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\paymenthistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\paymenthistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|d:\\doannet\\ecommerce_asp.net\\ecomemerceasp_net\\viewmodels\\hoadonvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\viewmodels\\hoadonvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|d:\\doannet\\ecommerce_asp.net\\ecomemerceasp_net\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|d:\\doannet\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\manageproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\data\\ecommercecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\data\\ecommercecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\controllers\\hanghoacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\controllers\\hanghoacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\manageproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\manageproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|d:\\doannet\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\managetype.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\managetype.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\viewmodels\\loaivm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\viewmodels\\loaivm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\viewmodels\\khachhangvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\viewmodels\\khachhangvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\viewmodels\\hoadonvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\viewmodels\\hoadonvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\viewmodels\\hanghoavm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\viewmodels\\hanghoavm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\viewmodels\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\viewmodels\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\viewmodels\\menuloaivm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\viewmodels\\menuloaivm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\viewmodels\\dashboardtopadminvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\viewmodels\\dashboardtopadminvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\data\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\data\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\data\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\data\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\hanghoa\\productitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\hanghoa\\productitem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\data\\vchitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\data\\vchitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\manageuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\manageuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\paymenthistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\paymenthistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\shared\\_footeradmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\shared\\_footeradmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\shared\\_footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|e:\\ecommerce_asp.net\\ecomemerceasp_net\\views\\admin\\dashboardtop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E549183F-6AF1-4B17-A1B6-699AF318C17A}|EcomemerceASP_NET\\EcomemerceASP_NET.csproj|solutionrelative:ecomemerceasp_net\\views\\admin\\dashboardtop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,8 +134,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HangHoaVM.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\HangHoaVM.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\ViewModels\\HangHoaVM.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\HangHoaVM.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\ViewModels\\HangHoaVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:36:41.117Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -66,133 +164,391 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PaymentHistory.cshtml",
-              "DocumentMoniker": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\PaymentHistory.cshtml",
-              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\PaymentHistory.cshtml",
-              "ToolTip": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\PaymentHistory.cshtml",
-              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\PaymentHistory.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T12:44:20.726Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\appsettings.json",
-              "RelativeDocumentMoniker": "EcomemerceASP_NET\\appsettings.json",
-              "ToolTip": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\appsettings.json",
-              "RelativeToolTip": "EcomemerceASP_NET\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-12T13:00:38.663Z",
+              "Title": "HangHoa.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\HangHoa.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Data\\HangHoa.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\HangHoa.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\Data\\HangHoa.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAADwvyMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:35:58.845Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ManageUser.cshtml",
-              "DocumentMoniker": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageUser.cshtml",
-              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\ManageUser.cshtml",
-              "ToolTip": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageUser.cshtml",
-              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\ManageUser.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADQAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T12:43:12.136Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DashboardTop.cshtml",
-              "DocumentMoniker": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\DashboardTop.cshtml",
-              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\DashboardTop.cshtml",
-              "ToolTip": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\DashboardTop.cshtml",
-              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\DashboardTop.cshtml",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAwDoAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T12:44:58.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAFQBAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T12:47:28.433Z",
+              "DocumentIndex": 5,
+              "Title": "EcommerceContext.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\EcommerceContext.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Data\\EcommerceContext.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\EcommerceContext.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\Data\\EcommerceContext.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA7wCEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:37:44.038Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\Index.cshtml",
-              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\Index.cshtml",
-              "ToolTip": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\Index.cshtml",
-              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\Index.cshtml",
-              "ViewState": "AgIAAJYBAAAAAAAAAAAAAKUBAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T12:42:20.748Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ManageProduct.cshtml",
-              "DocumentMoniker": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageProduct.cshtml",
-              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\ManageProduct.cshtml",
-              "ToolTip": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageProduct.cshtml",
-              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\ManageProduct.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T12:42:56.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HoaDonVM.cs",
-              "DocumentMoniker": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\HoaDonVM.cs",
-              "RelativeDocumentMoniker": "EcomemerceASP_NET\\ViewModels\\HoaDonVM.cs",
-              "ToolTip": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\HoaDonVM.cs",
-              "RelativeToolTip": "EcomemerceASP_NET\\ViewModels\\HoaDonVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
+              "Title": "Loai.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\Loai.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Data\\Loai.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\Loai.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\Data\\Loai.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T14:46:06.965Z",
+              "WhenOpened": "2024-12-12T15:28:01.426Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "ManageType.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageType.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\ManageType.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageType.cshtml*",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\ManageType.cshtml*",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAqwH4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T12:44:45.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Controllers\\AdminController.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "EcomemerceASP_NET\\Controllers\\AdminController.cs",
-              "ToolTip": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Controllers\\AdminController.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Controllers\\AdminController.cs",
               "RelativeToolTip": "EcomemerceASP_NET\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAAwFMAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwDQAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T12:45:17.2Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ManageType.cshtml",
-              "DocumentMoniker": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageType.cshtml",
-              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\ManageType.cshtml",
-              "ToolTip": "D:\\DoAnNet\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageType.cshtml",
-              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\ManageType.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-12T12:44:45.974Z",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwB8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:56:07.857Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HangHoaController.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Controllers\\HangHoaController.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Controllers\\HangHoaController.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Controllers\\HangHoaController.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\Controllers\\HangHoaController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAAEIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:55:27.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Controllers\\CartController.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Controllers\\CartController.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\Controllers\\CartController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAEwCUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:27:21.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginVM.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\LoginVM.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\ViewModels\\LoginVM.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\LoginVM.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\ViewModels\\LoginVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:21:05.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ManageProduct.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageProduct.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\ManageProduct.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageProduct.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\ManageProduct.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T12:42:56.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoaiVM.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\LoaiVM.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\ViewModels\\LoaiVM.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\LoaiVM.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\ViewModels\\LoaiVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:28:20.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "KhachHangVM.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\KhachHangVM.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\ViewModels\\KhachHangVM.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\KhachHangVM.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\ViewModels\\KhachHangVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:11:28.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HoaDonVM.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\HoaDonVM.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\ViewModels\\HoaDonVM.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\HoaDonVM.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\ViewModels\\HoaDonVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T14:46:06.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProductVM.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\ProductVM.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\ViewModels\\ProductVM.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\ProductVM.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\ViewModels\\ProductVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:02:09.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MenuLoaiVM.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\MenuLoaiVM.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\ViewModels\\MenuLoaiVM.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\MenuLoaiVM.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\ViewModels\\MenuLoaiVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:30:11.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DashboardTopAdminVM.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\DashboardTopAdminVM.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\ViewModels\\DashboardTopAdminVM.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\ViewModels\\DashboardTopAdminVM.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\ViewModels\\DashboardTopAdminVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:30:32.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HoaDon.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\HoaDon.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Data\\HoaDon.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\HoaDon.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\Data\\HoaDon.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvyIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:44:47.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "KhachHang.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\KhachHang.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Data\\KhachHang.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\KhachHang.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\Data\\KhachHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:35:37.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAO4BAAAAAAAAAAAvwP8BAACFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T15:58:56.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProductItem.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\HangHoa\\ProductItem.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\HangHoa\\ProductItem.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\HangHoa\\ProductItem.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\HangHoa\\ProductItem.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T15:56:25.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "VChiTietHoaDon.cs",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\VChiTietHoaDon.cs",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Data\\VChiTietHoaDon.cs",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Data\\VChiTietHoaDon.cs",
+              "RelativeToolTip": "EcomemerceASP_NET\\Data\\VChiTietHoaDon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:45:19.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "PaymentHistory.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\PaymentHistory.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\PaymentHistory.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\PaymentHistory.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\PaymentHistory.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T12:44:20.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ManageUser.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageUser.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\ManageUser.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\ManageUser.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\ManageUser.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAwCgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T12:43:12.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_FooterAdmin.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Shared\\_FooterAdmin.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Shared\\_FooterAdmin.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Shared\\_FooterAdmin.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Shared\\_FooterAdmin.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T15:26:04.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAJ8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T12:47:28.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_Footer.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Shared\\_Footer.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Shared\\_Footer.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Shared\\_Footer.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Shared\\_Footer.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T15:24:55.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAADwvygAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T15:25:19.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\appsettings.json",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\appsettings.json",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\appsettings.json",
+              "RelativeToolTip": "EcomemerceASP_NET\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-12T13:00:38.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "DashboardTop.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\DashboardTop.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\DashboardTop.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\DashboardTop.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\DashboardTop.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAwDoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T12:44:58.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "EcomemerceASP_NET\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "E:\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "EcomemerceASP_NET\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAJYBAAAAAAAAAAAAAKUBAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-12T12:42:20.748Z"
             }
           ]
         }
