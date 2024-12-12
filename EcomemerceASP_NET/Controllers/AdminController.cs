@@ -4,6 +4,7 @@ using EcomemerceASP_NET.Models;
 using System.Diagnostics;
 using EcomemerceASP_NET.Data;
 using EcomemerceASP_NET.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace EcomemerceASP_NET.Controllers
 {
@@ -75,11 +76,22 @@ namespace EcomemerceASP_NET.Controllers
 
         public IActionResult PaymentHistory()
         {
+
+
             ViewBag.Title = "Payment history";
 
+            var HoaDons= db.HoaDons.AsQueryable();
+            var result = HoaDons.Include(hd => hd.ChiTietHds).Select(hd => new HoaDonVM 
+            {
+                MaHd = hd.MaHd,
+                HoTen = hd.HoTen,
+                DonGia = hd.ChiTietHds.FirstOrDefault().DonGia,
+                SoLuong = hd.ChiTietHds.FirstOrDefault().SoLuong
+
+            }).ToList();
 
 
-            return View();
+            return View(result);
         }
     }
 }
