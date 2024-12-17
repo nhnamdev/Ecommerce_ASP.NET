@@ -9,10 +9,6 @@ public partial class NhaCungCap
 
     public string TenCongTy { get; set; } = null!;
 
-    public string Logo { get; set; } = null!;
-
-    public string? NguoiLienLac { get; set; }
-
     public string Email { get; set; } = null!;
 
     public string? DienThoai { get; set; }

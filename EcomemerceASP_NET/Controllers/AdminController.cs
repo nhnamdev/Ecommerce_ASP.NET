@@ -77,7 +77,6 @@ namespace EcomemerceASP_NET.Controllers
         public IActionResult PaymentHistory()
         {
 
-
             ViewBag.Title = "Payment history";
 
             var HoaDons = db.HoaDons.AsQueryable();

@@ -35,7 +35,7 @@ namespace EcomemerceASP_NET.Controllers
                 item = new CartItem
                 {
                     MaHh = hangHoa.MaHh,
-                    TenHH = hangHoa.TenHh,
+                    TenHH = hangHoa.TenHh,  
                     DonGia = hangHoa.DonGia ?? 0,
                     Hinh = hangHoa.Hinh ?? string.Empty,
                     SoLuong = quantity

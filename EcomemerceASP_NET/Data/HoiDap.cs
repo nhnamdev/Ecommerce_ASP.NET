@@ -15,5 +15,5 @@ public partial class HoiDap
 
     public string MaNv { get; set; } = null!;
 
-    public virtual NhanVien MaNvNavigation { get; set; } = null!;
+
 }
