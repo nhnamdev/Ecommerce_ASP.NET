@@ -69,6 +69,7 @@ namespace EcomemerceASP_NET.Controllers
                 ChiTiet = data.MoTa ?? "",
                 DiemDanhGia = 5,
                 MoTaNgan = data.MoTaDonVi ?? "",
+                MoTa = data.MoTa ?? "",
                 TenLoai = data.MaLoaiNavigation.TenLoai,
                 SoLuongTon = 10,
                 Hinh = data.Hinh ?? "",

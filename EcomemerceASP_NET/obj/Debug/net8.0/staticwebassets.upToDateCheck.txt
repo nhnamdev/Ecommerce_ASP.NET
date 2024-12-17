@@ -614,18 +614,6 @@ wwwroot\Hinh\icons\Zoom in.png
 wwwroot\Hinh\icons\Zoom out.png
 wwwroot\Hinh\icons\Zoom.png
 wwwroot\Hinh\KhachHang\6d2f1d0e-4f55-47bb-93c5-ffdbde29fbf6.png
-wwwroot\Hinh\KhachHang\7e0f2e8e-dc28-48f7-b668-f4129742b261.jpg
-wwwroot\Hinh\KhachHang\a836c050-39b1-4481-8514-c7b0a58d723d.jpg
-wwwroot\Hinh\KhachHang\android_300200.png
-wwwroot\Hinh\KhachHang\Author.jpg
-wwwroot\Hinh\KhachHang\bb8910af-6473-4a9d-9a16-df0ecfd203e5.jpg
-wwwroot\Hinh\KhachHang\e87695d7-9e2a-4f78-85a7-f62935b6b3c7.jpg
-wwwroot\Hinh\KhachHang\ec40bcd3-3df8-4c55-b002-11767bfad9a6.jpg
-wwwroot\Hinh\KhachHang\locket.jpg
-wwwroot\Hinh\KhachHang\man.jpg
-wwwroot\Hinh\KhachHang\Penguins.jpg
-wwwroot\Hinh\KhachHang\Untitled.png
-wwwroot\Hinh\KhachHang\woman.jpg
 wwwroot\Hinh\Loai\Accept.png
 wwwroot\Hinh\Loai\agenda_1.jpg
 wwwroot\Hinh\Loai\Alarm.png
@@ -648,18 +636,6 @@ wwwroot\Hinh\Loai\Unlock.png
 wwwroot\Hinh\Loai11.jpeg
 wwwroot\Hinh\Loaiimages.jpeg
 wwwroot\Hinh\NhaCC\Acer_logo-300x300.gif
-wwwroot\Hinh\NhaCC\amd-logo.jpg
-wwwroot\Hinh\NhaCC\apple.jpg
-wwwroot\Hinh\NhaCC\dell-logo.jpg
-wwwroot\Hinh\NhaCC\dell-logo2.jpg
-wwwroot\Hinh\NhaCC\hp-logo.jpg
-wwwroot\Hinh\NhaCC\intel-logo.jpg
-wwwroot\Hinh\NhaCC\motorola.jpg
-wwwroot\Hinh\NhaCC\nokia.jpg
-wwwroot\Hinh\NhaCC\samsung.jpg
-wwwroot\Hinh\NhaCC\samsung-logo-2.jpg
-wwwroot\Hinh\NhaCC\shopping_cart.png
-wwwroot\Hinh\NhaCC\sonny-ericsson.jpg
 wwwroot\Hinh\Others\shopping_cart.png
 wwwroot\img\avatar.jpg
 wwwroot\img\baner-1.png

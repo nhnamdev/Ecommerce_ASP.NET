@@ -113,8 +113,17 @@
                     </div>
                     <div class="modal-body d-flex align-items-center">
                         <div class="input-group w-75 mx-auto d-flex">
-                            <input id="searchText" type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                            <span id="searchButton" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                            <form asp-action="Search" asp-controller="HangHoa" style="display: flex">
+                                <input id="searchText" type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1" style="width: 1300px" name="query">
+                                <button>
+                                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                                </button>
+                            </form>
+                            @*<input id="searchText" type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <button type="button" aria-label="Search" style="border: none;border-radius: 10px">
+                                <span id="searchButton" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                            </button>*@
+                            @*@await Html.PartialAsync("_TimKiemPanel")*@
                         </div>
                     </div>
                 </div>
