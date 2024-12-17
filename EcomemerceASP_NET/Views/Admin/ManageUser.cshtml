@@ -34,11 +34,15 @@
                                
                                 <tbody>
                                     @* Xử lý vòng lặp *@
+                                     @if (Model != null && Model.Any())
+                                {
+                                    foreach (var item in Model)
+                                    {
                                     <tr role="row" class="odd">
-                                        <td class="sorting_1">Duy Nhật</td>
-                                        <td>2/9/2009</td>
-                                        <td>Bình Định</td>
-                                        <td>0xxxxxxxxxxx</td>
+                                    <td>@item.HoTen</td>
+                                    <td>@item.NgaySinh</td>
+                                    <td>@item.DiaChi</td>
+                                    <td>@item.DienThoai</td>
                                         <td>
                                             <div class="form-button-action">
                                                 <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
@@ -49,23 +53,11 @@
                                                 </button>
                                             </div>
                                         </td>
-                        </tr>
-                                    <tr role="row" class="even">
-                                        <td class="sorting_1">Trung Nghĩa</td>
-                                        <td>2/9/2009</td>
-                                        <td>Phú Yên</td>
-                                        <td>0xxxxxxxxx</td>
-                                        <td>
-                                            <div class="form-button-action">
-                                                <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-                                                    <i class="fa fa-edit"></i>
-                                                </button>
-                                                <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-                                                    <i class="fa fa-times"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                </tr>
+                                    }
+                                }
+                                    
+                                   
                                 </tbody>
                             </table>
                         </div>

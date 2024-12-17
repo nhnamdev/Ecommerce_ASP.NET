@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<EcomemerceASP_NET.ViewModels.ProductVM>
+@{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <div class="col-md-12">
@@ -43,13 +44,16 @@
                                 @* Xử lý vòng lặp *@
 
                                 @* Dữ liệu kiểu mẫu*@
-
+                                 @if (Model != null && Model.Any())
+                                {
+                                    foreach (var item in Model)
+                                    {
                                 <tr role="row" class="odd">
-                                    <td class="sorting_1">Bún bò</td>
-                                    <td>Món chính</td>
-                                    <td>30</td>
+                                            <td class="sorting_1">@item.TenHH</td>
+                                            <td>@item.TenLoai</td>
+                                            <td>@item.DonGia</td>
                                     <td>
-                                        <img src="https://th.bing.com/th/id/OIP.UCR_liL5tjZIUNl_UPBqiAHaFM?rs=1&pid=ImgDetMain" alt="Alternate Text" style="width: 100px; height: auto;" />
+                                                <img src="/Hinh/HangHoa/@item.Hinh" alt="@item.TenHH" style="width: 100px; height: auto;" />
                                     </td>
                                     <td>
                                         <div class="form-button-action">
@@ -62,25 +66,8 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr role="row" class="even">
-                                    <td class="sorting_1">Bún bò</td>
-                                    <td>Món chính</td>
-                                    <td>30</td>
-                                    <td>
-                                        <img src="https://th.bing.com/th/id/OIP.UCR_liL5tjZIUNl_UPBqiAHaFM?rs=1&pid=ImgDetMain" alt="Alternate Text" style="width: 100px; height: auto;" />
-                                    </td>
-                                    <td>
-                                        <div class="form-button-action">
-                                            <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-                                                <i class="fa fa-times"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                                    }
+                                }
                             </tbody>
                         </table>
                     </div>
