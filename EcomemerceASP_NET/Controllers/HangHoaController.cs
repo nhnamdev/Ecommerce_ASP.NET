@@ -22,8 +22,8 @@ namespace EcomemerceASP_NET.Controllers
             }
             var result = hangHoas.Select(p => new HangHoaVM
             {
-                MaHh = p.MaHH,
-                TenHH = p.TenHH,
+                MaHh = p.MaHh,
+                TenHH = p.TenHh,
                 Hinh = p.Hinh ?? "",
                 DonGia = p.DonGia ?? 0,
                 MoTaNgan = p.MoTaDonVi ?? "",
@@ -37,13 +37,13 @@ namespace EcomemerceASP_NET.Controllers
             var hangHoas = db.HangHoas.AsQueryable();
             if (query != null)
             {
-                hangHoas = hangHoas.Where(p => p.TenHH.Contains(query));
+                hangHoas = hangHoas.Where(p => p.TenHh.Contains(query));
 
             }
             var result = hangHoas.Select(p => new HangHoaVM
             {
-                MaHh = p.MaHH,
-                TenHH = p.TenHH,
+                MaHh = p.MaHh,
+                TenHH = p.TenHh,
                 Hinh = p.Hinh ?? "",
                 DonGia = p.DonGia ?? 0,
                 MoTaNgan = p.MoTaDonVi ?? "",
@@ -54,7 +54,7 @@ namespace EcomemerceASP_NET.Controllers
         }
         public IActionResult Detail(int id)
         {
-            var data = db.HangHoas.Include(P => P.MaLoaiNavigation).SingleOrDefault(p => p.MaHH == id);
+            var data = db.HangHoas.Include(P => P.MaLoaiNavigation).SingleOrDefault(p => p.MaHh == id);
                
             if (data == null)
             {
@@ -63,12 +63,13 @@ namespace EcomemerceASP_NET.Controllers
             }
             var result = new ChiTietHangHoaVM
             {
-                MaHh = data.MaHH,
-                TenHH = data.TenHH,
+                MaHh = data.MaHh,
+                TenHH = data.TenHh,
                 DonGia = data.DonGia ?? 0,
                 ChiTiet = data.MoTa ?? "",
                 DiemDanhGia = 5,
                 MoTaNgan = data.MoTaDonVi ?? "",
+                MoTa = data.MoTa ?? "",
                 TenLoai = data.MaLoaiNavigation.TenLoai,
                 SoLuongTon = 10,
                 Hinh = data.Hinh ?? "",

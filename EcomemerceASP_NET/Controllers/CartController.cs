@@ -26,7 +26,7 @@ namespace EcomemerceASP_NET.Controllers
             var item = gioHang.SingleOrDefault(p => p.MaHh == id);
             if(item == null)
             {
-                var hangHoa = db.HangHoas.SingleOrDefault(p => p.MaHH == id);
+                var hangHoa = db.HangHoas.SingleOrDefault(p => p.MaHh == id);
                 if(hangHoa == null)
                 {
                     TempData["Message"] = $"KLhoong tìm thấy hàng hóa có mã {id}";
@@ -34,8 +34,8 @@ namespace EcomemerceASP_NET.Controllers
                 }
                 item = new CartItem
                 {
-                    MaHh = hangHoa.MaHH,
-                    TenHH = hangHoa.TenHH,
+                    MaHh = hangHoa.MaHh,
+                    TenHH = hangHoa.TenHh,  
                     DonGia = hangHoa.DonGia ?? 0,
                     Hinh = hangHoa.Hinh ?? string.Empty,
                     SoLuong = quantity

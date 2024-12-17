@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EcomemerceASP_NET.props" />
+</Project>
