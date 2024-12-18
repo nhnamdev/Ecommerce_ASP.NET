@@ -1,4 +1,5 @@
 using EcomemerceASP_NET.Data;
+using EcomemerceASP_NET.Helpers;
 using EcomemerceASP_NET.Models;
 using EcomemerceASP_NET.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,7 @@ namespace EcomemerceASP_NET.Controllers
             _logger = logger;
             db = context;
         }
+        public List<CartItem> Cart => HttpContext.Session.Get<List<CartItem>>(MySetting.CART_KEY) ?? new List<CartItem>();
 
         public IActionResult Index()
         {
@@ -45,7 +47,7 @@ namespace EcomemerceASP_NET.Controllers
         [Route("/Checkout")]
         public IActionResult Checkout()
         {
-            return View();
+            return View(Cart);
         }
         [Route("/Testimonial")]
         public IActionResult Testimonial()

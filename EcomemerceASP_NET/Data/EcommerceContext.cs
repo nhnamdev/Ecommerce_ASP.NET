@@ -17,6 +17,8 @@ public partial class EcommerceContext : DbContext
 
     public virtual DbSet<ChiTietHd> ChiTietHds { get; set; }
 
+    public virtual DbSet<Contact> Contacts { get; set; }
+
     public virtual DbSet<GopY> Gopies { get; set; }
 
     public virtual DbSet<HangHoa> HangHoas { get; set; }
@@ -29,6 +31,7 @@ public partial class EcommerceContext : DbContext
 
     public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
 
+    public virtual DbSet<TrangThai> TrangThais { get; set; }
 
     public virtual DbSet<VChiTietHoaDon> VChiTietHoaDons { get; set; }
 
@@ -59,6 +62,16 @@ public partial class EcommerceContext : DbContext
                 .HasForeignKey(d => d.MaHh)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_OrderDetails_Products");
+        });
+
+        modelBuilder.Entity<Contact>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("Contact");
+
+            entity.Property(e => e.Email).HasMaxLength(50);
+            entity.Property(e => e.HoTen).HasMaxLength(50);
         });
 
         modelBuilder.Entity<GopY>(entity =>
@@ -146,7 +159,10 @@ public partial class EcommerceContext : DbContext
                 .HasForeignKey(d => d.MaKh)
                 .HasConstraintName("FK_Orders_Customers");
 
-            
+            entity.HasOne(d => d.MaTrangThaiNavigation).WithMany(p => p.HoaDons)
+                .HasForeignKey(d => d.MaTrangThai)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_HoaDon_TrangThai");
 
             entity.HasOne(d => d.MaVcNavigation).WithMany(p => p.HoaDons)
                 .HasForeignKey(d => d.MaVc)
@@ -204,7 +220,17 @@ public partial class EcommerceContext : DbContext
             entity.Property(e => e.TenCongTy).HasMaxLength(50);
         });
 
-      
+        modelBuilder.Entity<TrangThai>(entity =>
+        {
+            entity.HasKey(e => e.MaTrangThai);
+
+            entity.ToTable("TrangThai");
+
+            entity.Property(e => e.MaTrangThai).ValueGeneratedNever();
+            entity.Property(e => e.MoTa).HasMaxLength(500);
+            entity.Property(e => e.TenTrangThai).HasMaxLength(50);
+        });
+
         modelBuilder.Entity<VChiTietHoaDon>(entity =>
         {
             entity
