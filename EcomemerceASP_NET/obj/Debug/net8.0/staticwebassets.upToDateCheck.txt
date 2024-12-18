@@ -614,7 +614,7 @@ wwwroot\Hinh\icons\Zoom in.png
 wwwroot\Hinh\icons\Zoom out.png
 wwwroot\Hinh\icons\Zoom.png
 wwwroot\Hinh\KhachHang\6d2f1d0e-4f55-47bb-93c5-ffdbde29fbf6.png
-wwwroot\Hinh\KhachHang\e54a9d66-36f7-446a-a1df-172406cb472d.jpg
+wwwroot\Hinh\KhachHang\locket.jpg
 wwwroot\Hinh\Loai\Accept.png
 wwwroot\Hinh\Loai\agenda_1.jpg
 wwwroot\Hinh\Loai\Alarm.png
