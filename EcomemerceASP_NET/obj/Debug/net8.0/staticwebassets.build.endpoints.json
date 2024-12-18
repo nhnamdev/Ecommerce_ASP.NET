@@ -495,8 +495,8 @@
       ]
     },
     {
-      "Route": "Hinh/KhachHang/e54a9d66-36f7-446a-a1df-172406cb472d.jpg",
-      "AssetFile": "Hinh/KhachHang/e54a9d66-36f7-446a-a1df-172406cb472d.jpg",
+      "Route": "Hinh/KhachHang/locket.jpg",
+      "AssetFile": "Hinh/KhachHang/locket.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -521,7 +521,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Dec 2024 18:01:35 GMT"
+          "Value": "Tue, 17 Dec 2024 18:05:17 GMT"
         }
       ],
       "EndpointProperties": [
@@ -532,8 +532,8 @@
       ]
     },
     {
-      "Route": "Hinh/KhachHang/e54a9d66-36f7-446a-a1df-172406cb472d.t72h3qgshx.jpg",
-      "AssetFile": "Hinh/KhachHang/e54a9d66-36f7-446a-a1df-172406cb472d.jpg",
+      "Route": "Hinh/KhachHang/locket.t72h3qgshx.jpg",
+      "AssetFile": "Hinh/KhachHang/locket.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -558,7 +558,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 17 Dec 2024 18:01:35 GMT"
+          "Value": "Tue, 17 Dec 2024 18:05:17 GMT"
         }
       ],
       "EndpointProperties": [
@@ -572,7 +572,7 @@
         },
         {
           "Name": "label",
-          "Value": "Hinh/KhachHang/e54a9d66-36f7-446a-a1df-172406cb472d.jpg"
+          "Value": "Hinh/KhachHang/locket.jpg"
         }
       ]
     },
