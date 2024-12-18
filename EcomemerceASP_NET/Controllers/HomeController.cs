@@ -50,7 +50,17 @@ namespace EcomemerceASP_NET.Controllers
         [Route("/Testimonial")]
         public IActionResult Testimonial()
         {
-            return View();
+            var gopYs = db.Gopies.AsQueryable();
+
+            var result = gopYs.Select(p => new GopYVM
+            {
+                HoTen = p.HoTen,
+                DienThoai = p.DienThoai,
+                Email = p.Email,
+                NoiDung = p.NoiDung
+            });
+            return View(result);
+        
         }
      
     
