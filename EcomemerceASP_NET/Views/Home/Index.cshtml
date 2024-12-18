@@ -11,8 +11,10 @@
                 <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
                 <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
                 <div class="position-relative mx-auto">
-                    <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Search">
+                    <form asp-action="Search" asp-controller="HangHoa" style="display: flex">
+                        <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="text" placeholder="Search" name="query">
                     <button type="submit" class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style="top: 0; right: 25%;">Submit Now</button>
+                    </form>
                 </div>
             </div>
             <div class="col-md-12 col-lg-5">
@@ -108,26 +110,7 @@
                                 <span class="text-dark" style="width: 130px;">All Products</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                                <span class="text-dark" style="width: 130px;">Vegetables</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
-                                <span class="text-dark" style="width: 130px;">Fruits</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                                <span class="text-dark" style="width: 130px;">Bread</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                                <span class="text-dark" style="width: 130px;">Meat</span>
-                            </a>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -136,26 +119,29 @@
                     <div class="row g-4">
                         <div class="col-lg-12">
                             <div class="row g-4">
+                                @*Sản phẩm*@
                                 @foreach (var item in Model)
                                 {
-                                    <div class="col-md-6 col-lg-4 col-xl-3">
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                    <div class="col">
+                                        <div class="card border border-primary h-100 position-relative">
+                                            <div class="vesitable-img">
+                                                <img src="~/Hinh/HangHoa/@item.Hinh" class="card-img-top img-fluid w-100" alt="" style="width: 300px; height: 260px">
                                             </div>
-                                            <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">Fruits</div>
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>Grapes</h4>
-                                                <p>@item.MoTaNgan</p>
-                                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
-                                                </div>
+                                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">@item.TenLoai</div>
+                                            <div class="card-body">
+                                                <h4 class="card-title" style="height: 58px">@item.TenHH</h4>
+                                                <p class="card-text">@item.MoTaNgan</p>
+                                            </div>
+                                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                                <p class="text-dark fs-5 fw-bold mb-0">@item.DonGia</p>
+                                                <a asp-action="AddToCart" asp-controller="Cart" asp-route-id="@item.MaHh" class="btn border border-secondary rounded-pill px-3 text-primary">
+                                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-                                  
                                 }
+                                @*Sản phẩm*@
                             </div>
                         </div>
                     </div>
@@ -388,38 +374,6 @@
     </div>
 </div>
 <!-- Featurs End -->
-<!-- Vesitable Shop Start-->
-<div class="container-fluid vesitable py-5">
-    <div class="container py-5">
-        <h1 class="mb-0">Fresh Organic Vegetables</h1>
-        <div class="owl-carousel vegetable-carousel justify-content-center">
-            @*Sản phẩm*@
-            @foreach (var item in Model)
-            {
-                <div class="col">
-                    <div class="card border border-primary h-100 position-relative">
-                        <div class="vesitable-img">
-                            <img src="~/Hinh/HangHoa/@item.Hinh" class="card-img-top img-fluid w-100" alt="" style="width: 300px; height: 300px">
-                        </div>
-                        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">@item.TenLoai</div>
-                        <div class="card-body">
-                            <h4 class="card-title" style="height: 58px">@item.TenHH</h4>
-                            <p class="card-text">@item.MoTaNgan</p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center">
-                            <p class="text-dark fs-5 fw-bold mb-0">@item.DonGia</p>
-                            <a asp-action="AddToCart" asp-controller="Cart" asp-route-id="@item.MaHh" class="btn border border-secondary rounded-pill px-3 text-primary">
-                                <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            }
-            @*Sản phẩm*@
-        </div>
-    </div>
-</div>
-<!-- Vesitable Shop End -->
 <!-- Banner Section Start-->
 <div class="container-fluid banner bg-secondary my-5">
     <div class="container py-5">
@@ -429,7 +383,7 @@
                     <h1 class="display-3 text-white">Fresh Exotic Fruits</h1>
                     <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
                     <p class="mb-4 text-dark">Chúng tôi mang đến cho bạn những loại trái cây nhập khẩu tươi ngon, được tuyển chọn kỹ lưỡng từ khắp nơi trên thế giới. Không chỉ đa dạng về chủng loại, các sản phẩm còn đảm bảo chất lượng cao, đáp ứng nhu cầu dinh dưỡng và khẩu vị tinh tế của bạn.</p>
-                    <a href="#" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
+                    <a asp-controller="HangHoa" asp-action="Index" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
                 </div>
             </div>
             <div class="col-lg-6">

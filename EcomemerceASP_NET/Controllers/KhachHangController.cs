@@ -228,36 +228,6 @@ namespace EcomemerceASP_NET.Controllers
 
 
         #endregion
-        /* public IActionResult EditProfile(ProfileVM model, IFormFile? Hinh)
-         {
-             var customerId = User.Claims.FirstOrDefault(c => c.Type == "CustomerID")?.Value;
-             if (string.IsNullOrEmpty(customerId))
-             {
-                 return RedirectToAction("DangNhap");
-             }
 
-             var khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerId);
-             if (khachHang == null)
-             {
-                 return NotFound("Khách hàng không tồn tại.");
-             }
-
-             if (ModelState.IsValid)
-             {
-
-                 khachHang.HoTen = model.HoTen;
-                 khachHang.Email = model.Email;
-                 khachHang.DienThoai = model.DienThoai;
-                 khachHang.DiaChi = model.DiaChi;
-
-                 db.Update(khachHang);
-                 db.SaveChanges();
-
-                 return RedirectToAction("Profile");
-             }
-
-             return View(model);
-         }
- */
     }
 }
