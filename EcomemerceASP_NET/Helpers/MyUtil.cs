@@ -42,7 +42,7 @@ namespace EcomemerceASP_NET.Helpers
                 }
 
                 // Trả về đường dẫn tương đối
-                return Hinh.FileName;
+                return uniqueFileName;
             }
             catch (Exception ex)
             {
