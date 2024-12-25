@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "send code confirmation";
+}
+<h2>Gửi Mã Xác Minh</h2>
+
+<form method="post" asp-action="SendEmail">
+    <div class="form-group">
+        <label for="To">Địa chỉ email:</label>
+        <input type="email" class="form-control" id="To" name="To" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Gửi Mã</button>
+</form>
