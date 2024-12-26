@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddMemoryCache();
 builder.Services.AddDbContext<EcommerceContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Ecommerce"));
@@ -65,7 +66,7 @@ app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 
-
+app.MapControllers();
 
 app.MapControllerRoute(
     name: "default",

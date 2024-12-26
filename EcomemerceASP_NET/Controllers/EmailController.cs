@@ -66,17 +66,20 @@ namespace EcomemerceASP_NET.Controllers
         }
 
         [HttpPost]
-        public IActionResult VerifyCode(string verificationCode)
+        public IActionResult VerifyCode(string VerifyCode)
         {
             var storedCode = HttpContext.Session.GetString("RandomCode");
-
-            if (storedCode != null && storedCode.Equals(verificationCode, StringComparison.OrdinalIgnoreCase))
+            Console.WriteLine($"Session Code: {storedCode}, Input Code: {VerifyCode}");
+            
+            if (!string.IsNullOrEmpty(storedCode) && storedCode.Equals(VerifyCode, StringComparison.OrdinalIgnoreCase))
             {
                 return RedirectToAction("EditProfile", "KhachHang");
             }
+
             ModelState.AddModelError(string.Empty, "Invalid verification code.");
-            return RedirectToAction("EmailSent", "Email");
+            return View("EmailSent");
         }
+
 
     }
 }

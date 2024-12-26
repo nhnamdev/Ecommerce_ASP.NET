@@ -62,6 +62,8 @@ namespace EcomemerceASP_NET.Controllers
         [HttpGet]
         public IActionResult DangNhap(string? ReturnUrl)
         {
+            HttpContext.Session.Remove("user");
+
             ViewBag.ReturnUrl = ReturnUrl;
             return View();
         }
@@ -231,13 +233,15 @@ namespace EcomemerceASP_NET.Controllers
 
         #endregion
 
-        [HttpGet]
-        public JsonResult CheckUsername( string userName)
+        [HttpPost]
+        public JsonResult CheckUsername(string userName)
         {
             var user = db.KhachHangs.FirstOrDefault(u => u.MaKh.Equals(userName));
             Console.WriteLine(userName);
             if (user != null)
             {
+                var userJson = JsonConvert.SerializeObject(userName);
+                HttpContext.Session.Set("user", userJson);
                 return Json(new { message = "OK" });
             }
             else

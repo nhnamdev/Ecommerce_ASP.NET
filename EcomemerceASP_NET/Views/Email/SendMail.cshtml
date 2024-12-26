@@ -67,28 +67,31 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
+
+      
+
+
         $(document).ready(function () {
             $("#Toto").on("blur", function () {
 
-                    var userName = $("#Toto").val();
-                    console.log(userName);
-                    if (userName.length > 0) {
-                        $.ajax({
-                        url: "@Url.Action("CheckUserName", "KhachHang")" + "?userName=" + encodeURIComponent(userName),
-                            type: "get",
-                            contentType: "application/json",
-                            dataType: "json",
-
-                            success: function (response) {
-                                console.log("Response từ server:", response);
-                                if (response.message === "OK") {
-                                    $("#To").prop("disabled", false);
-                                    $("#errorMessage").hide();
-                                } else if (response.message === "Tài khoản không tồn tại.") {
-                                    $("#To").prop("disabled", true);
-                                    $("#errorMessage").show();
-                                }
-                            },
+                var userName = $("#Toto").val();
+                console.log(userName);
+                if (userName.length > 0) {
+                    $.ajax({
+                        url: "@Url.Action("CheckUserName", "KhachHang")"+"?userName=" + encodeURI(userName),
+                        type: "POST",
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (response) {
+                            console.log("Response từ server:", response);
+                            if (response.message === "OK") {
+                                $("#To").prop("disabled", false);
+                                $("#errorMessage").hide();
+                            } else if (response.message === "Tài khoản không tồn tại.") {
+                                $("#To").prop("disabled", true);
+                                $("#errorMessage").show();
+                            }
+                        },
                         error: function () {
                             $("#To").prop("disabled", true);
                             $("#errorMessage").show();
