@@ -1,11 +1,11 @@
-﻿using final.Models;
+﻿using EcomemerceASP_NET.Models;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
 using MimeKit.Text;
 using System.Threading.Tasks;
 
-namespace final.Service.EmailService
+namespace EcomemerceASP_NET.Service.EmailService
 {
     public class EmailService : IEmailService
     {

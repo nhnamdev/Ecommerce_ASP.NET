@@ -1,4 +1,4 @@
-﻿namespace final.Models
+﻿namespace EcomemerceASP_NET.Models
 {
     public class EmailDto
     {

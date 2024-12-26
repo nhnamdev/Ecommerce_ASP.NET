@@ -1,11 +1,11 @@
-﻿using final.Models;
-using final.Service.EmailService;
+﻿using EcomemerceASP_NET.Models;
+using EcomemerceASP_NET.Service.EmailService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Text;
 
-namespace final.Controllers
+namespace EcomemerceASP_NET.Controllers
 {
     public class EmailController : Controller
     {
@@ -22,11 +22,17 @@ namespace final.Controllers
             return View();
         }
 
+       
 
         [HttpPost]
         public async Task<IActionResult> SendEmail(EmailDto request)
         {
-
+            // Kiểm tra nếu email trống
+            if (string.IsNullOrEmpty(request.To))
+            {
+                ModelState.AddModelError("Email", "Email không được để trống.");
+                return View("SendMail");
+            }
             string verificationCode = GenerateRandomCode();
 
 
@@ -58,5 +64,19 @@ namespace final.Controllers
             }
             return new string(randomCode);
         }
+
+        [HttpPost]
+        public IActionResult VerifyCode(string verificationCode)
+        {
+            var storedCode = HttpContext.Session.GetString("RandomCode");
+
+            if (storedCode != null && storedCode.Equals(verificationCode, StringComparison.OrdinalIgnoreCase))
+            {
+                return RedirectToAction("EditProfile", "KhachHang");
+            }
+            ModelState.AddModelError(string.Empty, "Invalid verification code.");
+            return RedirectToAction("EmailSent", "Email");
+        }
+
     }
 }

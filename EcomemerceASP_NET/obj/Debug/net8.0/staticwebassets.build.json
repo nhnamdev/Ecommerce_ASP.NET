@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0dfRHYjo1QPa9cI5K28jhrUDohKEvVbiuSupeXWqb0k=",
+  "Hash": "hYalnE+20TlkmgWU6aqz348bFaShD+THDrb1X0cnDp0=",
   "Source": "EcomemerceASP_NET",
   "BasePath": "_content/EcomemerceASP_NET",
   "Mode": "Default",
@@ -11740,6 +11740,25 @@
       "OriginalItemSpec": "wwwroot\\Hinh\\icons\\Zoom.png"
     },
     {
+      "Identity": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\385560518_1079465383500878_6346324661298643845_n.png",
+      "SourceId": "EcomemerceASP_NET",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\",
+      "BasePath": "_content/EcomemerceASP_NET",
+      "RelativePath": "Hinh/KhachHang/385560518_1079465383500878_6346324661298643845_n.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Hinh\\KhachHang\\385560518_1079465383500878_6346324661298643845_n.png"
+    },
+    {
       "Identity": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\6d2f1d0e-4f55-47bb-93c5-ffdbde29fbf6.png",
       "SourceId": "EcomemerceASP_NET",
       "SourceType": "Discovered",
@@ -11776,6 +11795,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Hinh\\KhachHang\\locket.jpg"
+    },
+    {
+      "Identity": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\Screenshot 2024-12-22 084534.png",
+      "SourceId": "EcomemerceASP_NET",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\",
+      "BasePath": "_content/EcomemerceASP_NET",
+      "RelativePath": "Hinh/KhachHang/Screenshot 2024-12-22 084534.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Hinh\\KhachHang\\Screenshot 2024-12-22 084534.png"
     },
     {
       "Identity": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\Loai\\Accept.png",
@@ -12840,6 +12878,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\js\\CheckUserName.js",
+      "SourceId": "EcomemerceASP_NET",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\",
+      "BasePath": "_content/EcomemerceASP_NET",
+      "RelativePath": "js/CheckUserName.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CheckUserName.js"
     },
     {
       "Identity": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\js\\main.js",

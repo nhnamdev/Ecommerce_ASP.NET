@@ -21,8 +21,16 @@
       "PackagePath": "staticwebassets\\Hinh\\HangHoa\\taomy.jpg"
     },
     {
+      "Id": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\385560518_1079465383500878_6346324661298643845_n.png",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\385560518_1079465383500878_6346324661298643845_n.png"
+    },
+    {
       "Id": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\6d2f1d0e-4f55-47bb-93c5-ffdbde29fbf6.png",
       "PackagePath": "staticwebassets\\Hinh\\KhachHang\\6d2f1d0e-4f55-47bb-93c5-ffdbde29fbf6.png"
+    },
+    {
+      "Id": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\Screenshot 2024-12-22 084534.png",
+      "PackagePath": "staticwebassets\\Hinh\\KhachHang\\Screenshot 2024-12-22 084534.png"
     },
     {
       "Id": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\Hinh\\KhachHang\\locket.jpg",
@@ -2699,6 +2707,10 @@
     {
       "Id": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\js\\CheckUserName.js",
+      "PackagePath": "staticwebassets\\js\\CheckUserName.js"
     },
     {
       "Id": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\wwwroot\\js\\main.js",
