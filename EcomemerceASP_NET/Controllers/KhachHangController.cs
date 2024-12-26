@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System.Security.Claims;
 
 namespace EcomemerceASP_NET.Controllers
@@ -60,6 +62,8 @@ namespace EcomemerceASP_NET.Controllers
         [HttpGet]
         public IActionResult DangNhap(string? ReturnUrl)
         {
+            HttpContext.Session.Remove("user");
+
             ViewBag.ReturnUrl = ReturnUrl;
             return View();
         }
@@ -228,6 +232,23 @@ namespace EcomemerceASP_NET.Controllers
 
 
         #endregion
+
+        [HttpPost]
+        public JsonResult CheckUsername(string userName)
+        {
+            var user = db.KhachHangs.FirstOrDefault(u => u.MaKh.Equals(userName));
+            Console.WriteLine(userName);
+            if (user != null)
+            {
+                var userJson = JsonConvert.SerializeObject(userName);
+                HttpContext.Session.Set("user", userJson);
+                return Json(new { message = "OK" });
+            }
+            else
+            {
+                return Json(new { message = "Tài khoản không tồn tại." });
+            }
+        }
 
     }
 }

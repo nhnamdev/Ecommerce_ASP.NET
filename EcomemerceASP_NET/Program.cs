@@ -1,5 +1,6 @@
 ﻿using EcomemerceASP_NET.Data;
 using EcomemerceASP_NET.Helpers;
+using EcomemerceASP_NET.Service.EmailService;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,9 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<EcommerceContext>(options => {
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddMemoryCache();
+builder.Services.AddDbContext<EcommerceContext>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("Ecommerce"));
-    });
+});
 //Add service database
 // Add services to the container.
 
@@ -62,7 +66,7 @@ app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 
-
+app.MapControllers();
 
 app.MapControllerRoute(
     name: "default",
@@ -72,4 +76,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "admin",
     pattern: "{controller=Admin}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Email}/{action=SendMail}/{id?}");
 app.Run();

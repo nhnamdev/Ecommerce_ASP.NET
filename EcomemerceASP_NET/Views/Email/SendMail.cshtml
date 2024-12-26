@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "send code confirmation";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+
+    <style>
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .receiveBtn {
+            padding-top: 5px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="form-box">
+            <h2 class="text-center">Xác nhận đây là tài khoản của bạn !</h2>
+
+            <form method="post" asp-action="SendEmail">
+                <div class="form-group">
+                    <label for="Toto">Tên tài khoản :</label>
+                    <input type="text" class="form-control" id="Toto" name="Toto" />
+                    <label for="To">Địa chỉ email :</label>
+                    <input type="email" class="form-control" id="To" name="To" disabled />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block receiveBtn">Gửi mã !</button>
+            </form>
+
+            <form method="post" asp-controller="KhachHang" asp-action="DangNhap">
+                <button type="submit" class="btn btn-primary btn-block receiveBtn">Đăng Nhập !</button>
+            </form>
+
+        </div>
+    </div>
+    <div id="errorMessage">Tài khoản không tồn tại!</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+      
+
+
+        $(document).ready(function () {
+            $("#Toto").on("blur", function () {
+
+                var userName = $("#Toto").val();
+                console.log(userName);
+                if (userName.length > 0) {
+                    $.ajax({
+                        url: "@Url.Action("CheckUserName", "KhachHang")"+"?userName=" + encodeURI(userName),
+                        type: "POST",
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (response) {
+                            console.log("Response từ server:", response);
+                            if (response.message === "OK") {
+                                $("#To").prop("disabled", false);
+                                $("#errorMessage").hide();
+                            } else if (response.message === "Tài khoản không tồn tại.") {
+                                $("#To").prop("disabled", true);
+                                $("#errorMessage").show();
+                            }
+                        },
+                        error: function () {
+                            $("#To").prop("disabled", true);
+                            $("#errorMessage").show();
+                            alert("Lỗi khi kiểm tra tài khoản.");
+                        }
+                    });
+                } else {
+                    $("#To").prop("disabled", true);
+                    $("#errorMessage").hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
