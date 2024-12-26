@@ -78,10 +78,13 @@
                 console.log(userName);
                 if (userName.length > 0) {
                     $.ajax({
-                        url: "@Url.Action("CheckUserName", "KhachHang")"+"?userName=" + encodeURI(userName),
+                        url: "@Url.Action("CheckUserName", "KhachHang")",
                         type: "POST",
                         contentType: "application/json",
                         dataType: "json",
+                        data:JSON.stringify({
+                            userName: userName
+                        }),
                         success: function (response) {
                             console.log("Response từ server:", response);
                             if (response.message === "OK") {
