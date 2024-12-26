@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Security.Claims;
+using System.Text.Json;
 
 namespace EcomemerceASP_NET.Controllers
 {
@@ -234,8 +235,9 @@ namespace EcomemerceASP_NET.Controllers
         #endregion
 
         [HttpPost]
-        public JsonResult CheckUsername(string userName)
+        public JsonResult CheckUsername([FromBody] JsonElement data)
         {
+            var userName = data.GetProperty("userName").GetString();
             var user = db.KhachHangs.FirstOrDefault(u => u.MaKh.Equals(userName));
             Console.WriteLine(userName);
             if (user != null)
