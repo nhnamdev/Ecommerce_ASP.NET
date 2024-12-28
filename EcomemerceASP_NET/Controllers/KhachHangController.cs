@@ -233,7 +233,7 @@ namespace EcomemerceASP_NET.Controllers
 
 
         #endregion
-
+        #region CheckUsername
         [HttpPost]
         public JsonResult CheckUsername([FromBody] JsonElement data)
         {
@@ -241,9 +241,8 @@ namespace EcomemerceASP_NET.Controllers
             var user = db.KhachHangs.FirstOrDefault(u => u.MaKh.Equals(userName));
             Console.WriteLine(userName);
             if (user != null)
-            {
-                var userJson = JsonConvert.SerializeObject(userName);
-                HttpContext.Session.Set("user", userJson);
+            { 
+                HttpContext.Session.SetString("user", JsonConvert.SerializeObject(user));
                 return Json(new { message = "OK" });
             }
             else
@@ -251,6 +250,47 @@ namespace EcomemerceASP_NET.Controllers
                 return Json(new { message = "Tài khoản không tồn tại." });
             }
         }
+        #endregion
+        #region changePassword
+        [HttpGet]
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(string Toto, RegisterVM model)
+        {
+            string userJson = HttpContext.Session.GetString("user");
+            if (!string.IsNullOrEmpty(userJson))
+            {
+                KhachHang k = JsonConvert.DeserializeObject<KhachHang>(userJson);
+                if (k != null)
+                {
+                    k.MatKhau = Toto;
+                    k.MatKhau =k.MatKhau.ToMd5Hash(k.RandomKey);
+                    Console.WriteLine(k.MatKhau);
+                    string updatedUserJson = JsonConvert.SerializeObject(k);
+                    HttpContext.Session.Remove("user");
+                    HttpContext.Session.SetString("user", updatedUserJson);
+                    var khackInDb = await db.KhachHangs.FirstOrDefaultAsync(x => x.MaKh == k.MaKh);
+                    if (khackInDb != null)
+                    {
+                        khackInDb.MatKhau = k.MatKhau;
+                        Console.WriteLine(khackInDb.MatKhau);
+                        try
+                        {
+                            await db.SaveChangesAsync();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Lỗi khi lưu thay đổi: {ex.Message}");
+                        }
+                    }
+                }
+            }
 
+            return RedirectToAction("DangNhap");
+        }
+        #endregion
     }
 }

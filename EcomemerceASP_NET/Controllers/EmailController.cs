@@ -73,7 +73,7 @@ namespace EcomemerceASP_NET.Controllers
             
             if (!string.IsNullOrEmpty(storedCode) && storedCode.Equals(VerifyCode, StringComparison.OrdinalIgnoreCase))
             {
-                return RedirectToAction("EditProfile", "KhachHang");
+                return RedirectToAction("ChangePassword", "KhachHang");
             }
 
             ModelState.AddModelError(string.Empty, "Invalid verification code.");
