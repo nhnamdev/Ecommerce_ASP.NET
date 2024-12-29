@@ -1,8 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Verify Code !";
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,31 +10,41 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; 
+            height: 100vh;
             background-color: #f8f9fa;
         }
 
-       .form-box {
-    display: flex; 
-    flex-direction: column; 
-    gap: 7px; 
-    width: 100%;
-    max-width: 400px;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
 
-#ConfirmBtn {
-    padding-top: 5px;
-    width: 100%;
-    margin-top: 10px;
-}
+        .ConfirmBtn {
+            padding-top: 5px;
+            width: 100%;
+            margin-top: 10px;
+        }
 
+        #ConfirmBtn:disabled {
+            padding-top: 5px;
+            width: 100%;
+            margin-top: 10px;
+            color: gray;
+            cursor: not-allowed;
+        }
+
+        #btnSpectial {
+            display: none;
+        }
     </style>
-
 </head>
 <body>
 
@@ -48,14 +54,29 @@
 
             <form method="post" asp-action="VerifyCode">
                 <div class="form-group">
-                    <label for="To">Hãy nhập mã trong hòm thư của bạn !</label>
-                    <input type="text" class="form-control" id="your code" name="VerifyCode" required />
+                    <label for="your-code">Hãy nhập mã trong hòm thư của bạn !</label>
+                    <input type="text" class="form-control" id="your-code" name="VerifyCode" />
                 </div>
-                <button id="ConfirmBtn" type="submit" class="btn btn-primary btn-block"> Xác nhận !</button>
-                <button asp-controller="KhachHang" asp-action="DangNhap" id="ConfirmBtn" type="submit" class="btn btn-primary btn-block"> Đăng Nhập !</button>
+                <button id="btnSpectial" type="submit" class="btn btn-primary btn-block ConfirmBtn"> Xác nhận !</button>
+            </form>
+            <form asp-controller="KhachHang" asp-action="DangNhap" method="get">
+                <button type="submit" class="btn btn-primary btn-block  ConfirmBtn">Đăng Nhập !</button>
             </form>
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#your-code").on("input", function () {
+                const inputValue = $(this).val().trim();
+                if (inputValue) {
+                    $("#btnSpectial").show();
+                } else {
+                    $("#btnSpectial").hide();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
