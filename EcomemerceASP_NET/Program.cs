@@ -26,15 +26,10 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-// Add session
-
-// Auto reload khi thay đổi file cshtml
 builder.Services.AddControllersWithViews()
     .AddRazorRuntimeCompilation();
 
-// Auto reload khi thay đổi file cshtml
 
-// Add AutoMapper
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 // Add AutoMapper
 // Add Authentication

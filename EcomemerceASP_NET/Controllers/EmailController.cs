@@ -2,6 +2,7 @@
 using EcomemerceASP_NET.Service.EmailService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
 
@@ -22,7 +23,7 @@ namespace EcomemerceASP_NET.Controllers
             return View();
         }
 
-       
+
 
         [HttpPost]
         public async Task<IActionResult> SendEmail(EmailDto request)
@@ -65,12 +66,19 @@ namespace EcomemerceASP_NET.Controllers
             return new string(randomCode);
         }
 
+        #region VerifyCode
+
+        [HttpGet]
+        public IActionResult VerifyCode()
+        {
+            return View("EmailSent");
+        }
         [HttpPost]
         public IActionResult VerifyCode(string VerifyCode)
         {
             var storedCode = HttpContext.Session.GetString("RandomCode");
             Console.WriteLine($"Session Code: {storedCode}, Input Code: {VerifyCode}");
-            
+
             if (!string.IsNullOrEmpty(storedCode) && storedCode.Equals(VerifyCode, StringComparison.OrdinalIgnoreCase))
             {
                 return RedirectToAction("ChangePassword", "KhachHang");
@@ -80,6 +88,20 @@ namespace EcomemerceASP_NET.Controllers
             return View("EmailSent");
         }
 
+        [HttpGet]
+        public JsonResult checkNull(string VerifyCode)
+        {
+            var check = VerifyCode;
+            if (check != null || check.IsNullOrEmpty())
+            {
+                return Json(new { message = "null" });
+            }
+            else
+            {
+                return Json(new { message = "OK" });
+            }
+        }
+        #endregion
 
     }
 }
