@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EcomemerceASP_NET")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32ad0ae17f4268e42a501b8de0c5554979b06279")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98a1144c7843e589011652b3d18e9964ebc90cd6")]
 [assembly: System.Reflection.AssemblyProductAttribute("EcomemerceASP_NET")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EcomemerceASP_NET")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
