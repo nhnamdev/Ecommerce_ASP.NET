@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using EcomemerceASP_NET.Helpers;
 using EcomemerceASP_NET.ViewModels;
 using System.Text.Json;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EcomemerceASP_NET.Controllers
 {
@@ -16,11 +17,114 @@ namespace EcomemerceASP_NET.Controllers
 
         public List<CartItem> Cart => HttpContext.Session.Get<List<CartItem>>(MySetting.CART_KEY) ?? new List<CartItem>();
 
-
+        [Authorize]
+        [HttpGet]
         public IActionResult Index()
         {
+            if (Cart.Count == 0)
+            {
+                return Redirect("/");
+            }
             return View(Cart);
         }
+        [Authorize]
+        [HttpGet]
+        public IActionResult Checkout()
+        {
+            if (Cart.Count == 0)
+            {
+                return Redirect("/");
+            }
+            return View(Cart);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult Checkout([FromBody] CheckoutVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                var customerId = HttpContext.User.Claims.SingleOrDefault(p => p.Type == MySetting.CLAIM_CUSTOMERID)?.Value;
+
+                if (string.IsNullOrEmpty(customerId))
+                {
+                    return Json(new { success = false, message = "Không tìm thấy thông tin khách hàng." });
+                }
+
+                var khachHang = new KhachHang();
+                if (model.GiongKhacHangs)
+                {
+                    khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerId);
+                    if (khachHang == null)
+                    {
+                        return Json(new { success = false, message = "Thông tin khách hàng không tồn tại." });
+                    }
+                }
+
+                var hoadon = new HoaDon
+                {
+                    MaKh = customerId,
+                    HoTen = model.Hoten ?? khachHang.HoTen,
+                    DiaChi = model.DiaChi ?? khachHang.DiaChi,
+                    DienThoai = model.DienThoai ?? khachHang.DienThoai,
+                    NgayDat = DateTime.Now,
+                    CachThanhToan =  "COD" ,
+                    CachVanChuyen = "Grad",
+                    MaTrangThai = 0,
+                    GhiChu = model.GhiChu
+                };
+
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        db.Add(hoadon);
+                        db.SaveChanges();
+
+                        var cart = HttpContext.Session.Get<List<CartItem>>(MySetting.CART_KEY);
+                        if (cart == null || !cart.Any())
+                        {
+                            return Json(new { success = false, message = "Giỏ hàng của bạn trống." });
+                        }
+                        var cthd = new List<ChiTietHd>();
+                        foreach (var item in cart)
+                        {
+                            cthd.Add(new ChiTietHd
+                            {
+                                MaHd = hoadon.MaHd,
+                                SoLuong = item.SoLuong,
+                                DonGia = item.DonGia,
+                                MaHh = item.MaHh,
+                                GiamGia = 0
+                            });
+                        }
+                        db.AddRange(cthd);
+                        db.SaveChanges();
+                       // Xóa tất cả session
+HttpContext.Session.Clear();
+
+                        //HttpContext.Session.Set<List<CartItem>>(MySetting.CART_KEY, new List<CartItem>());
+
+                        transaction.Commit();
+
+                        return Json(new { success = true, message = "Đặt hàng thành công!" });
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        return Json(new { success = false, message = "Có lỗi xảy ra: " + ex.Message });
+                    }
+                }
+            }
+
+            // Nếu dữ liệu không hợp lệ
+            return Json(new { success = false, message = "Dữ liệu không hợp lệ." });
+        }
+
+
+
+
+
         public IActionResult AddToCart(int id, int quantity = 1)
         {
             var gioHang = Cart;
@@ -91,18 +195,45 @@ namespace EcomemerceASP_NET.Controllers
         public JsonResult checkCoupon([FromBody] JsonElement coupon)
         {
             var couponCode = coupon.GetProperty("couponCode").GetString();
-            var couponid = db.Vouchers.FirstOrDefault(v => v.MaVc ==couponCode);  
+            var couponid = db.Vouchers.FirstOrDefault(v => v.MaVc == couponCode);
 
             if (couponid != null)
             {
-                return Json(new { message = "ok" });
+                return Json(new { discount = couponid.GiamGia / 100.0 });  
             }
             else
             {
-                return Json(new { message = "invalid" });
+                return Json(new { discount = 0.0 });  
             }
         }
 
+
         #endregion
+        [Authorize]
+        [HttpGet]
+        public IActionResult GetCustomerInfo()
+        {
+            var customerId = HttpContext.User.Claims.SingleOrDefault(p => p.Type == MySetting.CLAIM_CUSTOMERID)?.Value;
+            if (string.IsNullOrEmpty(customerId))
+            {
+                return Json(new { success = false, message = "Không tìm thấy khách hàng." });
+            }
+
+            var khachHang = db.KhachHangs.SingleOrDefault(kh => kh.MaKh == customerId);
+            if (khachHang == null)
+            {
+                return Json(new { success = false, message = "Thông tin khách hàng không tồn tại." });
+            }
+
+            return Json(new
+            {
+                success = true,
+                hoTen = khachHang.HoTen,
+                diaChi = khachHang.DiaChi,
+                dienThoai = khachHang.DienThoai
+            });
+        }
+
+
     }
 }

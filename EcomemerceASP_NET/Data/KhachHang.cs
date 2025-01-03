@@ -28,4 +28,6 @@ public partial class KhachHang
     public int VaiTro { get; set; }
 
     public string? RandomKey { get; set; }
+
+    public virtual ICollection<HoaDon> HoaDons { get; set; } = new List<HoaDon>();
 }

@@ -37,9 +37,9 @@ public partial class EcommerceContext : DbContext
 
     public virtual DbSet<Voucher> Vouchers { get; set; }
 
-//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-//        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-3Q4PVDP;Initial Catalog=Ecommerce;Persist Security Info=True;User ID=sa;Password=levuhung123!;Trust Server Certificate=True");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-3Q4PVDP;Initial Catalog=Ecommerce;Persist Security Info=True;User ID=sa;Password=levuhung123!;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -135,6 +135,7 @@ public partial class EcommerceContext : DbContext
                 .HasMaxLength(50)
                 .HasDefaultValue("Nhanh");
             entity.Property(e => e.DiaChi).HasMaxLength(60);
+            entity.Property(e => e.DienThoai).HasMaxLength(24);
             entity.Property(e => e.GhiChu).HasMaxLength(50);
             entity.Property(e => e.HoTen).HasMaxLength(50);
             entity.Property(e => e.MaKh)
@@ -154,6 +155,11 @@ public partial class EcommerceContext : DbContext
             entity.Property(e => e.NgayGiao)
                 .HasDefaultValueSql("(((1)/(1))/(1900))")
                 .HasColumnType("datetime");
+
+            entity.HasOne(d => d.MaKhNavigation).WithMany(p => p.HoaDons)
+                .HasForeignKey(d => d.MaKh)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_HoaDon_KhachHang");
 
             entity.HasOne(d => d.MaTrangThaiNavigation).WithMany(p => p.HoaDons)
                 .HasForeignKey(d => d.MaTrangThai)
@@ -243,7 +249,7 @@ public partial class EcommerceContext : DbContext
 
         modelBuilder.Entity<Voucher>(entity =>
         {
-            entity.HasKey(e => e.MaVc).HasName("PK__Voucher__27251029B071A465");
+            entity.HasKey(e => e.MaVc).HasName("PK__Voucher__2725102906017914");
 
             entity.ToTable("Voucher");
 
