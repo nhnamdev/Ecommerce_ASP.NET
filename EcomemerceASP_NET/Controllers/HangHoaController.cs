@@ -2,6 +2,7 @@
 using EcomemerceASP_NET.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace EcomemerceASP_NET.Controllers
 {
@@ -55,7 +56,7 @@ namespace EcomemerceASP_NET.Controllers
         public IActionResult Detail(int id)
         {
             var data = db.HangHoas.Include(P => P.MaLoaiNavigation).SingleOrDefault(p => p.MaHh == id);
-               
+
             if (data == null)
             {
                 TempData["Massage"] = $"Không tìm thấy sản phẩm {id}";
@@ -77,5 +78,28 @@ namespace EcomemerceASP_NET.Controllers
             };
             return View(result);
         }
+
+        #region themGiamGia
+        public JsonResult themGiamGia([FromBody] JsonElement coupon)
+        {
+            var couponCode = coupon.GetProperty("couponCode").GetString();
+            if (couponCode != null)
+            {
+
+                var couponid = db.Vouchers.FirstOrDefault(v => v.MaVc == couponCode);
+                var hangHoas = db.HangHoas.AsQueryable();
+                if (couponid != null)
+                {
+                    foreach (var item in hangHoas)
+                    {
+                        item.GiamGia = couponid.GiamGia;
+                    }
+
+                    return Json(new { message = "ok" });
+                }
+            }
+            return Json(new { message = "invalid" });
+        }
+        #endregion
     }
 }
