@@ -3,7 +3,7 @@
     ViewData["Title"] = "Giỏ Hàng";
 }
 
-<h1>Index</h1>
+<h1>Giỏ Hàng</h1>
 <!-- Single Page Header start -->
 <div class="container-fluid page-header py-5">
     <h1 class="text-center text-white display-6">Cart</h1>
@@ -32,7 +32,6 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-
                         <tr>
                             <th scope="row">
                                 <div class="d-flex align-items-center">
@@ -50,13 +49,13 @@
                             <td>
                                 <div class="input-group quantity mt-4" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <button a" onclick="updateQuantity('@item.MaHh',@item.SoLuong-1)" class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                        <button onclick="updateQuantity('@item.MaHh', @item.SoLuong - 1)" class="btn btn-sm btn-minus rounded-circle bg-light border">
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
                                     <input type="text" class="form-control form-control-sm text-center border-0" value="@item.SoLuong">
                                     <div class="input-group-btn">
-                                        <button onclick="updateQuantity('@item.MaHh',@item.SoLuong+1)" class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                        <button onclick="updateQuantity('@item.MaHh', @item.SoLuong + 1)" class="btn btn-sm btn-plus rounded-circle bg-light border">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
@@ -70,11 +69,8 @@
                                     <i class="fa fa-times text-danger"></i>
                                 </a>
                             </td>
-
                         </tr>
                     }
-
-
                 </tbody>
             </table>
         </div>
@@ -82,6 +78,7 @@
             <input id="couponInput" type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
             <button onclick="applyCoupon()" class="btn border-secondary rounded-pill px-4 py-3 text-primary" type="button">Apply Coupon</button>
         </div>
+
         <div class="row g-4 justify-content-end">
             <div class="col-8"></div>
             <div class="col-sm-8 col-md-7 col-lg-6 col-xl-4">
@@ -105,14 +102,13 @@
                                 <p id="textCoupon" class="mb-0">Không</p>
                             </div>
                         </div>
-
                     </div>
                     <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
                         <h5 class="mb-0 ps-4 me-4">Total</h5>
-                        <p class="mb-0 pe-4">@Model.Sum(p => p.ThanhTien) VNĐ</p>
+                        <p class="mb-0 pe-4" id="totalAmountAfterDiscount">@Model.Sum(p => p.ThanhTien) VNĐ</p>
                     </div>
-                    <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">
-                        <a asp-controller="Home" asp-action="Checkout">Thanh Toán</a>
+                    <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" asp-action="Checkout" asp-controller="Cart">
+                        Thanh Toán
                     </button>
                 </div>
             </div>
@@ -120,6 +116,7 @@
     </div>
 </div>
 <!-- Cart Page End -->
+
 <script>
     function updateQuantity(productId, quantity) {
         if (quantity < 1) {
@@ -139,7 +136,6 @@
             }
         });
     }
-
     function applyCoupon() {
         const coupon = document.getElementById("couponInput").value;
 
@@ -147,16 +143,28 @@
             $.ajax({
                 url: "@Url.Action("checkCoupon", "Cart")",
                 type: 'POST',
-                contentType: "application/json", 
-                data: JSON.stringify({ couponCode: coupon }), 
+                contentType: "application/json",
+                data: JSON.stringify({ couponCode: coupon }),
                 success: function (response) {
-                    if (response.message === "ok") {
+                    if (response.discount > 0) {
                         sessionStorage.removeItem("tongThanhTien");
-                        var sumThanhTien = document.getElementById("thanhTien").value;
-                        
-                        var oldCoupon = sessionStorage.getItem("couponId");
-                        sessionStorage.removeItem("couponId");
-                        document.getElementById("textCoupon").innerText = coupon;
+
+                        var sumThanhTien = 0;
+                        var discount = response.discount;
+
+                        // Tính tổng tiền trước giảm giá
+                        document.querySelectorAll('#thanhTien').forEach(function (item) {
+                            sumThanhTien += parseFloat(item.innerText.replace(" VNĐ", "").trim());
+                        });
+
+                        // Tính số tiền giảm và tổng tiền sau giảm giá
+                        var discountAmount = sumThanhTien * discount;
+                        var finalAmount = sumThanhTien - discountAmount;
+
+                        // Cập nhật giá trị giảm giá và tổng tiền sau giảm giá
+                        document.getElementById("textCoupon").innerText = `Giảm giá: ${discount * 100}%`;
+                        document.getElementById("totalAmountAfterDiscount").innerText = finalAmount.toFixed(2) + " VNĐ";  // Hiển thị tổng tiền sau giảm giá
+
                         sessionStorage.setItem("couponId", coupon);
                     } else {
                         alert("Mã giảm giá không hợp lệ");
@@ -168,9 +176,8 @@
             });
         } else {
             document.getElementById("textCoupon").innerText = "Không";
+            document.getElementById("totalAmountAfterDiscount").innerText = "@Model.Sum(p => p.ThanhTien) VNĐ";  // Hiển thị tổng tiền gốc nếu không có mã giảm giá
         }
     }
-
-
 
 </script>

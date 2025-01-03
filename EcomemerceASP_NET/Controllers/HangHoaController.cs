@@ -101,5 +101,24 @@ namespace EcomemerceASP_NET.Controllers
             return Json(new { message = "invalid" });
         }
         #endregion
+
+
+        #region GetDiscount
+        [HttpPost]
+        public JsonResult GetDiscount(string couponCode)
+        {
+            var voucher = db.Vouchers.FirstOrDefault(v => v.MaVc == couponCode);
+
+            if (voucher != null)
+            {
+                return Json(new { success = true, discount = voucher.GiamGia });
+            }
+            else
+            {
+                return Json(new { success = false, message = "Mã giảm giá không hợp lệ." });
+            }
+        }
+
+        #endregion
     }
 }
