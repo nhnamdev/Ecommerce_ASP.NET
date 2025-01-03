@@ -71,9 +71,9 @@
             $("#your-code").on("input", function () {
                 const inputValue = $(this).val().trim();
                 if (inputValue) {
-                    $("#btnSpectial").show();
+                    $("#btnSpectial").fadeIn(2000);
                 } else {
-                    $("#btnSpectial").hide();
+                    $("#btnSpectial").fadeOut(2000);
                 }
             });
         });

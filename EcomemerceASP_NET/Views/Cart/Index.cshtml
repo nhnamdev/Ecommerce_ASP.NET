@@ -50,20 +50,20 @@
                             <td>
                                 <div class="input-group quantity mt-4" style="width: 100px;">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                        <button a" onclick="updateQuantity('@item.MaHh',@item.SoLuong-1)" class="btn btn-sm btn-minus rounded-circle bg-light border">
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
                                     <input type="text" class="form-control form-control-sm text-center border-0" value="@item.SoLuong">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                        <button onclick="updateQuantity('@item.MaHh',@item.SoLuong+1)" class="btn btn-sm btn-plus rounded-circle bg-light border">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <p class="mb-0 mt-4">@item.ThanhTien VNĐ</p>
+                                <p id="thanhTien" class="mb-0 mt-4">@item.ThanhTien VNĐ</p>
                             </td>
                             <td>
                                 <a asp-action="RemoveCart" asp-controller="Cart" asp-route-id="@item.MaHh" class="btn btn-md rounded-circle bg-light border mt-4">
@@ -79,8 +79,8 @@
             </table>
         </div>
         <div class="mt-5">
-            <input type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
-            <button class="btn border-secondary rounded-pill px-4 py-3 text-primary" type="button">Apply Coupon</button>
+            <input id="couponInput" type="text" class="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code">
+            <button onclick="applyCoupon()" class="btn border-secondary rounded-pill px-4 py-3 text-primary" type="button">Apply Coupon</button>
         </div>
         <div class="row g-4 justify-content-end">
             <div class="col-8"></div>
@@ -102,21 +102,75 @@
                         <div class="d-flex justify-content-between">
                             <h5 class="mb-0 me-4">Voucher</h5>
                             <div class="">
-                                <p class="mb-0">Không</p>
+                                <p id="textCoupon" class="mb-0">Không</p>
                             </div>
                         </div>
-                       
+
                     </div>
                     <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
                         <h5 class="mb-0 ps-4 me-4">Total</h5>
                         <p class="mb-0 pe-4">@Model.Sum(p => p.ThanhTien) VNĐ</p>
                     </div>
                     <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">
-                        <a asp-controller="Home" asp-action="Checkout">Thanh Toán</a>   
-                        </button>
+                        <a asp-controller="Home" asp-action="Checkout">Thanh Toán</a>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Cart Page End -->
+<script>
+    function updateQuantity(productId, quantity) {
+        if (quantity < 1) {
+            alert("Số lượng không hợp lệ!");
+            return;
+        }
+
+        $.ajax({
+            url: '/Cart/UpdateQuantity',
+            type: 'POST',
+            data: { productId: productId, quantity: quantity },
+            success: function () {
+                location.reload();
+            },
+            error: function (xhr) {
+                alert(xhr.responseText);
+            }
+        });
+    }
+
+    function applyCoupon() {
+        const coupon = document.getElementById("couponInput").value;
+
+        if (coupon != null && coupon !== "") {
+            $.ajax({
+                url: "@Url.Action("checkCoupon", "Cart")",
+                type: 'POST',
+                contentType: "application/json", 
+                data: JSON.stringify({ couponCode: coupon }), 
+                success: function (response) {
+                    if (response.message === "ok") {
+                        sessionStorage.removeItem("tongThanhTien");
+                        var sumThanhTien = document.getElementById("thanhTien").value;
+                        
+                        var oldCoupon = sessionStorage.getItem("couponId");
+                        sessionStorage.removeItem("couponId");
+                        document.getElementById("textCoupon").innerText = coupon;
+                        sessionStorage.setItem("couponId", coupon);
+                    } else {
+                        alert("Mã giảm giá không hợp lệ");
+                    }
+                },
+                error: function (xhr) {
+                    alert(xhr.responseText);
+                }
+            });
+        } else {
+            document.getElementById("textCoupon").innerText = "Không";
+        }
+    }
+
+
+
+</script>

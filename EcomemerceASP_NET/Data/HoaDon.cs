@@ -9,6 +9,8 @@ public partial class HoaDon
 
     public string MaKh { get; set; } = null!;
 
+    public string MaVc { get; set; } = null!;
+
     public DateTime NgayDat { get; set; }
 
     public DateTime? NgayCan { get; set; }
@@ -27,13 +29,11 @@ public partial class HoaDon
 
     public int MaTrangThai { get; set; }
 
-    public string? MaNv { get; set; }
-
     public string? GhiChu { get; set; }
 
     public virtual ICollection<ChiTietHd> ChiTietHds { get; set; } = new List<ChiTietHd>();
 
-    public virtual NhanVien? MaNvNavigation { get; set; }
-
     public virtual TrangThai MaTrangThaiNavigation { get; set; } = null!;
+
+    public virtual Voucher MaVcNavigation { get; set; } = null!;
 }
