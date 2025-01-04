@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wSl8I9Q7cjQ=",
+  "dgSpecHash": "Y1xgbSaHWy4=",
   "success": true,
-  "projectFilePath": "D:\\folderdotNet\\clone\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\EcomemerceASP_NET.csproj",
+  "projectFilePath": "D:\\folderdotNet\\clone2\\Ecommerce_ASP.NET\\EcomemerceASP_NET\\EcomemerceASP_NET.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

@@ -107,9 +107,9 @@
                         <h5 class="mb-0 ps-4 me-4">Total</h5>
                         <p class="mb-0 pe-4" id="totalAmountAfterDiscount">@Model.Sum(p => p.ThanhTien) VNĐ</p>
                     </div>
-                    <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" asp-action="Checkout" asp-controller="Cart">
+                    <a class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" asp-action="Checkout" asp-controller="Home">
                         Thanh Toán
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -152,18 +152,15 @@
                         var sumThanhTien = 0;
                         var discount = response.discount;
 
-                        // Tính tổng tiền trước giảm giá
                         document.querySelectorAll('#thanhTien').forEach(function (item) {
                             sumThanhTien += parseFloat(item.innerText.replace(" VNĐ", "").trim());
                         });
 
-                        // Tính số tiền giảm và tổng tiền sau giảm giá
                         var discountAmount = sumThanhTien * discount;
                         var finalAmount = sumThanhTien - discountAmount;
 
-                        // Cập nhật giá trị giảm giá và tổng tiền sau giảm giá
                         document.getElementById("textCoupon").innerText = `Giảm giá: ${discount * 100}%`;
-                        document.getElementById("totalAmountAfterDiscount").innerText = finalAmount.toFixed(2) + " VNĐ";  // Hiển thị tổng tiền sau giảm giá
+                        document.getElementById("totalAmountAfterDiscount").innerText = finalAmount.toFixed(2) + " VNĐ";  
 
                         sessionStorage.setItem("couponId", coupon);
                     } else {
@@ -176,7 +173,7 @@
             });
         } else {
             document.getElementById("textCoupon").innerText = "Không";
-            document.getElementById("totalAmountAfterDiscount").innerText = "@Model.Sum(p => p.ThanhTien) VNĐ";  // Hiển thị tổng tiền gốc nếu không có mã giảm giá
+            document.getElementById("totalAmountAfterDiscount").innerText = "@Model.Sum(p => p.ThanhTien) VNĐ";
         }
     }
 

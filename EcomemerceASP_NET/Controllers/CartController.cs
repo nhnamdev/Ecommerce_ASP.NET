@@ -4,6 +4,7 @@ using EcomemerceASP_NET.Helpers;
 using EcomemerceASP_NET.ViewModels;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace EcomemerceASP_NET.Controllers
 {
@@ -61,31 +62,46 @@ namespace EcomemerceASP_NET.Controllers
                     }
                 }
 
+               
                 var hoadon = new HoaDon
                 {
-                    MaKh = customerId,
-                    HoTen = model.Hoten ?? khachHang.HoTen,
-                    DiaChi = model.DiaChi ?? khachHang.DiaChi,
-                    DienThoai = model.DienThoai ?? khachHang.DienThoai,
+                    MaVc = "VC000",
+                    MaKh = string.IsNullOrEmpty(customerId) ? throw new ArgumentException("Mã khách hàng không hợp lệ.") : customerId,
+                    HoTen = string.IsNullOrEmpty(model.Hoten) ? khachHang.HoTen : model.Hoten,
+                    DiaChi = string.IsNullOrEmpty(model.DiaChi) ? khachHang.DiaChi : model.DiaChi,
+                    DienThoai = string.IsNullOrEmpty(model.DienThoai) ? khachHang.DienThoai : model.DienThoai,
                     NgayDat = DateTime.Now,
-                    CachThanhToan =  "COD" ,
+                    CachThanhToan = "COD",
                     CachVanChuyen = "Grad",
                     MaTrangThai = 0,
-                    GhiChu = model.GhiChu
+                    GhiChu = model.GhiChu ?? string.Empty
                 };
+
 
                 using (var transaction = db.Database.BeginTransaction())
                 {
                     try
                     {
-                        db.Add(hoadon);
-                        db.SaveChanges();
+                        db.Add(hoadon);  
+                        try
+                        {
+                            db.SaveChanges();
+                        }
+                        catch (DbUpdateException dbEx)
+                        {
+                            Console.WriteLine("Lỗi khi lưu dữ liệu: " + dbEx.InnerException?.Message);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Lỗi: " + ex.Message);
+                        }
 
                         var cart = HttpContext.Session.Get<List<CartItem>>(MySetting.CART_KEY);
                         if (cart == null || !cart.Any())
                         {
                             return Json(new { success = false, message = "Giỏ hàng của bạn trống." });
                         }
+
                         var cthd = new List<ChiTietHd>();
                         foreach (var item in cart)
                         {
@@ -98,26 +114,25 @@ namespace EcomemerceASP_NET.Controllers
                                 GiamGia = 0
                             });
                         }
-                        db.AddRange(cthd);
-                        db.SaveChanges();
-                       // Xóa tất cả session
-HttpContext.Session.Clear();
 
-                        //HttpContext.Session.Set<List<CartItem>>(MySetting.CART_KEY, new List<CartItem>());
+                        db.AddRange(cthd); 
+                        db.SaveChanges(); 
 
-                        transaction.Commit();
+                        HttpContext.Session.Set<List<CartItem>>(MySetting.CART_KEY, new List<CartItem>());
+                        HttpContext.Session.Clear();
 
+                        transaction.Commit(); 
                         return Json(new { success = true, message = "Đặt hàng thành công!" });
                     }
                     catch (Exception ex)
                     {
-                        transaction.Rollback();
+                        transaction.Rollback();  
                         return Json(new { success = false, message = "Có lỗi xảy ra: " + ex.Message });
                     }
                 }
+
             }
 
-            // Nếu dữ liệu không hợp lệ
             return Json(new { success = false, message = "Dữ liệu không hợp lệ." });
         }
 
@@ -199,11 +214,11 @@ HttpContext.Session.Clear();
 
             if (couponid != null)
             {
-                return Json(new { discount = couponid.GiamGia / 100.0 });  
+                return Json(new { discount = couponid.GiamGia / 100.0 });
             }
             else
             {
-                return Json(new { discount = 0.0 });  
+                return Json(new { discount = 0.0 });
             }
         }
 
