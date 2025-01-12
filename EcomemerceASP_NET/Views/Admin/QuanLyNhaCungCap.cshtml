@@ -40,12 +40,17 @@
                                         <td>@supplier.DiaChi</td>
                                         <td>
                                             <div class="form-button-action">
-                                                <button type="button" data-bs-toggle="tooltip" title="Edit" class="btn btn-link btn-primary btn-lg">
+                                                <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editSupplierModal"
+                                                        data-id="@supplier.MaNcc" data-companyname="@supplier.TenCongTy" data-email="@supplier.Email"
+                                                        data-phone="@supplier.DienThoai" data-address="@supplier.DiaChi">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button type="button" data-bs-toggle="tooltip" title="Remove" class="btn btn-link btn-danger">
+
+                                                <button type="button" class="btn btn-link btn-danger" data-bs-toggle="modal" data-bs-target="#deleteSupplierModal"
+                                                        data-id="@supplier.MaNcc">
                                                     <i class="fa fa-times"></i>
                                                 </button>
+
                                             </div>
                                         </td>
                                     </tr>
@@ -57,23 +62,22 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal to add new supplier -->
+<!-- Modal to add new supplier -->
     <div class="modal fade" id="addSupplierModal" tabindex="-1" aria-labelledby="addSupplierModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header justify-content-center">
-                    <h5 class="modal-title" id="addSupplierModalLabel">Add New Supplier</h5>
+                    <h5 class="modal-title" id="addSupplierModalLabel">Thêm nhà cung cấp</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="@Url.Action("AddSupplier", "Admin")">
+                    <form method="post" action="@Url.Action("", "Admin")">
                         <div class="mb-3">
-                            <label for="supplierId" class="form-label">Supplier ID</label>
+                            <label for="supplierId" class="form-label">Mã nhà cung cấp</label>
                             <input type="text" class="form-control" id="supplierId" name="SupplierId" required />
                         </div>
                         <div class="mb-3">
-                            <label for="companyName" class="form-label">Company Name</label>
+                            <label for="companyName" class="form-label">Tên công ty</label>
                             <input type="text" class="form-control" id="companyName" name="CompanyName" required />
                         </div>
                         <div class="mb-3">
@@ -81,15 +85,70 @@
                             <input type="email" class="form-control" id="email" name="Email" required />
                         </div>
                         <div class="mb-3">
-                            <label for="phone" class="form-label">Phone</label>
+                            <label for="phone" class="form-label">Điện thoại</label>
                             <input type="tel" class="form-control" id="phone" name="Phone" required />
                         </div>
                         <div class="mb-3">
-                            <label for="address" class="form-label">Address</label>
+                            <label for="address" class="form-label">Địa chỉ</label>
                             <input type="text" class="form-control" id="address" name="Address" required />
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Add Supplier</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editSupplierModal" tabindex="-1" aria-labelledby="editSupplierModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title" id="editSupplierModalLabel">Chỉnh sửa nhà cung cấp</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/Admin/UpdateNhaCungCap">
+                        <input type="hidden" id="editSupplierId" name="MaNcc" />
+                        <div class="mb-3">
+                            <label for="editCompanyName" class="form-label">Tên công ty</label>
+                            <input type="text" class="form-control" id="editCompanyName" name="TenCongTy" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail" name="Email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPhone" class="form-label">Điện thoại</label>
+                            <input type="tel" class="form-control" id="editPhone" name="DienThoai" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="editAddress" class="form-label">Địa chỉ</label>
+                            <input type="text" class="form-control" id="editAddress" name="DiaChi" required />
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Cập nhật nhà cung cấp</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="deleteSupplierModal" tabindex="-1" aria-labelledby="deleteSupplierModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteSupplierModalLabel">Xóa nhà cung cấp</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn xóa nhà cung cấp này không?</p>
+                    <form method="post" action="/Admin/DeleteNhaCungCap">
+                        <input type="hidden" id="deleteSupplierId" name="maNhaCungCap" />
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-danger">Xóa</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                         </div>
                     </form>
                 </div>
@@ -127,6 +186,34 @@
                 info: true
             });
         });
+        document.addEventListener('DOMContentLoaded', function () {
+            const editModal = document.getElementById('editSupplierModal');
+            editModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const id = button.getAttribute('data-id');
+                const companyName = button.getAttribute('data-companyname');
+                const email = button.getAttribute('data-email');
+                const phone = button.getAttribute('data-phone');
+                const address = button.getAttribute('data-address');
+
+                document.getElementById('editSupplierId').value = id;
+                document.getElementById('editCompanyName').value = companyName;
+                document.getElementById('editEmail').value = email;
+                document.getElementById('editPhone').value = phone;
+                document.getElementById('editAddress').value = address;
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const deleteModal = document.getElementById('deleteSupplierModal');
+            deleteModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const id = button.getAttribute('data-id');
+                document.getElementById('deleteSupplierId').value = id;
+            });
+        });
+
+
 
     </script>
 </div>

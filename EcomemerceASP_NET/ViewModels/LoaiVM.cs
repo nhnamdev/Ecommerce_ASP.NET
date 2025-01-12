@@ -1,4 +1,6 @@
-﻿namespace EcomemerceASP_NET.ViewModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EcomemerceASP_NET.ViewModels
 {
     public class LoaiVM
     {

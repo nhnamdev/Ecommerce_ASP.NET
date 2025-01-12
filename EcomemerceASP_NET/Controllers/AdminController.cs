@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using EcomemerceASP_NET.Models;
-
-using System.Diagnostics;
-using EcomemerceASP_NET.Data;
+﻿using EcomemerceASP_NET.Data;
 using EcomemerceASP_NET.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EcomemerceASP_NET.Controllers
@@ -50,30 +47,55 @@ namespace EcomemerceASP_NET.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateType(int MaLoai, string type, string moTa)
+        public JsonResult AddType(string Name, string notes)
         {
-            var loai = db.Loais.FirstOrDefault(p => p.MaLoai == MaLoai);
-            if (loai == null)
+            if (string.IsNullOrWhiteSpace(Name))
             {
-                return NotFound("Không tìm thấy loại cần cập nhật.");
+                return Json(new { success = false, message = "Tên loại không được để trống." });
             }
-            loai.TenLoai = type;
-            loai.MoTa = moTa;
+
+            var loai = new Loai
+            {
+                TenLoai = Name,
+                MoTa = notes
+            };
+
+            db.Loais.Add(loai);
             db.SaveChanges();
-            return RedirectToAction("ManageType");
+
+            return Json(new { success = true, message = "Thêm loại thành công." });
         }
 
         [HttpPost]
-        public IActionResult DeleteType(int MaLoai)
+        public JsonResult UpdateType(int MaLoai, string type, string moTa)
         {
             var loai = db.Loais.FirstOrDefault(p => p.MaLoai == MaLoai);
             if (loai == null)
             {
-                return NotFound("Không tìm thấy loại cần xóa.");
+                return Json(new { success = false, message = "Không tìm thấy loại cần cập nhật." });
             }
+
+            loai.TenLoai = type;
+            loai.MoTa = moTa;
+            db.SaveChanges();
+
+            return Json(new { success = true, message = "Cập nhật loại thành công." });
+        }
+
+
+        [HttpPost]
+        public JsonResult DeleteType(int MaLoai)
+        {
+            var loai = db.Loais.FirstOrDefault(p => p.MaLoai == MaLoai);
+            if (loai == null)
+            {
+                return Json(new { success = false, message = "Không tìm thấy loại cần xóa." });
+            }
+
             db.Loais.Remove(loai);
             db.SaveChanges();
-            return RedirectToAction("ManageType");
+
+            return Json(new { success = true, message = "Loại đã được xóa thành công." });
         }
 
         public IActionResult ManageProduct()
@@ -130,7 +152,7 @@ namespace EcomemerceASP_NET.Controllers
             }).ToList();
             return View(re);
         }
-        public  IActionResult QuanLyVoucher()
+        public IActionResult QuanLyVoucher()
         {
             ViewBag.Title = "Quan Ly Voucher";
             var vouchers = db.Vouchers.AsQueryable();
@@ -140,6 +162,76 @@ namespace EcomemerceASP_NET.Controllers
                 GiamGia = v.GiamGia
             }).ToList();
             return View(re);
+        }
+        public IActionResult QuanLyContact()
+        {
+            ViewBag.Title = "Quan Ly Contact";
+            var contacts = db.Contacts.AsQueryable();
+            var re = contacts.Select(v => new ContactVM
+            {
+                Id = v.Id,
+                HoTen = v.HoTen,
+                Email = v.Email,
+                NoiDung = v.NoiDung
+            }).ToList();
+            return View(re);
+        }
+        [HttpPost]
+        public IActionResult UpdateNhaCungCap(string maNcc, string TenCongTy, string Email, string DienThoai, string DiaChi, string moTa)
+        {
+            var nhacungcap = db.NhaCungCaps.FirstOrDefault(p => p.MaNcc == maNcc);
+            if (nhacungcap == null)
+            {
+                return NotFound("Không tìm thấy loại cần cập nhật.");
+            }
+            nhacungcap.MaNcc = maNcc;
+            nhacungcap.TenCongTy = TenCongTy;
+            nhacungcap.Email = Email;
+            nhacungcap.DienThoai = DienThoai;
+            nhacungcap.DiaChi = DiaChi;
+            nhacungcap.MoTa = moTa;
+            db.SaveChanges();
+            return RedirectToAction("QuanLyNhaCungCap");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteNhaCungCap(string maNhaCungCap)
+        {
+            var nhacc = db.NhaCungCaps.FirstOrDefault(p => p.MaNcc == maNhaCungCap);
+            if (nhacc == null)
+            {
+                return NotFound("Không tìm thấy loại cần xóa.");
+            }
+            db.NhaCungCaps.Remove(nhacc);
+            db.SaveChanges();
+            return RedirectToAction("QuanLyNhaCungCap");
+        }
+
+        [HttpPost]
+        public IActionResult UpdateVoucher(string maVoucher, int giamGia)
+        {
+            var voucher = db.Vouchers.FirstOrDefault(v => v.MaVc == maVoucher);
+            if (voucher == null)
+            {
+                return NotFound("Không tìm thấy loại cần cập nhật.");
+            }
+            voucher.MaVc = maVoucher;
+            voucher.GiamGia = giamGia;
+            db.SaveChanges();
+            return RedirectToAction("QuanLyVoucher");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteVoucher(string maVoucher)
+        {
+            var voucher = db.Vouchers.FirstOrDefault(v => v.MaVc == maVoucher);
+            if (voucher == null)
+            {
+                return NotFound("Không tìm thấy loại cần xóa.");
+            }
+            db.Vouchers.Remove(voucher);
+            db.SaveChanges();
+            return RedirectToAction("QuanLyVoucher");
         }
     }
 }

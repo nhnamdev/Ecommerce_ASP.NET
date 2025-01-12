@@ -37,13 +37,15 @@
                                             <td>@voucher.GiamGia</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <button type="button" data-bs-toggle="tooltip" title="Edit Voucher" class="btn btn-link btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editVoucherModal"
+                                                            data-id="@voucher.MaVc"
+                                                            data-discount="@voucher.GiamGia">
                                                         <i class="fa fa-edit"></i>
                                                     </button>
-                                                    <button type="button" data-bs-toggle="tooltip" title="Remove Voucher" class="btn btn-link btn-danger">
+                                                    <button type="button" class="btn btn-link btn-danger" data-bs-toggle="modal" data-bs-target="#deleteVoucherModal"
+                                                            data-id="@voucher.MaVc">
                                                         <i class="fa fa-times"></i>
-                                                    </button>
-                                                </div>
+                                                    </button></div>
                                             </td>
                                         </tr>
                                     }
@@ -82,6 +84,55 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal to Edit Voucher -->
+    <div class="modal fade" id="editVoucherModal" tabindex="-1" aria-labelledby="editVoucherModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title ms-auto" id="editVoucherModalLabel">Edit Voucher</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="@Url.Action("UpdateVoucher", "Admin")">
+                        <div class="mb-3">
+                            <label for="voucherCode" class="form-label">Mã Voucher</label>
+                            <input type="text" class="form-control" id="editVoucherCode" name="MaVoucher" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="voucherDiscount" class="form-label">Giảm Giá (%)</label><input type="number" class="form-control" id="editVoucherDiscount" name="GiamGia" min="1" max="100" required />
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Cập Nhật Voucher</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal to Delete Voucher -->
+    <div class="modal fade" id="deleteVoucherModal" tabindex="-1" aria-labelledby="deleteVoucherModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title ms-auto" id="deleteVoucherModalLabel">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="@Url.Action("DeleteVoucher", "Admin")">
+                        <input type="hidden" id="deleteVoucherId" name="MaVoucher" />
+                        <p>Bạn chắc chắn muốn xóa voucher này?</p>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-danger">Xóa</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <!-- DataTables Bootstrap Integration -->
@@ -111,6 +162,28 @@
                 paging: true,
                 ordering: true,
                 info: true
+            });
+        });
+        // Edit Voucher Modal
+        document.addEventListener('DOMContentLoaded', function () {
+            const editModal = document.getElementById('editVoucherModal');
+            editModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const id = button.getAttribute('data-id');
+                const discount = button.getAttribute('data-discount');
+
+                document.getElementById('editVoucherCode').value = id;
+                document.getElementById('editVoucherDiscount').value = discount;
+            });
+        });
+
+        // Delete Voucher Modal
+        document.addEventListener('DOMContentLoaded', function () {
+            const deleteModal = document.getElementById('deleteVoucherModal');
+            deleteModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const id = button.getAttribute('data-id');
+                document.getElementById('deleteVoucherId').value = id;
             });
         });
     </script>

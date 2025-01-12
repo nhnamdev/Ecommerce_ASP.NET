@@ -15,7 +15,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+             <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                 </div><div class="row">
                     <div class="col-sm-12">
                         <table id="basic-datatables" class="table table-striped table-hover">
@@ -39,19 +39,15 @@
                                                         data-id="@item.MaLoai" data-type="@item.TenLoai" data-mota="@item.MoTa">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <form method="post" action="/Admin/DeleteType" style="display:inline;">
-                                                    <input type="hidden" name="MaLoai" value="@item.MaLoai" />
-                                                    <button type="submit" class="btn btn-link btn-danger btn-sm">
+                                                    <button class="btn btn-link btn-danger btn-sm btn-delete" data-id="@item.MaLoai">
                                                         <i class="fa fa-times"></i>
                                                     </button>
-                                                </form>
                                             </td>
                                         </tr>
                                     }
                                 }
                             </tbody>
                         </table>
-
                         <div class="modal fade" id="editRowModal" tabindex="-1" aria-labelledby="editRowModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -61,7 +57,7 @@
                                     </div>
 
                                     <div class="modal-body">
-                                        <form method="post" action="/Admin/UpdateType">
+                                        <form id="editTypeForm">
                                             <input type="hidden" id="editTypeId" name="MaLoai" />
                                             <div class="mb-3">
                                                 <label for="editType" class="form-label">Loại</label>
@@ -79,49 +75,219 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addRowModal" tabindex="-1" aria-labelledby="addRowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title ms-auto" id="addRowModalLabel">Add New Type</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
-                        <!-- DataTables CSS -->
-                        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-                        <!-- DataTables Bootstrap Integration -->
-                        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-                        <!-- jQuery -->
-                        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-                        <!-- DataTables JS -->
-                        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-                        <!-- DataTables Bootstrap Integration -->
-                        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-                        <script>
-                                $(document).ready(function () {
-                                    $('#basic-datatables').DataTable({
-                                        language: {
-                                        search: "Tìm kiếm:",
-                                        lengthMenu: "Hiển thị _MENU_ dòng",
-                                        zeroRecords: "Không tìm thấy kết quả",
-                                        info: "",
-                                        infoFiltered: "",
-                                            paginate: {
-                                            first: "&#60;&#60;",
-                                            last: "&#62;&#62;",
-                                            next: "&#8594;",
-                                            previous: "&#8592;"
-                                            }
-                                        },
-                                        paging: true,   
-                                        ordering: true, 
-                                        info: true      
-                                    });
-                                });
+                <div class="modal-body">
+                    <form id="addTypeForm">
+                        <div class="mb-3">
+                            <label for="TypeName" class="form-label">Tên loại</label>
+                            <input type="text" class="form-control" id="TypeName" name="Name" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="TypeDescription" class="form-label">Mô tả</label>
+                            <textarea id="TypeDescription" name="notes" rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Thêm loại</button>
+                        </div>
+                    </form>
 
-                            document.addEventListener('DOMContentLoaded', function () {
-                                const editModal = document.getElementById('editRowModal');
-                                editModal.addEventListener('show.bs.modal', function (event) {
-                                    const button = event.relatedTarget;
-                                    const id = button.getAttribute('data-id');
-                                    const type = button.getAttribute('data-type');
-                                    const moTa = button.getAttribute('data-mota');
-                                    document.getElementById('editTypeId').value = id;
-                                    document.getElementById('editType').value = type;
-                                    document.getElementById('editDescription').value = moTa;
-                                });
+                </div>
+            </div>
+        </div>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <!-- DataTables Bootstrap Integration -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <!-- DataTables Bootstrap Integration -->
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+        <!-- SweetAlert2 CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.min.css" rel="stylesheet">
+
+        <!-- SweetAlert2 JS -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.all.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#basic-datatables').DataTable({
+                language: {
+                    search: "Tìm kiếm:",
+                    lengthMenu: "Hiển thị _MENU_ dòng",
+                    zeroRecords: "Không tìm thấy kết quả",
+                    info: "",
+                    infoFiltered: "",
+                    paginate: {
+                        first: "&#60;&#60;",
+                        last: "&#62;&#62;",
+                        next: "&#8594;",
+                        previous: "&#8592;"
+                    }
+                },
+                paging: true,
+                ordering: true,
+                info: true
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const editModal = document.getElementById('editRowModal');
+            editModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const id = button.getAttribute('data-id');
+                const type = button.getAttribute('data-type');
+                const moTa = button.getAttribute('data-mota');
+                document.getElementById('editTypeId').value = id;
+                document.getElementById('editType').value = type;
+                document.getElementById('editDescription').value = moTa;
+            });
+        });
+
+            $(document).ready(function () {
+                $('.btn-delete').click(function (e) {
+                    e.preventDefault();
+                    const maLoai = $(this).data('id');
+                    const row = $(this).closest('tr');
+
+                    Swal.fire({
+                        title: 'Bạn có chắc không?',
+                        text: "Bạn sẽ không thể khôi phục lại loại này!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Đúng, xóa nó!',
+                        cancelButtonText: 'Hủy bỏ'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                url: '/Admin/DeleteType', 
+                                type: 'POST',
+                                data: { MaLoai: maLoai },
+                                success: function (response) {
+                                    if (response.success) {
+                                        Swal.fire(
+                                            'Đã xóa!',
+                                            response.message, 
+                                            'success'
+                                        );
+                                        row.remove();
+                                    } else {
+                                        Swal.fire(
+                                            'Lỗi!',
+                                            response.message,  
+                                            'error'
+                                        );
+                                    }
+                                },
+                                error: function () {
+                                    Swal.fire(
+                                        'Lỗi!',
+                                        'Có lỗi xảy ra khi xóa!',
+                                        'error'
+                                    );
+                                }
                             });
-                        </script>
+                        }
+                    });
+                });
+            });
+
+            // Xử lý sự kiện thêm loại
+            $('#addTypeForm').submit(function (e) {
+                e.preventDefault();
+
+                const name = $('#TypeName').val();
+                const notes = $('#TypeDescription').val();
+
+                $.ajax({
+                    url: '/Admin/AddType',
+                    type: 'POST',
+                    data: { Name: name, notes: notes },
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire({
+                                title: 'Thành công!',
+                                text: response.message,  // Thông báo từ controller
+                                icon: 'success'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    location.reload();  // Reload lại trang khi người dùng nhấn "OK"
+                                }
+                            });
+                        } else {
+                            Swal.fire(
+                                'Lỗi!',
+                                response.message,
+                                'error'
+                            );
+                        }
+                    },
+                    error: function () {
+                        Swal.fire(
+                            'Lỗi!',
+                            'Có lỗi xảy ra khi thêm loại!',
+                            'error'
+                        );
+                    }
+                });
+            });
+            // Xử lý sự kiện cập nhật loại
+            $('#editTypeForm').submit(function (e) {
+                e.preventDefault();
+
+                const maLoai = $('#editTypeId').val();
+                const type = $('#editType').val();
+                const moTa = $('#editDescription').val();
+
+                $.ajax({
+                    url: '/Admin/UpdateType',
+                    type: 'POST',
+                    data: { MaLoai: maLoai, type: type, moTa: moTa },
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire({
+                                title: 'Thành công!',
+                                text: response.message,  // Thông báo từ controller
+                                icon: 'success'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    location.reload();  // Reload lại trang khi người dùng nhấn "OK"
+                                }
+                            });
+                        } else {
+                            Swal.fire(
+                                'Lỗi!',
+                                response.message,
+                                'error'
+                            );
+                        }
+                    },
+                    error: function () {
+                        Swal.fire(
+                            'Lỗi!',
+                            'Có lỗi xảy ra khi cập nhật loại!',
+                            'error'
+                        );
+                    }
+                });
+            });
+
+    </script>
+</div>
+                        
+

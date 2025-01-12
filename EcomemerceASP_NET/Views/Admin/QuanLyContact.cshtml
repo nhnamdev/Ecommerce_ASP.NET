@@ -1,0 +1,98 @@
+﻿@model IEnumerable<EcomemerceASP_NET.ViewModels.ContactVM>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-start align-items-center mt-2 w-100">
+                <h4 class="card-title ms-auto">Quản lý liên hệ</h4>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="contact-table-wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                    <table id="ql_contact" class="display table table-striped table-hover dataTable" role="grid">
+                        <thead>
+                            <tr role="row">
+                                <th>ID</th>
+                                <th>Họ Tên</th>
+                                <th>Email</th>
+                                <th>Nội Dung</th>
+                                <th>Thao Tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null && Model.Any())
+
+
+
+                            {
+
+
+
+                                foreach (var contact in Model)
+
+
+
+                                {
+                                    <tr role="row" class="odd">
+                                        <td>@contact.Id</td>
+                                        <td>@contact.HoTen</td>
+                                        <td>@contact.Email</td>
+                                        <td>@contact.NoiDung</td>
+                                        <td>
+                                            <div class="form-button-action">
+                                                <button type="button" data-bs-toggle="tooltip" title="Edit" class="btn btn-link btn-primary btn-lg">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" data-bs-toggle="tooltip" title="Remove" class="btn btn-link btn-danger">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <!-- DataTables Bootstrap Integration -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <!-- DataTables Bootstrap Integration -->
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#ql_contact').DataTable({
+                language: {
+                    search: "Tìm kiếm:",
+                    lengthMenu: "Hiển thị _MENU_ dòng",
+                    zeroRecords: "Không tìm thấy kết quả",
+                    info: "",
+                    infoFiltered: "",
+                        paginate: {
+                            first: "&#60;&#60;",
+                            last: "&#62;&#62;",
+                            next: "&#8594;",
+                            previous: "&#8592;"
+                        }
+                    },
+                    paging: true,
+                    ordering: true,
+                    info: true
+                });
+        });
+
+    </script>
+</div>
