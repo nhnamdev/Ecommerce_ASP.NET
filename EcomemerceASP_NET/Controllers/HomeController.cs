@@ -44,6 +44,26 @@ namespace EcomemerceASP_NET.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [Route("/Contact")]
+        public IActionResult Contact(ContactVM contactVM)
+        {
+            if (ModelState.IsValid)
+            {
+                var contact = new Contact
+                {
+                    HoTen = contactVM.HoTen,
+                    Email = contactVM.Email,
+                    NoiDung = contactVM.NoiDung
+                };
+
+                db.Contacts.Add(contact);
+                db.SaveChanges();
+                return RedirectToAction("Contact");
+            }
+
+            return View(contactVM);
+        }
         [Route("/Checkout")]
         public IActionResult Checkout()
         {

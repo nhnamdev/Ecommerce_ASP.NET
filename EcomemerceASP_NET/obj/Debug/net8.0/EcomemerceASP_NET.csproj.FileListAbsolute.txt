@@ -2907,3 +2907,8 @@ D:\folderdotNet\clone2\Ecommerce_ASP.NET\EcomemerceASP_NET\obj\Debug\net8.0\refi
 D:\folderdotNet\clone2\Ecommerce_ASP.NET\EcomemerceASP_NET\obj\Debug\net8.0\EcomemerceASP_NET.pdb
 D:\folderdotNet\clone2\Ecommerce_ASP.NET\EcomemerceASP_NET\obj\Debug\net8.0\EcomemerceASP_NET.genruntimeconfig.cache
 D:\folderdotNet\clone2\Ecommerce_ASP.NET\EcomemerceASP_NET\obj\Debug\net8.0\ref\EcomemerceASP_NET.dll
+E:\Ecommerce_ASP.NET\EcomemerceASP_NET\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+E:\Ecommerce_ASP.NET\EcomemerceASP_NET\bin\Debug\net8.0\MailKit.dll
+E:\Ecommerce_ASP.NET\EcomemerceASP_NET\bin\Debug\net8.0\MimeKit.dll
+E:\Ecommerce_ASP.NET\EcomemerceASP_NET\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+E:\Ecommerce_ASP.NET\EcomemerceASP_NET\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

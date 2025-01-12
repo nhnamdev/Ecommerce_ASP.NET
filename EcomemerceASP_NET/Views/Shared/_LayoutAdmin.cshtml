@@ -53,13 +53,9 @@
                     <ul class="nav nav-secondary">
                         <li class="nav-item active">
                             <a asp-controller="Admin" asp-action="Index">
-                            
-                               
                                 <i class="fas fa-home"></i>
                                 <p>Dashboard</p>
-                               
                             </a>
-                         
                         </li>
                         <li class="nav-section">
                             <span class="sidebar-mini-icon">
@@ -91,8 +87,18 @@
                                 <p>Payment History</p>
                             </a>
                         </li>
-
-                  
+                        <li class="nav-item">
+                            <a asp-controller="Admin" asp-action="QuanLyNhaCungCap">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Quản Lý Nhà Cung Cấp</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Admin" asp-action="QuanLyVoucher">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Quản Lý Voucher</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -157,7 +163,6 @@
                 @RenderBody()
         </div>
 
-            @await Html.PartialAsync("_FooterAdmin")
     </div>
 
     <!-- Custom template | don't include it in your project! -->

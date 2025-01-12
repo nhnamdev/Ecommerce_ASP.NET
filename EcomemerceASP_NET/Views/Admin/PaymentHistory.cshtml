@@ -13,15 +13,10 @@
         <div class="card-body">
             <div class="table-responsive">
                 <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <label>Tìm kiếm: <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="basic-datatables"></label>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
+                        <table id="ql-lichSuThanhToan" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
                             <thead>
                                 <tr role="row">
                                     <th class="sorting" tabindex="0" aria-controls="basic-datatables" rowspan="1" colspan="1">Mã hóa đơn</th>
@@ -58,4 +53,36 @@
             </div>
         </div>
     </div>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <!-- DataTables Bootstrap Integration -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <!-- DataTables Bootstrap Integration -->
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#ql-lichSuThanhToan').DataTable({
+                language: {
+                    search: "Tìm kiếm:",
+                    lengthMenu: "Hiển thị _MENU_ dòng",
+                    zeroRecords: "Không tìm thấy kết quả",
+                    info: "",
+                    infoFiltered: "",
+                    paginate: {
+                        first: "&#60;&#60;",
+                        last: "&#62;&#62;",
+                        next: "&#8594;",
+                        previous: "&#8592;"
+                    }
+                },
+                paging: true,
+                ordering: true,
+                info: true
+            });
+        });
+    </script>
 </div>

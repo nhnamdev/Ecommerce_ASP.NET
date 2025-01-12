@@ -33,52 +33,79 @@ namespace EcomemerceASP_NET.Controllers
             };
             return View(model);
         }
+
         public IActionResult ManageType()
         {
             ViewBag.Title = "Type";
 
+            var Types = db.Loais.AsQueryable();
+            var result = Types.Select(p => new LoaiVM
+            {
+                TenLoai = p.TenLoai,
+                MoTa = p.MoTa,
+                MaLoai = p.MaLoai
+            }).ToList();
 
-
-            return View();
+            return View(result);
         }
+
+        [HttpPost]
+        public IActionResult UpdateType(int MaLoai, string type, string moTa)
+        {
+            var loai = db.Loais.FirstOrDefault(p => p.MaLoai == MaLoai);
+            if (loai == null)
+            {
+                return NotFound("Không tìm thấy loại cần cập nhật.");
+            }
+            loai.TenLoai = type;
+            loai.MoTa = moTa;
+            db.SaveChanges();
+            return RedirectToAction("ManageType");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteType(int MaLoai)
+        {
+            var loai = db.Loais.FirstOrDefault(p => p.MaLoai == MaLoai);
+            if (loai == null)
+            {
+                return NotFound("Không tìm thấy loại cần xóa.");
+            }
+            db.Loais.Remove(loai);
+            db.SaveChanges();
+            return RedirectToAction("ManageType");
+        }
+
         public IActionResult ManageProduct()
         {
             ViewBag.Title = "Product";
-
-
-
-            return View();
+            var Products = db.HangHoas.AsQueryable();
+            var result = Products.Include(p => p.MaLoaiNavigation).Select(p => new ProductVM
+            {
+                TenHH = p.TenHh,
+                TenLoai = p.MaLoaiNavigation.TenLoai,
+                DonGia = p.DonGia,
+                Hinh = p.Hinh,
+            }).ToList();
+            return View(result);
         }
         public IActionResult ManageUser()
         {
             ViewBag.Title = "User";
-
-
             var khachHangs = db.KhachHangs.AsQueryable();
-
-
-
             var result = khachHangs.Select(p => new KhachHangVM
             {
-                MaKh = p.MaKh,
-                MatKhau = p.MatKhau,
                 HoTen = p.HoTen,
-                GioiTinh = p.GioiTinh,
+                NgaySinh = p.NgaySinh,
                 DiaChi = p.DiaChi,
                 DienThoai = p.DienThoai,
-                Email = p.Email,
-                Hinh = p.Hinh,
-                HieuLuc = p.HieuLuc,
-                VaiTro = p.VaiTro
-            });
+            }).ToList();
             return View(result);
         }
 
         public IActionResult PaymentHistory()
         {
-
             ViewBag.Title = "Payment history";
-
             var HoaDons = db.HoaDons.AsQueryable();
             var result = HoaDons.Include(hd => hd.ChiTietHds).Select(hd => new HoaDonVM
             {
@@ -86,11 +113,33 @@ namespace EcomemerceASP_NET.Controllers
                 HoTen = hd.HoTen,
                 DonGia = hd.ChiTietHds.FirstOrDefault().DonGia,
                 SoLuong = hd.ChiTietHds.FirstOrDefault().SoLuong
-
             }).ToList();
-
-
             return View(result);
+        }
+        public IActionResult QuanLyNhaCungCap()
+        {
+            ViewBag.Title = "Quan Ly Nha Cung Cap";
+            var nhaCungCaps = db.NhaCungCaps.AsQueryable();
+            var re = nhaCungCaps.Select(n => new NhaCungCapVM
+            {
+                MaNcc = n.MaNcc,
+                TenCongTy = n.TenCongTy,
+                Email = n.Email,
+                DienThoai = n.DienThoai,
+                DiaChi = n.DiaChi
+            }).ToList();
+            return View(re);
+        }
+        public  IActionResult QuanLyVoucher()
+        {
+            ViewBag.Title = "Quan Ly Voucher";
+            var vouchers = db.Vouchers.AsQueryable();
+            var re = vouchers.Select(v => new VoucherVM
+            {
+                MaVc = v.MaVc,
+                GiamGia = v.GiamGia
+            }).ToList();
+            return View(re);
         }
     }
 }

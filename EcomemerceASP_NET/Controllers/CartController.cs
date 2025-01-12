@@ -69,7 +69,7 @@ namespace EcomemerceASP_NET.Controllers
                     MaKh = string.IsNullOrEmpty(customerId) ? throw new ArgumentException("Mã khách hàng không hợp lệ.") : customerId,
                     HoTen = string.IsNullOrEmpty(model.Hoten) ? khachHang.HoTen : model.Hoten,
                     DiaChi = string.IsNullOrEmpty(model.DiaChi) ? khachHang.DiaChi : model.DiaChi,
-                    DienThoai = string.IsNullOrEmpty(model.DienThoai) ? khachHang.DienThoai : model.DienThoai,
+                    //DienThoai = string.IsNullOrEmpty(model.DienThoai) ? khachHang.DienThoai : model.DienThoai,
                     NgayDat = DateTime.Now,
                     CachThanhToan = "COD",
                     CachVanChuyen = "Grad",
