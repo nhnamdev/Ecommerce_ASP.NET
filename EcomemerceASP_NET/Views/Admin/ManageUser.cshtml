@@ -14,13 +14,13 @@
 
         </div>
         <div class="card-body">
-          
-
             <div class="table-responsive">
-                <div id="add-row_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="add-row"></label></div></div></div><div class="row">
-                        <div class="col-sm-12">
-                            <table id="add-row" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
+                <div id="add-row_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4"></div>
+            </div>
+         </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="add-row" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
                     <thead>
                         <tr role="row">
                             <th class="sorting_asc" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Họ Tên: activate to sort column descending" style="width: 200px;">Họ Tên</th>
@@ -30,8 +30,6 @@
                             <th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" aria-label="Thao Tác: activate to sort column ascending" style="width: 150px;">Thao Tác</th>
                         </tr>
                     </thead>
-
-                               
                                 <tbody>
                                     @* Xử lý vòng lặp *@
                                      @if (Model != null && Model.Any())
@@ -65,4 +63,36 @@
             </div>
         </div>
     </div>
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<!-- DataTables Bootstrap Integration -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<!-- DataTables Bootstrap Integration -->
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('#add-row').DataTable({
+            language: {
+                search: "Tìm kiếm:",
+                lengthMenu: "Hiển thị _MENU_ dòng",
+                zeroRecords: "Không tìm thấy kết quả",
+                info: "",
+                infoFiltered: "",
+                paginate: {
+                    first: "&#60;&#60;",
+                    last: "&#62;&#62;",
+                    next: "&#8594;",
+                    previous: "&#8592;"
+                }
+            },
+            paging: true,
+            ordering: true,
+            info: true
+        });
+    });
+</script>
 </div>

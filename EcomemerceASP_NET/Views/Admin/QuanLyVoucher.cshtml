@@ -1,0 +1,117 @@
+﻿@model IEnumerable<EcomemerceASP_NET.ViewModels.VoucherVM>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center mt-2 w-100">
+                <h4 class="card-title ms-auto">Add Voucher</h4>
+                <button class="btn btn-primary btn-round ms-auto" data-bs-toggle="modal" data-bs-target="#addVoucherModal">
+                    <i class="fa fa-plus"></i>
+                    Add Voucher
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="voucher-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="ql_voucher" class="display table table-striped table-hover dataTable" role="grid">
+                            <thead>
+                                <tr role="row">
+                                    <th class="sorting_asc" style="width: 200px;">Mã Voucher</th>
+                                    <th class="sorting" style="width: 200px;">Giảm Giá (%)</th>
+                                    <th class="sorting" style="width: 150px;">Thao Tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null && Model.Any())
+                                {
+                                    foreach (var voucher in Model)
+                                    {
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">@voucher.MaVc</td>
+                                            <td>@voucher.GiamGia</td>
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <button type="button" data-bs-toggle="tooltip" title="Edit Voucher" class="btn btn-link btn-primary btn-lg">
+                                                        <i class="fa fa-edit"></i>
+                                                    </button>
+                                                    <button type="button" data-bs-toggle="tooltip" title="Remove Voucher" class="btn btn-link btn-danger">
+                                                        <i class="fa fa-times"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal to add new voucher -->
+    <div class="modal fade" id="addVoucherModal" tabindex="-1" aria-labelledby="addVoucherModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title ms-auto" id="addVoucherModalLabel">Add New Voucher</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="@Url.Action("AddVoucher", "Admin")">
+                        <div class="mb-3">
+                            <label for="voucherCode" class="form-label">Mã Voucher</label>
+                            <input type="text" class="form-control" id="voucherCode" name="MaVoucher" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="voucherDiscount" class="form-label">Giảm Giá (%)</label>
+                            <input type="number" class="form-control" id="voucherDiscount" name="GiamGia" min="1" max="100" required />
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Add Voucher</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <!-- DataTables Bootstrap Integration -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <!-- DataTables Bootstrap Integration -->
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#ql_voucher').DataTable({
+                language: {
+                    search: "Tìm kiếm:",
+                    lengthMenu: "Hiển thị _MENU_ dòng",
+                    zeroRecords: "Không tìm thấy kết quả",
+                    info: "",
+                    infoFiltered: "",
+                    paginate: {
+                        first: "&#60;&#60;",
+                        last: "&#62;&#62;",
+                        next: "&#8594;",
+                        previous: "&#8592;"
+                    }
+                },
+                paging: true,
+                ordering: true,
+                info: true
+            });
+        });
+    </script>
+</div>

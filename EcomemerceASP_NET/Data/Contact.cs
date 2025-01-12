@@ -10,4 +10,6 @@ public partial class Contact
     public string? Email { get; set; }
 
     public string NoiDung { get; set; } = null!;
+
+    public int Id { get; set; }
 }
