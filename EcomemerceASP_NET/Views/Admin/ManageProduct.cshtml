@@ -227,27 +227,27 @@
         $(document).ready(function () {
             $('#ql_product').DataTable({
                 language: {
-                search: "Tìm kiếm:",
-                lengthMenu: "Hiển thị _MENU_ dòng",
-                zeroRecords: "Không tìm thấy kết quả",
-                info: "",
-                infoFiltered: "",
-                paginate: {
-                first: "&#60;&#60;",
-                last: "&#62;&#62;",
-                next: "&#8594;",
-                previous: "&#8592;"
+                    search: "Tìm kiếm:",
+                    lengthMenu: "Hiển thị _MENU_ dòng",
+                    zeroRecords: "Không tìm thấy kết quả",
+                    info: "",
+                    infoFiltered: "",
+                    paginate: {
+                        first: "&#60;&#60;",
+                        last: "&#62;&#62;",
+                        next: "&#8594;",
+                        previous: "&#8592;"
                     }
                 },
-                paging: true,   
-                ordering: true, 
-                info: true       
-                });
+                paging: true,
+                ordering: true,
+                info: true
             });
-            //thêm sản phẩm
+        });
+        //thêm sản phẩm
         $(document).ready(function () {
             $('#addRowModal form').on('submit', function (e) {
-                e.preventDefault(); 
+                e.preventDefault();
 
                 Swal.fire({
                     title: 'Bạn có chắc chắn muốn thêm sản phẩm không?',
@@ -258,7 +258,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         const formData = $(this).serialize();
-                        const url = $(this).attr('action'); 
+                        const url = $(this).attr('action');
 
                         $.post(url, formData, function (response) {
                             if (response.success) {
@@ -282,11 +282,11 @@
                 });
             });
         });
-        //xóa sản phẩm 
+        //xóa sản phẩm
         $(document).ready(function () {
             $('.delete-product').on('click', function (e) {
-                e.preventDefault(); 
-                const productId = $(this).data('id'); 
+                e.preventDefault();
+                const productId = $(this).data('id');
                 const row = $(this).closest('tr');
                 Swal.fire({
                     title: 'Bạn có chắc chắn muốn xóa sản phẩm này không?',
@@ -299,10 +299,10 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             url: '/Admin/DeleteProduct',
-                            type: 'POST', 
+                            type: 'POST',
                             data: {
                                 productId: productId,
-                                _token: '{{ csrf_token() }}' 
+                                _token: '{{ csrf_token() }}'
                             },
                             success: function (response) {
                                 if (response.success) {
@@ -334,7 +334,7 @@
                 });
             });
         });
-       
+
         $(document).ready(function () {
             // Khi nhấn nút edit-product
             $('.edit-product').on('click', function () {
@@ -382,41 +382,41 @@
                 });
 
 
-            $('#editProductForm').on('submit', function (e) {
-                e.preventDefault();
+                $('#editProductForm').on('submit', function (e) {
+                    e.preventDefault();
 
-                Swal.fire({
-                    title: 'Bạn có chắc chắn muốn cập nhật sản phẩm này không?',
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText: 'Có, cập nhật!',
-                    cancelButtonText: 'Không, hủy bỏ!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        const formData = $(this).serialize(); 
-                        const url = $(this).attr('action'); 
+                    Swal.fire({
+                        title: 'Bạn có chắc chắn muốn cập nhật sản phẩm này không?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Có, cập nhật!',
+                        cancelButtonText: 'Không, hủy bỏ!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            const formData = $(this).serialize();
+                            const url = $(this).attr('action');
 
-                        $.post(url, formData, function (response) {
-                            if (response.success) {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Thành công!',
-                                    text: response.message,
-                                    confirmButtonText: 'OK'
-                                }).then(() => {
-                                    location.reload(); 
-                                });
-                            } else {
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Lỗi!',
-                                    text: response.message
-                                });
-                            }
-                        });
-                    }
+                            $.post(url, formData, function (response) {
+                                if (response.success) {
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Thành công!',
+                                        text: response.message,
+                                        confirmButtonText: 'OK'
+                                    }).then(() => {
+                                        location.reload();
+                                    });
+                                } else {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Lỗi!',
+                                        text: response.message
+                                    });
+                                }
+                            });
+                        }
+                    });
                 });
             });
-        });
     </script>
- </div>
+</div>
