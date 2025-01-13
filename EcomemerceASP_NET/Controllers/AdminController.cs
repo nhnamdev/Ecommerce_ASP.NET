@@ -2,6 +2,7 @@
 using EcomemerceASP_NET.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Versioning;
 
 namespace EcomemerceASP_NET.Controllers
 {
@@ -54,6 +55,11 @@ namespace EcomemerceASP_NET.Controllers
             if (string.IsNullOrWhiteSpace(Name))
             {
                 return Json(new { success = false, message = "Tên loại không được để trống." });
+            }
+            var exisLoai = db.Loais.FirstOrDefault(t => t.TenLoai == Name);
+            if(exisLoai != null)
+            {
+                return Json(new { success = false, message = "Tên loại đã tồn tại." });
             }
 
             var loai = new Loai
@@ -281,6 +287,12 @@ namespace EcomemerceASP_NET.Controllers
             {
                 return Json(new { success = false, message = "Dữ liệu không hợp lệ." });
             }
+            var existingNCC = db.NhaCungCaps.FirstOrDefault(v => v.MaNcc == supplierId);
+            var existingTenCT = db.NhaCungCaps.FirstOrDefault(n => n.TenCongTy == companyName);
+            if(existingNCC != null || existingTenCT != null)
+            {
+                return Json(new { success = false, message = "Mã nhà cung cấp hoặc công ty đã tồn tại." });
+            }
             var NhaCC = new NhaCungCap
             {
                 MaNcc = supplierId,
@@ -341,16 +353,15 @@ namespace EcomemerceASP_NET.Controllers
             var nhacungcap = db.NhaCungCaps.FirstOrDefault(p => p.MaNcc == maNcc);
             if (nhacungcap == null)
             {
-                return NotFound("Không tìm thấy loại cần cập nhật.");
+                return NotFound("Không tìm thấy nhà cung cấp cần cập nhật.");
             }
-            nhacungcap.MaNcc = maNcc;
             nhacungcap.TenCongTy = TenCongTy;
             nhacungcap.Email = Email;
             nhacungcap.DienThoai = DienThoai;
             nhacungcap.DiaChi = DiaChi;
             nhacungcap.MoTa = moTa;
             db.SaveChanges();
-            return RedirectToAction("QuanLyNhaCungCap");
+            return Json(new { success = true, message = "Cập nhật thành công!" });
         }
         //xóa nhà cung cấp
         [HttpPost]
@@ -402,7 +413,11 @@ namespace EcomemerceASP_NET.Controllers
             {
                 return Json(new { success = false, message = "Mã voucher không được để trống." });
             }
-
+            var existingVoucher = db.Vouchers.FirstOrDefault(v => v.MaVc == maVoucher);
+            if (existingVoucher != null)
+            {
+                return Json(new { success = false, message = "Mã voucher đã tồn tại." });
+            }
             var voucher = new Voucher
             {
                 MaVc = maVoucher,
