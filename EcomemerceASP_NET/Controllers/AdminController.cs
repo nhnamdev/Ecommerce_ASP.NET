@@ -31,6 +31,7 @@ namespace EcomemerceASP_NET.Controllers
             return View(model);
         }
 
+        //view loại 
         public IActionResult ManageType()
         {
             ViewBag.Title = "Type";
@@ -46,6 +47,7 @@ namespace EcomemerceASP_NET.Controllers
             return View(result);
         }
 
+        //thêm loại 
         [HttpPost]
         public JsonResult AddType(string Name, string notes)
         {
@@ -66,6 +68,7 @@ namespace EcomemerceASP_NET.Controllers
             return Json(new { success = true, message = "Thêm loại thành công." });
         }
 
+        //cập nhật loại 
         [HttpPost]
         public JsonResult UpdateType(int MaLoai, string type, string moTa)
         {
@@ -82,7 +85,7 @@ namespace EcomemerceASP_NET.Controllers
             return Json(new { success = true, message = "Cập nhật loại thành công." });
         }
 
-
+        //xóa loại 
         [HttpPost]
         public JsonResult DeleteType(int MaLoai)
         {
@@ -98,19 +101,134 @@ namespace EcomemerceASP_NET.Controllers
             return Json(new { success = true, message = "Loại đã được xóa thành công." });
         }
 
+        //view product 
         public IActionResult ManageProduct()
         {
             ViewBag.Title = "Product";
-            var Products = db.HangHoas.AsQueryable();
-            var result = Products.Include(p => p.MaLoaiNavigation).Select(p => new ProductVM
+
+            // Lấy danh sách các loại sản phẩm (Type) từ database
+            var types = db.Loais.Select(l => new LoaiVM
             {
+                MaLoai = l.MaLoai,
+                TenLoai = l.TenLoai
+            }).ToList();
+            ViewBag.Types = types;
+
+            var sub = db.NhaCungCaps.Select(n => new NhaCungCapVM
+            {
+                MaNcc = n.MaNcc,
+                TenCongTy = n.TenCongTy
+            }).ToList();
+            ViewBag.subs = sub;
+            var products = db.HangHoas.Include(p => p.MaLoaiNavigation).Select(p => new ProductVM
+            {
+                MaHh = p.MaHh,
                 TenHH = p.TenHh,
                 TenLoai = p.MaLoaiNavigation.TenLoai,
+                MoTaDonVi = p.MoTaDonVi,
                 DonGia = p.DonGia,
                 Hinh = p.Hinh,
             }).ToList();
-            return View(result);
+
+            return View(products);
         }
+
+        //thêm product 
+        [HttpPost]
+        public IActionResult AddProduct(string TenHh, int MaLoai, string MaNcc, double DonGia, string Hinh, DateTime NgaySx, double GiamGia, string MoTa, string MoTaDonVi)
+        {
+            if (string.IsNullOrWhiteSpace(MaNcc) || DonGia <= 0)
+            {
+                return Json(new { success = false, message = "Dữ liệu không hợp lệ." });
+            }
+
+            var product = new HangHoa
+            {
+                TenHh = TenHh,
+                MaLoai = MaLoai,
+                MoTaDonVi = MoTaDonVi,
+                DonGia = DonGia,
+                Hinh = Hinh,
+                NgaySx = NgaySx,
+                GiamGia = GiamGia,
+                MoTa = MoTa,
+                MaNcc = MaNcc
+            };
+
+            db.HangHoas.Add(product);
+            db.SaveChanges();
+
+            return Json(new { success = true, message = "Thêm sản phẩm thành công." });
+        }
+        //xóa product 
+        [HttpPost]
+        public IActionResult DeleteProduct(int productId)
+        {
+            var product = db.HangHoas.FirstOrDefault(p => p.MaHh == productId); // Giả sử 'MaHh' là ID sản phẩm trong database.
+
+            if (product == null)
+            {
+                return Json(new { success = false, message = "Sản phẩm không tồn tại." });
+            }
+
+            // Xóa sản phẩm
+            db.HangHoas.Remove(product);
+            db.SaveChanges();
+
+            return Json(new { success = true, message = "Sản phẩm đã được xóa thành công." });
+        }
+
+        [HttpGet]
+        public JsonResult GetProductById(int productId)
+        {
+            var product = db.HangHoas.FirstOrDefault(p => p.MaHh == productId);
+            if (product == null)
+            {
+                return Json(new { success = false, message = "Không tìm thấy sản phẩm." });
+            }
+
+            var productVM = new ProductVM
+            {
+                MaHh = product.MaHh,
+                TenHH = product.TenHh,
+                MaLoai = product.MaLoai,
+                MoTaDonVi = product.MoTaDonVi,
+                DonGia = product.DonGia,
+                Hinh = product.Hinh,
+                NgaySx = product.NgaySx,
+                GiamGia = product.GiamGia,
+                MoTa = product.MoTa,
+                MaNcc = product.MaNcc
+            };
+
+            return Json(new { success = true, data = productVM });
+        }
+
+        [HttpPost]
+        public JsonResult UpdateProduct(ProductVM productVM)
+        {
+            var product = db.HangHoas.FirstOrDefault(p => p.MaHh == productVM.MaHh);
+            if (product == null)
+            {
+                return Json(new { success = false, message = "Không tìm thấy sản phẩm cần cập nhật." });
+            }
+
+            product.TenHh = productVM.TenHH;
+            product.MaLoai = productVM.MaLoai;
+            product.MoTaDonVi = productVM.MoTaDonVi;
+            product.DonGia = productVM.DonGia;
+            product.Hinh = productVM.Hinh;
+            product.NgaySx = productVM.NgaySx;
+            product.GiamGia = productVM.GiamGia;
+            product.MoTa = productVM.MoTa;
+            product.MaNcc = productVM.MaNcc;
+
+            db.SaveChanges();
+            return Json(new { success = true, message = "Cập nhật sản phẩm thành công." });
+        }
+
+
+        //view user 
         public IActionResult ManageUser()
         {
             ViewBag.Title = "User";
@@ -121,8 +239,23 @@ namespace EcomemerceASP_NET.Controllers
                 NgaySinh = p.NgaySinh,
                 DiaChi = p.DiaChi,
                 DienThoai = p.DienThoai,
+                MaKh = p.MaKh
             }).ToList();
             return View(result);
+        }
+        [HttpPost]
+        public JsonResult DeleteUser(string MaKh)
+        {
+            var user = db.KhachHangs.FirstOrDefault(p => p.MaKh == MaKh);
+            if (user == null)
+            {
+                return Json(new { success = false, message = "Không tìm thấy khách hàng cần xóa." });
+            }
+
+            db.KhachHangs.Remove(user);
+            db.SaveChanges();
+
+            return Json(new { success = true, message = "khách hàng đã được xóa thành công." });
         }
 
         public IActionResult PaymentHistory()

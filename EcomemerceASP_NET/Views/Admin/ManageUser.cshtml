@@ -43,12 +43,9 @@
                                     <td>@item.DienThoai</td>
                                         <td>
                                             <div class="form-button-action">
-                                                <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-                                                    <i class="fa fa-edit"></i>
-                                                </button>
-                                                <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-                                                    <i class="fa fa-times"></i>
-                                                </button>
+                                            <button class="btn btn-link btn-danger btn-delete-uesr" data-id="@item.MaKh">
+                                                <i class="fa fa-times"></i>
+                                            </button>
                                             </div>
                                         </td>
                                 </tr>
@@ -73,6 +70,11 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <!-- DataTables Bootstrap Integration -->
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<!-- SweetAlert2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.min.css" rel="stylesheet">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.all.min.js"></script>
     <script>
     $(document).ready(function () {
         $('#add-row').DataTable({
@@ -94,5 +96,54 @@
             info: true
         });
     });
+
+    $(document).ready(function () {
+        $('.btn-delete-uesr').click(function (e) {
+            e.preventDefault();
+            const maKh = $(this).data('id');
+            const row = $(this).closest('tr');
+
+            Swal.fire({
+                title: 'Bạn có chắc không?',
+                text: "Bạn sẽ không thể khôi phục lại khách hàng này!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Đúng, xóa nó!',
+                cancelButtonText: 'Hủy bỏ'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '/Admin/DeleteUser',
+                        type: 'POST',
+                        data: { MaKh: maKh },
+                        success: function (response) {
+                            if (response.success) {
+                                Swal.fire(
+                                    'Đã xóa!',
+                                    response.message,
+                                    'success'
+                                );
+                                row.remove();
+                            } else {
+                                Swal.fire(
+                                    'Lỗi!',
+                                    response.message,
+                                    'error'
+                                );
+                            }
+                        },
+                        error: function () {
+                            Swal.fire(
+                                'Lỗi!',
+                                'Có lỗi xảy ra khi xóa!',
+                                'error'
+                            );
+                        }
+                    });
+                }
+            });
+        });
+    });
 </script>
-</div>
