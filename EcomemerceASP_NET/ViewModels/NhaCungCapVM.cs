@@ -12,5 +12,7 @@
 
         public string? DiaChi { get; set; }
 
+        public string? MoTa { get; set; }
+
     }
 }

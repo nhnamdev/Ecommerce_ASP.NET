@@ -38,20 +38,44 @@
                                             <td>
                                                 <div class="form-button-action">
                                                     <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editVoucherModal"
-                                                            data-id="@voucher.MaVc"
-                                                            data-discount="@voucher.GiamGia">
+                                                            data-id="@voucher.MaVc" data-discount="@voucher.GiamGia">
                                                         <i class="fa fa-edit"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-link btn-danger" data-bs-toggle="modal" data-bs-target="#deleteVoucherModal"
-                                                            data-id="@voucher.MaVc">
+                                                    <button class="btn btn-link btn-danger  btn-deleteV"data-id="@voucher.MaVc">
                                                         <i class="fa fa-times"></i>
-                                                    </button></div>
+                                                    </button>
+                                                    </div>
                                             </td>
                                         </tr>
                                     }
                                 }
                             </tbody>
                         </table>
+                        <!-- Modal to Edit Voucher -->
+                        <div class="modal fade" id="editVoucherModal" tabindex="-1" aria-labelledby="editVoucherModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header justify-content-center">
+                                        <h5 class="modal-title ms-auto" id="editVoucherModalLabel">Edit Voucher</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="editV">
+                                            <div class="mb-3">
+                                                <label for="voucherCode" class="form-label">Mã Voucher</label>
+                                                <input type="text" class="form-control" id="editVoucherCode" name="MaVoucher" disabled />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="voucherDiscount" class="form-label">Giảm Giá (%)</label><input type="number" class="form-control" id="editVoucherDiscount" name="GiamGia" min="1" max="100" required />
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-primary">Cập Nhật Voucher</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -67,7 +91,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="@Url.Action("AddVoucher", "Admin")">
+                    <form id="addVoucher">
                         <div class="mb-3">
                             <label for="voucherCode" class="form-label">Mã Voucher</label>
                             <input type="text" class="form-control" id="voucherCode" name="MaVoucher" required />
@@ -85,54 +109,6 @@
         </div>
     </div>
 
-    <!-- Modal to Edit Voucher -->
-    <div class="modal fade" id="editVoucherModal" tabindex="-1" aria-labelledby="editVoucherModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header justify-content-center">
-                    <h5 class="modal-title ms-auto" id="editVoucherModalLabel">Edit Voucher</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" action="@Url.Action("UpdateVoucher", "Admin")">
-                        <div class="mb-3">
-                            <label for="voucherCode" class="form-label">Mã Voucher</label>
-                            <input type="text" class="form-control" id="editVoucherCode" name="MaVoucher" required />
-                        </div>
-                        <div class="mb-3">
-                            <label for="voucherDiscount" class="form-label">Giảm Giá (%)</label><input type="number" class="form-control" id="editVoucherDiscount" name="GiamGia" min="1" max="100" required />
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Cập Nhật Voucher</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal to Delete Voucher -->
-    <div class="modal fade" id="deleteVoucherModal" tabindex="-1" aria-labelledby="deleteVoucherModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header justify-content-center">
-                    <h5 class="modal-title ms-auto" id="deleteVoucherModalLabel">Confirm Deletion</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" action="@Url.Action("DeleteVoucher", "Admin")">
-                        <input type="hidden" id="deleteVoucherId" name="MaVoucher" />
-                        <p>Bạn chắc chắn muốn xóa voucher này?</p>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-danger">Xóa</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <!-- DataTables Bootstrap Integration -->
@@ -143,6 +119,12 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <!-- DataTables Bootstrap Integration -->
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.all.min.js"></script>
+
     <script>
         $(document).ready(function () {
             $('#ql_voucher').DataTable({
@@ -164,27 +146,116 @@
                 info: true
             });
         });
-        // Edit Voucher Modal
-        document.addEventListener('DOMContentLoaded', function () {
+
+
+        $(document).ready(function () {
+            // Xử lý sự kiện xóa voucher
+            $('.btn-deleteV').click(function (e) {
+                e.preventDefault();
+                const maVoucher = $(this).data('id');
+                const row = $(this).closest('tr');
+
+                Swal.fire({
+                    title: 'Bạn có chắc không?',
+                    text: "Bạn sẽ không thể khôi phục lại voucher này!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Đúng, xóa nó!',
+                    cancelButtonText: 'Hủy bỏ'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '/Admin/DeleteVoucher',
+                            type: 'POST',
+                            data: { MaVc: maVoucher },
+                            success: function (response) {
+                                if (response.success) {
+                                    Swal.fire('Đã xóa!', response.message, 'success');
+                                    row.remove();
+                                } else {
+                                    Swal.fire('Lỗi!', response.message, 'error');
+                                }
+                            },
+                            error: function () {
+                                Swal.fire('Lỗi!', 'Có lỗi xảy ra khi xóa!', 'error');
+                            }
+                        });
+                    }
+                });
+            });
+            //cập nhật
             const editModal = document.getElementById('editVoucherModal');
             editModal.addEventListener('show.bs.modal', function (event) {
                 const button = event.relatedTarget;
                 const id = button.getAttribute('data-id');
                 const discount = button.getAttribute('data-discount');
-
                 document.getElementById('editVoucherCode').value = id;
                 document.getElementById('editVoucherDiscount').value = discount;
             });
-        });
-
-        // Delete Voucher Modal
-        document.addEventListener('DOMContentLoaded', function () {
-            const deleteModal = document.getElementById('deleteVoucherModal');
-            deleteModal.addEventListener('show.bs.modal', function (event) {
-                const button = event.relatedTarget;
-                const id = button.getAttribute('data-id');
-                document.getElementById('deleteVoucherId').value = id;
+            $('#editV').submit(function (e) {
+                e.preventDefault();
+                const maV = $('#editVoucherCode').val();
+                const discount = $('#editVoucherDiscount').val();
+                $.ajax({
+                    url: '/Admin/UpdateVoucher',
+                    type: 'POST',
+                    data: { maVoucher: maV, giamGia: discount },
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire('Thành công!', response.message, 'success').then(() => {
+                                location.reload(); 
+                            });
+                        } else {
+                            Swal.fire('Lỗi!', response.message, 'error');
+                        }
+                    },
+                    error: function () {
+                        Swal.fire('Lỗi!', 'Có lỗi xảy ra khi cập nhật Voucher!', 'error');
+                    }
+                });
             });
         });
+        // Xử lý sự kiện thêm voucher
+        $('#addVoucher').submit(function (e) {
+            e.preventDefault();
+
+            const maVC = $('#voucherCode').val();
+            const giamGia = $('#voucherDiscount').val();
+
+            $.ajax({
+                url: '/Admin/AddVoucher',
+                type: 'POST',
+                data: { maVoucher: maVC, giamGia: giamGia },
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: 'Thành công!',
+                            text: response.message,  // Thông báo từ controller
+                            icon: 'success'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                location.reload();  // Reload lại trang khi người dùng nhấn "OK"
+                            }
+                        });
+                    } else {
+                        Swal.fire(
+                            'Lỗi!',
+                            response.message,
+                            'error'
+                        );
+                    }
+                },
+                error: function () {
+                    Swal.fire(
+                        'Lỗi!',
+                        'Có lỗi xảy ra khi thêm loại!',
+                        'error'
+                    );
+                }
+            });
+        });
+
     </script>
 </div>

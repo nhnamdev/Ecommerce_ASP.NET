@@ -227,27 +227,27 @@
         $(document).ready(function () {
             $('#ql_product').DataTable({
                 language: {
-                    search: "Tìm kiếm:",
-                    lengthMenu: "Hiển thị _MENU_ dòng",
-                    zeroRecords: "Không tìm thấy kết quả",
-                    info: "",
-                    infoFiltered: "",
-                    paginate: {
-                        first: "&#60;&#60;",
-                        last: "&#62;&#62;",
-                        next: "&#8594;",
-                        previous: "&#8592;"
+                search: "Tìm kiếm:",
+                lengthMenu: "Hiển thị _MENU_ dòng",
+                zeroRecords: "Không tìm thấy kết quả",
+                info: "",
+                infoFiltered: "",
+                paginate: {
+                first: "&#60;&#60;",
+                last: "&#62;&#62;",
+                next: "&#8594;",
+                previous: "&#8592;"
                     }
                 },
-                paging: true,
-                ordering: true,
-                info: true
+                paging: true,   
+                ordering: true, 
+                info: true       
+                });
             });
-        });
-        //thêm sản phẩm
+            //thêm sản phẩm
         $(document).ready(function () {
             $('#addRowModal form').on('submit', function (e) {
-                e.preventDefault();
+                e.preventDefault(); 
 
                 Swal.fire({
                     title: 'Bạn có chắc chắn muốn thêm sản phẩm không?',
@@ -258,7 +258,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         const formData = $(this).serialize();
-                        const url = $(this).attr('action');
+                        const url = $(this).attr('action'); 
 
                         $.post(url, formData, function (response) {
                             if (response.success) {
@@ -282,11 +282,11 @@
                 });
             });
         });
-        //xóa sản phẩm
+        //xóa sản phẩm 
         $(document).ready(function () {
             $('.delete-product').on('click', function (e) {
-                e.preventDefault();
-                const productId = $(this).data('id');
+                e.preventDefault(); 
+                const productId = $(this).data('id'); 
                 const row = $(this).closest('tr');
                 Swal.fire({
                     title: 'Bạn có chắc chắn muốn xóa sản phẩm này không?',
@@ -299,10 +299,10 @@
                     if (result.isConfirmed) {
                         $.ajax({
                             url: '/Admin/DeleteProduct',
-                            type: 'POST',
+                            type: 'POST', 
                             data: {
                                 productId: productId,
-                                _token: '{{ csrf_token() }}'
+                                _token: '{{ csrf_token() }}' 
                             },
                             success: function (response) {
                                 if (response.success) {
@@ -335,88 +335,67 @@
             });
         });
 
-        $(document).ready(function () {
-            // Khi nhấn nút edit-product
-            $('.edit-product').on('click', function () {
-                const productId = $(this).data('id');
+        $(document).on("click", ".edit-product", function () {
+            const productId = $(this).data("id");
 
-                $(document).ready(function () {
-                    $('.edit-product').on('click', function () {
-                        const productId = $(this).data('id');
-
-                        $.ajax({
-                            url: '/Admin/GetProductById',
-                            type: 'GET',
-                            data: { id: productId },
-                            success: function (response) {
-                                if (response.success) {
-                                    const product = response.data;
-
-                                    $('#editProductId').val(product.MaHh);
-                                    $('#editProductName').val(product.TenHh);
-                                    $('#editProductType').val(product.MaLoai);
-                                    $('#editProductDec').val(product.MoTaDonVi);
-                                    $('#editProductPrice').val(product.DonGia);
-                                    $('#editProductImage').val(product.Hinh);
-                                    $('#editProductManufactureDate').val(product.NgaySx);
-                                    $('#editProductDiscount').val(product.GiamGia);
-                                    $('#editProductDescription').val(product.MoTa);
-                                    $('#editProductSupplier').val(product.MaNcc);
-                                } else {
-                                    Swal.fire({
-                                        icon: 'error',
-                                        title: 'Lỗi!',
-                                        text: response.message
-                                    });
-                                }
-                            },
-                            error: function () {
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Lỗi!',
-                                    text: 'Không thể lấy dữ liệu sản phẩm.'
-                                });
-                            }
-                        });
-                    });
-                });
-
-
-                $('#editProductForm').on('submit', function (e) {
-                    e.preventDefault();
-
-                    Swal.fire({
-                        title: 'Bạn có chắc chắn muốn cập nhật sản phẩm này không?',
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonText: 'Có, cập nhật!',
-                        cancelButtonText: 'Không, hủy bỏ!'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            const formData = $(this).serialize();
-                            const url = $(this).attr('action');
-
-                            $.post(url, formData, function (response) {
-                                if (response.success) {
-                                    Swal.fire({
-                                        icon: 'success',
-                                        title: 'Thành công!',
-                                        text: response.message,
-                                        confirmButtonText: 'OK'
-                                    }).then(() => {
-                                        location.reload();
-                                    });
-                                } else {
-                                    Swal.fire({
-                                        icon: 'error',
-                                        title: 'Lỗi!',
-                                        text: response.message
-                                    });
-                                }
-                            });
-                        }
-                    });
-                });
+            // Gửi yêu cầu lấy thông tin sản phẩm từ server
+            $.get(`/Admin/GetProductById/${productId}`, function (data) {
+                if (data.success) {
+                    // Điền dữ liệu vào các trường trong modal
+                    $("#editProductId").val(data.product.MaHh);
+                    $("#editProductName").val(data.product.TenHh);
+                    $("#editProductType").val(data.product.MaLoai);
+                    $("#editProductDec").val(data.product.MoTaDonVi);
+                    $("#editProductPrice").val(data.product.DonGia);
+                    $("#editProductImage").val(data.product.Hinh);
+                    $("#editProductManufactureDate").val(data.product.NgaySx.split("T")[0]); // Format lại ngày
+                    $("#editProductDiscount").val(data.product.GiamGia);
+                    $("#editProductDescription").val(data.product.MoTa);
+                    $("#editProductSupplier").val(data.product.MaNcc);
+                } else {
+                    alert("Không thể tải thông tin sản phẩm.");
+                }
             });
+        });
+
+        $("#saveEditProduct").on("click", function () {
+            // Lấy dữ liệu từ các trường trong modal
+            const productData = {
+                MaHh: $("#editProductId").val(),
+                TenHh: $("#editProductName").val(),
+                MaLoai: $("#editProductType").val(),
+                MoTaDonVi: $("#editProductDec").val(),
+                DonGia: $("#editProductPrice").val(),
+                Hinh: $("#editProductImage").val(),
+                NgaySx: $("#editProductManufactureDate").val(),
+                GiamGia: $("#editProductDiscount").val(),
+                MoTa: $("#editProductDescription").val(),
+                MaNcc: $("#editProductSupplier").val(),
+            };
+
+            // Gửi dữ liệu lên server bằng AJAX
+            $.ajax({
+                url: "/Admin/UpdateProduct",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(productData), // Chuyển dữ liệu sang JSON
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        location.reload(); // Reload lại trang
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function () {
+                    alert("Đã xảy ra lỗi trong quá trình cập nhật.");
+                },
+            });
+        });
+
+
+
+              
+
     </script>
-</div>
+ </div>

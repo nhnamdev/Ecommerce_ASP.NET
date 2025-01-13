@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-header">
             <div class="d-flex justify-content-between align-items-center mt-2 w-100">
-                <h4 class="card-title ms-auto">Manage Suppliers</h4>
+                <h4 class="card-title ms-auto">Nhà cung cấp</h4>
                 <button class="btn btn-primary btn-round ms-auto" data-bs-toggle="modal" data-bs-target="#addSupplierModal">
                     <i class="fa fa-plus"></i>
                     Add Supplier
@@ -24,6 +24,7 @@
                                 <th>Email</th>
                                 <th>Điện thoại</th>
                                 <th>Địa chỉ</th>
+                                <th>Mô tả</th>
                                 <th>Thao Tác</th>
                             </tr>
                         </thead>
@@ -38,16 +39,15 @@
                                         <td>@supplier.Email</td>
                                         <td>@supplier.DienThoai</td>
                                         <td>@supplier.DiaChi</td>
+                                        <td>@supplier.MoTa</td>
                                         <td>
                                             <div class="form-button-action">
                                                 <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editSupplierModal"
                                                         data-id="@supplier.MaNcc" data-companyname="@supplier.TenCongTy" data-email="@supplier.Email"
-                                                        data-phone="@supplier.DienThoai" data-address="@supplier.DiaChi">
+                                                        data-phone="@supplier.DienThoai" data-address="@supplier.DiaChi" data-moTa="@supplier.MoTa">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-
-                                                <button type="button" class="btn btn-link btn-danger" data-bs-toggle="modal" data-bs-target="#deleteSupplierModal"
-                                                        data-id="@supplier.MaNcc">
+                                                <button class="btn btn-link btn-danger  btn-deleteN" data-id="@supplier.MaNcc">
                                                     <i class="fa fa-times"></i>
                                                 </button>
 
@@ -63,7 +63,7 @@
         </div>
     </div>
 <!-- Modal to add new supplier -->
-    <div class="modal fade" id="addSupplierModal" tabindex="-1" aria-labelledby="addSupplierModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addSupplierModal" tabindex="-1" aria-labelledby="addSupplierModalLabel">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header justify-content-center">
@@ -71,7 +71,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="@Url.Action("", "Admin")">
+                    <form id="add-sub">
                         <div class="mb-3">
                             <label for="supplierId" class="form-label">Mã nhà cung cấp</label>
                             <input type="text" class="form-control" id="supplierId" name="SupplierId" required />
@@ -92,6 +92,10 @@
                             <label for="address" class="form-label">Địa chỉ</label>
                             <input type="text" class="form-control" id="address" name="Address" required />
                         </div>
+                        <div class="mb-3">
+                            <label for="moTa" class="form-label">Mô tả</label>
+                            <input type="text" class="form-control" id="moTa" name="moTa" required />
+                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Add Supplier</button>
                         </div>
@@ -109,8 +113,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="/Admin/UpdateNhaCungCap">
-                        <input type="hidden" id="editSupplierId" name="MaNcc" />
+                    <form id="editNCC">
+                        <div class="mb-3">
+                            <label for="editSupplierId" class="form-label">Mã nhà cung cấp</label>
+                            <input type="text" id="editSupplierId" name="MaNcc" disabled/>
+                        </div>
                         <div class="mb-3">
                             <label for="editCompanyName" class="form-label">Tên công ty</label>
                             <input type="text" class="form-control" id="editCompanyName" name="TenCongTy" required />
@@ -127,28 +134,12 @@
                             <label for="editAddress" class="form-label">Địa chỉ</label>
                             <input type="text" class="form-control" id="editAddress" name="DiaChi" required />
                         </div>
+                        <div class="mb-3">
+                            <label for="editMoTa" class="form-label">Mô tả</label>
+                            <input type="text" class="form-control" id="editMoTa" name="moTa" required />
+                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Cập nhật nhà cung cấp</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="deleteSupplierModal" tabindex="-1" aria-labelledby="deleteSupplierModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteSupplierModalLabel">Xóa nhà cung cấp</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Bạn có chắc chắn muốn xóa nhà cung cấp này không?</p>
-                    <form method="post" action="/Admin/DeleteNhaCungCap">
-                        <input type="hidden" id="deleteSupplierId" name="maNhaCungCap" />
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-danger">Xóa</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                         </div>
                     </form>
                 </div>
@@ -165,6 +156,11 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <!-- DataTables Bootstrap Integration -->
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.1/dist/sweetalert2.all.min.js"></script>
     <script>
         $(document).ready(function () {
             $('#ql_supplier').DataTable({
@@ -195,24 +191,146 @@
                 const email = button.getAttribute('data-email');
                 const phone = button.getAttribute('data-phone');
                 const address = button.getAttribute('data-address');
+                const moTa = button.getAttribute('data-moTa');
 
                 document.getElementById('editSupplierId').value = id;
                 document.getElementById('editCompanyName').value = companyName;
                 document.getElementById('editEmail').value = email;
                 document.getElementById('editPhone').value = phone;
                 document.getElementById('editAddress').value = address;
+                document.getElementById('editMoTa').value = moTa;
+
+                // Set focus on the first input field inside the modal
+                document.getElementById('editCompanyName').focus();
+            });
+
+            // Handle when modal is closed, return focus to the button that opened the modal
+            editModal.addEventListener('hidden.bs.modal', function () {
+                const button = document.querySelector('[data-bs-target="#editSupplierModal"]');
+                if (button) {
+                    button.focus();
+                }
             });
         });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const deleteModal = document.getElementById('deleteSupplierModal');
-            deleteModal.addEventListener('show.bs.modal', function (event) {
-                const button = event.relatedTarget;
-                const id = button.getAttribute('data-id');
-                document.getElementById('deleteSupplierId').value = id;
+
+      
+
+        // Xử lý sự kiện thêm loại
+        $('#add-sub').submit(function (e) {
+            e.preventDefault();
+
+            const supplierId = $('#supplierId').val();
+            const companyName = $('#companyName').val();
+            const email = $('#email').val();
+            const phone = $('#phone').val();
+            const address = $('#address').val();
+            const moTa = $('#moTa').val();
+
+            $.ajax({
+                url: '/Admin/AddNhaCungCap',
+                type: 'POST',
+                data: { supplierId: supplierId, companyName: companyName, email: email, phone: phone, address: address, moTa: moTa },
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            title: 'Thành công!',
+                            text: response.message, 
+                            icon: 'success'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                location.reload(); 
+                            }
+                        });
+                    } else {
+                        Swal.fire(
+                            'Lỗi!',
+                            response.message,
+                            'error'
+                        );
+                    }
+                },
+                error: function () {
+                    Swal.fire(
+                        'Lỗi!',
+                        'Có lỗi xảy ra khi thêm Nhà cung cấp!',
+                        'error'
+                    );
+                }
             });
         });
 
+        $(document).ready(function () {
+            // Sử dụng on để chỉ định sự kiện cho các phần tử động
+            $(document).on('click', '.btn-deleteN', function (e) {
+                e.preventDefault();
+                const maNhaCungCap = $(this).data('id');
+                const row = $(this).closest('tr');
+
+                Swal.fire({
+                    title: 'Bạn có chắc không?',
+                    text: "Bạn sẽ không thể khôi phục lại Nhà cung cấp này!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Đúng, xóa nó!',
+                    cancelButtonText: 'Hủy bỏ'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '/Admin/DeleteNhaCungCap',
+                            type: 'POST',
+                            data: { maNhaCungCap: maNhaCungCap },
+                            success: function (response) {
+                                if (response.success) {
+                                    Swal.fire('Đã xóa!', response.message, 'success');
+                                    row.remove();
+                                } else {
+                                    Swal.fire('Lỗi!', response.message, 'error');
+                                }
+                            },
+                            error: function () {
+                                Swal.fire('Lỗi!', 'Có lỗi xảy ra khi xóa!', 'error');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+
+        //cập nhật
+        $(document).ready(function () {
+            // Sử dụng $(document).on() để gán sự kiện một cách động
+            $(document).on('submit', '#editNCC', function (e) {
+                e.preventDefault();
+
+                const maNcc = $('#editSupplierId').val();
+                const TenCongTy = $('#editCompanyName').val();
+                const Email = $('#editEmail').val();
+                const DienThoai = $('#editPhone').val();
+                const DiaChi = $('#editAddress').val();
+                const moTa = $('#editMoTa').val();
+
+                $.ajax({
+                    url: '/Admin/UpdateNhaCungCap',
+                    type: 'POST',
+                    data: { maNcc: maNcc, TenCongTy: TenCongTy, Email: Email, DienThoai: DienThoai, DiaChi: DiaChi, moTa: moTa },
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire('Thành công!', response.message, 'success').then(() => {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire('Lỗi!', response.message, 'error');
+                        }
+                    },
+                    error: function () {
+                        Swal.fire('Lỗi!', 'Có lỗi xảy ra khi cập nhật!', 'error');
+                    }
+                });
+            });
+        });
 
 
     </script>

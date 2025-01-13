@@ -178,54 +178,37 @@ namespace EcomemerceASP_NET.Controllers
             return Json(new { success = true, message = "Sản phẩm đã được xóa thành công." });
         }
 
-        [HttpGet]
-        public JsonResult GetProductById(int productId)
+        [HttpPost]
+        public IActionResult UpdateProduct([FromBody] ProductVM product)
         {
-            var product = db.HangHoas.FirstOrDefault(p => p.MaHh == productId);
-            if (product == null)
+            if (product == null || product.DonGia <= 0)
+            {
+                return Json(new { success = false, message = "Dữ liệu không hợp lệ." });
+            }
+
+            var existingProduct = db.HangHoas.FirstOrDefault(p => p.MaHh == product.MaHh);
+            if (existingProduct == null)
             {
                 return Json(new { success = false, message = "Không tìm thấy sản phẩm." });
             }
 
-            var productVM = new ProductVM
-            {
-                MaHh = product.MaHh,
-                TenHH = product.TenHh,
-                MaLoai = product.MaLoai,
-                MoTaDonVi = product.MoTaDonVi,
-                DonGia = product.DonGia,
-                Hinh = product.Hinh,
-                NgaySx = product.NgaySx,
-                GiamGia = product.GiamGia,
-                MoTa = product.MoTa,
-                MaNcc = product.MaNcc
-            };
-
-            return Json(new { success = true, data = productVM });
-        }
-
-        [HttpPost]
-        public JsonResult UpdateProduct(ProductVM productVM)
-        {
-            var product = db.HangHoas.FirstOrDefault(p => p.MaHh == productVM.MaHh);
-            if (product == null)
-            {
-                return Json(new { success = false, message = "Không tìm thấy sản phẩm cần cập nhật." });
-            }
-
-            product.TenHh = productVM.TenHH;
-            product.MaLoai = productVM.MaLoai;
-            product.MoTaDonVi = productVM.MoTaDonVi;
-            product.DonGia = productVM.DonGia;
-            product.Hinh = productVM.Hinh;
-            product.NgaySx = productVM.NgaySx;
-            product.GiamGia = productVM.GiamGia;
-            product.MoTa = productVM.MoTa;
-            product.MaNcc = productVM.MaNcc;
+            // Cập nhật thông tin sản phẩm
+            existingProduct.TenHh = product.TenHH;
+            existingProduct.MaLoai = product.MaLoai;
+            existingProduct.MoTaDonVi = product.MoTaDonVi;
+            existingProduct.DonGia = product.DonGia;
+            existingProduct.Hinh = product.Hinh;
+            existingProduct.NgaySx = product.NgaySx;
+            existingProduct.GiamGia = product.GiamGia;
+            existingProduct.MoTa = product.MoTa;
+            existingProduct.MaNcc = product.MaNcc;
 
             db.SaveChanges();
+
             return Json(new { success = true, message = "Cập nhật sản phẩm thành công." });
         }
+
+
 
 
         //view user 
@@ -243,6 +226,8 @@ namespace EcomemerceASP_NET.Controllers
             }).ToList();
             return View(result);
         }
+
+        //xóa khách hàng
         [HttpPost]
         public JsonResult DeleteUser(string MaKh)
         {
@@ -258,6 +243,7 @@ namespace EcomemerceASP_NET.Controllers
             return Json(new { success = true, message = "khách hàng đã được xóa thành công." });
         }
 
+        //view lịch sử thanh toán
         public IActionResult PaymentHistory()
         {
             ViewBag.Title = "Payment history";
@@ -271,6 +257,8 @@ namespace EcomemerceASP_NET.Controllers
             }).ToList();
             return View(result);
         }
+
+        //view nhà cung cấp
         public IActionResult QuanLyNhaCungCap()
         {
             ViewBag.Title = "Quan Ly Nha Cung Cap";
@@ -281,9 +269,31 @@ namespace EcomemerceASP_NET.Controllers
                 TenCongTy = n.TenCongTy,
                 Email = n.Email,
                 DienThoai = n.DienThoai,
-                DiaChi = n.DiaChi
+                DiaChi = n.DiaChi,
+                MoTa = n.MoTa
             }).ToList();
             return View(re);
+        }
+        //them nhà cung cấp
+        public IActionResult AddNhaCungCap(string supplierId, string companyName, string email, string phone, string address, string moTa)
+        {
+            if (string.IsNullOrWhiteSpace(supplierId) || string.IsNullOrWhiteSpace(companyName) || string.IsNullOrWhiteSpace(phone) || string.IsNullOrWhiteSpace(email))
+            {
+                return Json(new { success = false, message = "Dữ liệu không hợp lệ." });
+            }
+            var NhaCC = new NhaCungCap
+            {
+                MaNcc = supplierId,
+                TenCongTy = companyName,
+                Email = email,
+                DienThoai = phone,
+                DiaChi = address,
+                MoTa = moTa
+            };
+            db.NhaCungCaps.Add(NhaCC);
+            db.SaveChanges();
+
+            return Json(new { success = true, message = "Thêm nhà cung cấp thành công." });
         }
         public IActionResult QuanLyVoucher()
         {
@@ -296,6 +306,8 @@ namespace EcomemerceASP_NET.Controllers
             }).ToList();
             return View(re);
         }
+
+        //view contact
         public IActionResult QuanLyContact()
         {
             ViewBag.Title = "Quan Ly Contact";
@@ -308,6 +320,20 @@ namespace EcomemerceASP_NET.Controllers
                 NoiDung = v.NoiDung
             }).ToList();
             return View(re);
+        }
+        //xóa contact 
+        [HttpPost]
+        public IActionResult DeleteContact(int Id)
+        {
+            var contact = db.Contacts.FirstOrDefault(v => v.Id == Id);
+            if (contact == null)
+            {
+                return Json(new { success = false, message = "Không tìm thấy contact cần xóa." });
+            }
+
+            db.Contacts.Remove(contact);
+            db.SaveChanges();
+            return Json(new { success = true, message = "Contact đã được xóa thành công." });
         }
         [HttpPost]
         public IActionResult UpdateNhaCungCap(string maNcc, string TenCongTy, string Email, string DienThoai, string DiaChi, string moTa)
@@ -326,18 +352,18 @@ namespace EcomemerceASP_NET.Controllers
             db.SaveChanges();
             return RedirectToAction("QuanLyNhaCungCap");
         }
-
+        //xóa nhà cung cấp
         [HttpPost]
         public IActionResult DeleteNhaCungCap(string maNhaCungCap)
         {
             var nhacc = db.NhaCungCaps.FirstOrDefault(p => p.MaNcc == maNhaCungCap);
             if (nhacc == null)
             {
-                return NotFound("Không tìm thấy loại cần xóa.");
+                return Json(new { success = false, message = "Không tìm thấy Nhà cung cấp cần xóa." });
             }
             db.NhaCungCaps.Remove(nhacc);
             db.SaveChanges();
-            return RedirectToAction("QuanLyNhaCungCap");
+            return Json(new { success = true, message = "Nhà cung đã được xóa thành công." });
         }
 
         [HttpPost]
@@ -346,25 +372,47 @@ namespace EcomemerceASP_NET.Controllers
             var voucher = db.Vouchers.FirstOrDefault(v => v.MaVc == maVoucher);
             if (voucher == null)
             {
-                return NotFound("Không tìm thấy loại cần cập nhật.");
+                return Json(new { success = false, message = "Không tìm thấy Nhà cung cấp cần cập nhật." });
             }
-            voucher.MaVc = maVoucher;
+
             voucher.GiamGia = giamGia;
             db.SaveChanges();
-            return RedirectToAction("QuanLyVoucher");
+            return Json(new { success = true, message = "Nhà cung đã được cập nhật thành công." });
         }
 
         [HttpPost]
-        public IActionResult DeleteVoucher(string maVoucher)
+        public IActionResult DeleteVoucher(string MaVc)
         {
-            var voucher = db.Vouchers.FirstOrDefault(v => v.MaVc == maVoucher);
+            var voucher = db.Vouchers.FirstOrDefault(v => v.MaVc == MaVc);
             if (voucher == null)
             {
-                return NotFound("Không tìm thấy loại cần xóa.");
+                return Json(new { success = false, message = "Không tìm thấy voucher cần xóa." });
             }
+
             db.Vouchers.Remove(voucher);
             db.SaveChanges();
-            return RedirectToAction("QuanLyVoucher");
+            return Json(new { success = true, message = "Voucher đã được xóa thành công." });
+        }
+
+        //thêm voucher 
+        [HttpPost]
+        public JsonResult AddVoucher(string maVoucher, int giamGia)
+        {
+            if (string.IsNullOrWhiteSpace(maVoucher))
+            {
+                return Json(new { success = false, message = "Mã voucher không được để trống." });
+            }
+
+            var voucher = new Voucher
+            {
+                MaVc = maVoucher,
+                GiamGia = giamGia
+            };
+
+            db.Vouchers.Add(voucher);
+            db.SaveChanges();
+
+            return Json(new { success = true, message = "Thêm voucher thành công." });
         }
     }
 }
