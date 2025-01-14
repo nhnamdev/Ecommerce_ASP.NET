@@ -39,7 +39,7 @@ public partial class EcommerceContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=admin\\SQLEXPRESS;Initial Catalog=Ecommerce;Integrated Security=True;Trust Server Certificate=True");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-S96G2SP\\NAM;Initial Catalog=Ecommerce;User ID=sa;Password=123451231;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -63,12 +63,13 @@ public partial class EcommerceContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_OrderDetails_Products");
         });
-
         modelBuilder.Entity<Contact>(entity =>
         {
             entity
-                .HasNoKey()
-                .ToTable("Contact");
+                .HasKey(e => e.Id); // Đặt Id làm khóa chính
+                                    // Nếu bảng Contact không có cột Id, thay đổi tên cột tương ứng với cột khóa chính trong database.
+
+            entity.ToTable("Contact");
 
             entity.Property(e => e.Email).HasMaxLength(50);
             entity.Property(e => e.HoTen).HasMaxLength(50);
