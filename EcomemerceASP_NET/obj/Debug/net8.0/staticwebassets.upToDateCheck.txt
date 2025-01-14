@@ -613,8 +613,14 @@ wwwroot\Hinh\icons\Yin-Yang.png
 wwwroot\Hinh\icons\Zoom in.png
 wwwroot\Hinh\icons\Zoom out.png
 wwwroot\Hinh\icons\Zoom.png
+wwwroot\Hinh\KhachHang\384521722_134285706413581_6852410118785358196_n.jpg
+wwwroot\Hinh\KhachHang\385560518_1079465383500878_6346324661298643845_n.png
+wwwroot\Hinh\KhachHang\5550ea16-cb06-446d-b4e5-50a8c895d6d5.png
 wwwroot\Hinh\KhachHang\6d2f1d0e-4f55-47bb-93c5-ffdbde29fbf6.png
+wwwroot\Hinh\KhachHang\avt.jpg
 wwwroot\Hinh\KhachHang\locket.jpg
+wwwroot\Hinh\KhachHang\Screenshot 2024-12-22 084534.png
+wwwroot\Hinh\KhachHang\Screenshot 2025-01-03 223132.png
 wwwroot\Hinh\Loai\Accept.png
 wwwroot\Hinh\Loai\agenda_1.jpg
 wwwroot\Hinh\Loai\Alarm.png
@@ -671,6 +677,7 @@ wwwroot\img\vegetable-item-4.jpg
 wwwroot\img\vegetable-item-5.jpg
 wwwroot\img\vegetable-item-6.jpg
 wwwroot\index.html
+wwwroot\js\CheckUserName.js
 wwwroot\js\main.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
